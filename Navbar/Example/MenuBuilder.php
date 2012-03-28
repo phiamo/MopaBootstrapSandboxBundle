@@ -3,7 +3,7 @@ namespace Mopa\Bundle\BootstrapSandboxBundle\Navbar\Example;
 
 use Knp\Menu\FactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Mopa\BootstrapBundle\Navbar\AbstractNavbarMenuBuilder;
+use Mopa\Bundle\BootstrapBundle\Navbar\AbstractNavbarMenuBuilder;
 
 /**
  * An example howto inject a default KnpMenu to the Navbar

@@ -3,7 +3,7 @@ namespace Mopa\Bundle\BootstrapSandboxBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
-use Mopa\BootstrapBundle\Navbar\NavbarFormInterface;
+use Mopa\Bundle\BootstrapBundle\Navbar\NavbarFormInterface;
 
 
 class ExampleSearchFormType extends AbstractType implements NavbarFormInterface
