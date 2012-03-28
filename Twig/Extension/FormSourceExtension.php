@@ -6,8 +6,21 @@ use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Bundle\TwigBundle\Loader\FilesystemLoader;
 use Acme\DemoBundle\Twig\Extension\DemoExtension;
 
-class FormSourceExtension extends DemoExtension
+class FormSourceExtension extends \Twig_Extension
 {
+    
+    protected $loader;
+    protected $controller;
+
+    public function __construct(FilesystemLoader $loader)
+    {
+        $this->loader = $loader;
+    }
+
+    public function setController($controller)
+    {
+        $this->controller = $controller;
+    }
     
     /**
      * {@inheritdoc}
