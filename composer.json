@@ -1,0 +1,28 @@
+{
+    "name": "mopa/bootstrap-sandbox-bundle",
+    "type": "symfony-bundle",
+    "description": "Seperate live docs from code",
+    "keywords": ["form", "sandbox", "extra form", "bootstrap", "bootstrap form", "template"],
+    "license": "MIT",
+    "version": "master",
+    "authors": [
+        {
+            "name": "Philipp A. Mohrenweiser",
+            "email": "phiamo@googlemail.com"
+        },
+        {
+            "name": "Community contributions",
+            "homepage": "https://github.com/phiamo/MopaBootstrapBundle/contributors"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Mopa\\Bundle\\BootstrapSandboxBundle": ""
+        }
+    },
+    "target-dir": "Mopa/Bundle/BootstrapSandboxBundle",
+    "require": {
+        "php": ">=5.3.2",
+        "mopa/bootstrap-bundle": "master"
+    }
+}
