@@ -22,12 +22,11 @@ class FormSourceExtension extends DemoExtension
     }
     public function getFormSource($form)
     {
-        var_dump($form);
         $r = new \ReflectionClass($form);
 
         $code = file($r->getFilename());
 
-        return '//'.$r->getFilename()."\n".implode("", $code);
+        return '// '.$r->getFilename()."\n".implode("", $code);
     }
 
     public function getTemplateSource($template)
