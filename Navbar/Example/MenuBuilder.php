@@ -1,5 +1,5 @@
 <?php
-namespace Mopa\BootstrapBundle\Navbar\Example;
+namespace Mopa\Bundle\BootstrapSandboxBundle\Navbar\Example;
 
 use Knp\Menu\FactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
