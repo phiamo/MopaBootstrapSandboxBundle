@@ -23,6 +23,6 @@
     "target-dir": "Mopa/Bundle/BootstrapSandboxBundle",
     "require": {
         "php": ">=5.3.2",
-        "mopa/bootstrap-bundle": "master"
+        "mopa/bootstrap-bundle": "dev-master"
     }
 }
