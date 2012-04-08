@@ -13,8 +13,10 @@ class MopaBootstrapSandboxExtension extends Extension
     {
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
+        $yamlloader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config/examples'));
+        $yamlloader->load("example_menu.yml");
+        $yamlloader->load("example_navbar.yml");
     }
-
     public function getAlias()
     {
         return 'mopa_bootstrap_sandbox';
