@@ -1,5 +1,36 @@
 {% extends "MopaBootstrapBundle::layout.html.twig" %}
 {% from 'MopaBootstrapBundle::flash.html.twig' import session_flash %}
+{% form_theme form _self %}
+
+{% block example_date_widget %}
+{# block to create the example_date_widget from ExamleDateType #}
+    {% set oid = id %}
+    {% set id = oid ~ "_control_group" %}
+    <div class="collection-item form-inline" {{ block('widget_attributes') }}>
+    {% set id = oid %}
+    {{ form_widget(form.startAt) }} - <br>
+    {{ form_widget(form.endAt) }}
+    {{ form_widget(form.special) }}
+    {{ form_rest(form) }} <br>
+    {% if widget_remove_btn is defined %}
+        &nbsp;{{ block('field_widget_remove_btn') }}
+    {% endif %}
+    </div>
+{% endblock %}
+
+{% block date_widget %}
+    {% if widget == 'single_text' %}
+        {{ block('field_widget') }}
+    {% else %}
+          {% set attr = attr|merge({'class': attr.class|default('')}) %}
+            {{ date_pattern|replace({
+                '{{ year }}':  form_widget(form.year, {'attr': {'class': attr.widget_class|default('') ~ ' input-mini'}}),
+                '{{ month }}': form_widget(form.month, {'attr': {'class': attr.widget_class|default('') ~ ' input-small'}}),
+                '{{ day }}':   form_widget(form.day, {'attr': {'class': attr.widget_class|default('') ~ ' input-mini'}}), 
+            })|raw }}
+          {{ block('help') }}
+    {% endif %}
+{% endblock date_widget %}
 
 {% block content %}
 </div>
@@ -14,7 +45,6 @@
         </div>
       </form>
     </div>
-    
     <div class="span5">
       <h3>Easy use of collections</h3>
       <p>We often saw probs when using collection, so we added some code to ease the use</p>

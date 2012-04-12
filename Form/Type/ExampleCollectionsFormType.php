@@ -35,14 +35,13 @@ class ExampleCollectionsFormType extends AbstractType
 					),
 				)
             ))
-            
             ->add('dates_collection','collection', array(
                 'type' => new ExampleDateFormType(),
                 'allow_add' => true,
                 'allow_delete' => true, // should render default button, change text with widget_remove_btn
                 'prototype' => true,
                 'options' => array(
-					'widget_remove_btn' => "remove"
+					'widget_remove_btn' => "icon-remove"
 				)
             ))
         ;
