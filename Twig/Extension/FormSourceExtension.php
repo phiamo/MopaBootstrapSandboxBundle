@@ -8,7 +8,6 @@ use Acme\DemoBundle\Twig\Extension\DemoExtension;
 
 class FormSourceExtension extends \Twig_Extension
 {
-    
     protected $loader;
     protected $controller;
 
@@ -21,7 +20,6 @@ class FormSourceExtension extends \Twig_Extension
     {
         $this->controller = $controller;
     }
-    
     /**
      * {@inheritdoc}
      */
@@ -44,8 +42,8 @@ class FormSourceExtension extends \Twig_Extension
 
     public function getTemplateSource($template)
     {
-        $code = $this->getTemplateCode($template);
-        
+        $code = $this->loader->getSource($template->getTemplateName());
+
         return '{# '.$template->getTemplateName()." #}\n\n".$code;
     }
 
