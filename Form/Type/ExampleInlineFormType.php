@@ -15,6 +15,7 @@ class ExampleInlineFormType extends AbstractType
             ->add('Email', null, array(
                 'label_render' => false,
                 'widget_controls' => false,
+                'widget_control_group' => false,
                 'attr' => array(
                 	'placeholder' => 'Password',
                 	'class' => 'input-small'
@@ -23,6 +24,7 @@ class ExampleInlineFormType extends AbstractType
             ->add('Password', null, array(
                 'label_render' => false,
                 'widget_controls' => false,
+                'widget_control_group' => false,
                 'attr' => array(
                 	'placeholder' => 'Email',
                 	'class' => 'input-small'
