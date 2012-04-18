@@ -66,8 +66,8 @@ class ExampleExtendedFormType extends AbstractType
                 	'icon' => 'headphones'
                 ),
                 'attr' => array(
-                    'class' => 'span1',
-                	'placeholder' => 'span1',
+                    'class' => 'span3',
+                	'placeholder' => 'Which kind of usic?',
                 )
             ))
             ->add('Appended_Text', 'text', array(
@@ -86,8 +86,8 @@ class ExampleExtendedFormType extends AbstractType
                 	'append'=>true
                 ),
                 'attr' => array(
-                    'class' => 'span1',
-                	'placeholder' => 'span1',
+                    'class' => 'span3',
+                    'placeholder' => 'Which kind of books?',
                 )
             ))
             ->add('Checkboxes_Inline', 'choice', array(

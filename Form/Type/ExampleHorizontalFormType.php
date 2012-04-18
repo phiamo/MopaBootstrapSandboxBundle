@@ -48,6 +48,7 @@ class ExampleHorizontalFormType extends AbstractType
             ->add('File', 'file', array(
             ))
             ->add('Textarea', 'textarea', array(
+                'help_inline' => "Some inline help",
                 'attr'	=> array(
                 	'class' => 'input-xlarge',
                 	'rows'  => 3

@@ -12,6 +12,7 @@ class ExampleSearchFormType extends AbstractType implements NavbarFormInterface
     {
         $builder
             ->setAttribute('render_fieldset', false)
+            ->setAttribute('label_render', false)
             ->setAttribute('show_legend', false)
             ->add('search', 'text', array(
                 'label_render' => false,
