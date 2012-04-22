@@ -11,7 +11,7 @@ services:
         scope: request # needed as we have the request as a dependency here
         tags:
             - { name: knp_menu.menu, alias: examplemain } # The alias is what is used to retrieve the menu
-            
+
     mopa_bootstrap.exampledropdown:
         class: Knp\Menu\MenuItem # the service definition requires setting the class
         factory_service: mopa_bootstrap.examplemenu_builder

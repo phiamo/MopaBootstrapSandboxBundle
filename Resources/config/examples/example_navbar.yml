@@ -4,7 +4,7 @@ services:
         arguments:
             # first argument: a named array of menues:
             - { leftmenu: @mopa_bootstrap.examplemenu=, rightmenu: @mopa_bootstrap.exampledropdown= }
-            # second argument: a named array of FormType Classes  
+            # second argument: a named array of FormType Classes
             - { searchform: Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleSearchFormType }
             # third argument: a named array of options
             - { title: "MopaBootstrapBundle", titleRoute: "mopa_bootstrap_welcome", fixedTop: true, isFluid: false }
