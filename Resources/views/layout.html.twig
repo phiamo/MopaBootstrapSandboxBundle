@@ -1,0 +1,48 @@
+{% extends 'MopaBootstrapBundle::base.html.twig' %}
+
+{% block head_style %}
+{% stylesheets filter='?yui_css' 
+       '@MopaBootstrapSandboxBundle/Resources/public/less/mopabootstrapsandboxbundle.less'
+%}
+<link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+{% endstylesheets %}
+{% endblock head_style %}
+
+{% block body %}
+{{ parent() }}
+<a href="http://github.com/phiamo/MopaBootstrapbundle"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 99999;" src="https://a248.e.akamai.net/assets.github.com/img/7afbc8b248c68eb468279e8c17986ad46549fb71/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
+{% endblock body%}
+
+{% block content_row %}
+{{ parent() }}
+{% if showTemplate is defined and showForm is defined %}
+<div class="row-fluid">
+    <div class="span6">
+        <p><strong>FormType Code</strong></p>
+        <pre>{{ formCode(showForm)|raw }}</pre>
+    </div>
+    <div class="span6">
+        <p><strong>Template Code</strong></p>
+        <pre>{{ templateCode(showTemplate) }}</pre>
+    </div>
+</div>
+{% endif %}
+{% endblock content_row %}
+
+{% block navbar %}
+{{ mopa_bootstrap_navbar('frontendNavbar') }}
+{% endblock navbar %}
+
+{% block foot_script %}
+{{ parent() }}
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17161773-2']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+{% endblock foot_script %}
