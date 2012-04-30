@@ -67,7 +67,7 @@ class ExampleExtendedFormType extends AbstractType
                 ),
                 'attr' => array(
                     'class' => 'span3',
-                	'placeholder' => 'Which kind of usic?',
+                	'placeholder' => 'Which kind of music?',
                 )
             ))
             ->add('Appended_Text', 'text', array(
@@ -121,7 +121,6 @@ class ExampleExtendedFormType extends AbstractType
             ->add('time1', 'time', array(
 				'widget' => 'choice',
             ))
-            
             ->add('Prefix_Text', 'text', array(
                 'widget_prefix' => "Prefix Text",
                 'attr' => array(
