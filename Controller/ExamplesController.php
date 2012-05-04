@@ -7,7 +7,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleInputFormType;
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleFormsType;
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleChoiceFormType;
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleCollectionsFormType;

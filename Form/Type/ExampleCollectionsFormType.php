@@ -18,8 +18,10 @@ class ExampleCollectionsFormType extends AbstractType
 				'widget_add_btn' => "add now",
                 'show_legend' => false, // dont show another legend of subform
                 'options' => array( // options for collection fields
+                	'label_render' => false,
+                	'widget_control_group' => false,
 					'widget_remove_btn' => "remove now",
-					'attr' => array('class' => 'span3'),
+					'attr' => array('class' => 'input-large'),
 				)
             ))
             ->add('nice_email_collection','collection', array(
@@ -31,7 +33,8 @@ class ExampleCollectionsFormType extends AbstractType
                 'show_legend' => false, // dont show another legend of subform
                 'options' => array( // options for collection fields
 					'widget_remove_btn' => "remove this",
-					'attr' => array('class' => 'span3'),
+                	'widget_control_group' => false,
+					'attr' => array('class' => 'input-large'),
 					'widget_addon' => array(
 						'text' => '@',
 					),
@@ -44,7 +47,8 @@ class ExampleCollectionsFormType extends AbstractType
                 'prototype' => true,
                 'show_legend' => false, // dont show another legend of subform
                 'options' => array(
-					'widget_remove_btn' => "icon-remove"
+					'widget_remove_btn' => "icon-remove",
+                	'widget_control_group' => false
 				)
             ))
         ;

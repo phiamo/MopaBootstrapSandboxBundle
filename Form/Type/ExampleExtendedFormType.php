@@ -13,43 +13,43 @@ class ExampleExtendedFormType extends AbstractType
             ->add('textfield1', 'text', array(
                 'label' => 'Form sizes',
                 'attr' => array(
-                    'class' => 'span1',
-                	'placeholder' => 'span1',
+                    'class' => 'input-mini',
+                	'placeholder' => 'input-mini',
                 )
             ))
             ->add('textfield2', 'text', array(
                 'label_render' => false,
                 'attr' => array(
-                    'class' => 'span2',
-                	'placeholder' => 'span2',
+                    'class' => 'input-medium',
+                	'placeholder' => 'input-medium',
                 )
             ))
             ->add('textfield3', 'text', array(
                 'label_render' => false,
                 'attr' => array(
-                    'class' => 'span3',
-                	'placeholder' => 'span3',
+                    'class' => 'input-large',
+                	'placeholder' => 'input-large',
                 )
             ))
             ->add('select1', 'choice', array(
                 'label_render'        => false,
                 'choices'      => array('1' => 'one', '2' => 'two'),
                 'attr' => array(
-                    'class' => 'span1',
+                    'class' => 'input-mini',
                 )
             ))
             ->add('select2', 'choice', array(
                 'label_render'        => false,
                 'choices'      => array('1' => 'one', '2' => 'two'),
                 'attr' => array(
-                    'class' => 'span2',
+                    'class' => 'input-medium',
                 )
             ))
             ->add('select3', 'choice', array(
                 'label_render'        => false,
                 'choices'      => array('1' => 'one', '2' => 'two'),
                 'attr' => array(
-                    'class' => 'span3',
+                    'class' => 'input-large',
                 )
             ))
             ->add('Prepended_Text', 'text', array(
@@ -57,8 +57,8 @@ class ExampleExtendedFormType extends AbstractType
                 	'text' => '@'
                 ),
                 'attr' => array(
-                    'class' => 'span1',
-                	'placeholder' => 'span1',
+                    'class' => 'input-mini',
+                	'placeholder' => 'input-mini',
                 )
             ))
             ->add('Prepended_Icon', 'text', array(
@@ -66,7 +66,7 @@ class ExampleExtendedFormType extends AbstractType
                 	'icon' => 'headphones'
                 ),
                 'attr' => array(
-                    'class' => 'span3',
+                    'class' => 'input-lage',
                 	'placeholder' => 'Which kind of music?',
                 )
             ))
@@ -76,8 +76,8 @@ class ExampleExtendedFormType extends AbstractType
                 	'append' => true
                 ),
                 'attr' => array(
-                    'class' => 'span1',
-                	'placeholder' => 'span1',
+                    'class' => 'input-mini',
+                	'placeholder' => 'input-mini',
                 )
             ))
             ->add('Appended_Icon', 'text', array(
@@ -86,7 +86,7 @@ class ExampleExtendedFormType extends AbstractType
                 	'append'=>true
                 ),
                 'attr' => array(
-                    'class' => 'span3',
+                    'class' => 'input-large',
                     'placeholder' => 'Which kind of books?',
                 )
             ))
@@ -124,15 +124,15 @@ class ExampleExtendedFormType extends AbstractType
             ->add('Prefix_Text', 'text', array(
                 'widget_prefix' => "Prefix Text",
                 'attr' => array(
-                    'class' => 'span1',
-                	'placeholder' => 'span1',
+                    'class' => 'input-mini',
+                	'placeholder' => 'input-mini',
                 )
             ))
             ->add('Suffix_Text', 'text', array(
                 'widget_suffix' => "Suffix Text",
                 'attr' => array(
-                    'class' => 'span1',
-                	'placeholder' => 'span1',
+                    'class' => 'input-mini',
+                	'placeholder' => 'input-mini',
                 )
             ))
         ;
