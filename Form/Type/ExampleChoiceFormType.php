@@ -42,6 +42,11 @@ class ExampleChoiceFormType extends AbstractType
                 'choices'      => array('1' => 'one', '2' => 'two'),
                 'widget_type'  => "inline"
             ))
+            ->add('Simple_Checkboxes', 'checkbox', array(
+                'label'        => 'Simple checkbox',
+                'help_inline'  => 'This is the inline help',
+                'help_block'  => 'Checkbox widgets can have help block too'
+            ))
         ;
     }
     public function getName(){
