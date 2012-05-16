@@ -13,8 +13,10 @@ use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleCollectionsFormType;
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleInlineFormType;
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleSearchFormType;
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleHorizontalFormType;
+use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleErrorsFormType;
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleExtendedFormType;
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleExtendedViewFormType;
+use Symfony\Component\Validator\Constraints\Email;
 
 
 class ExamplesController extends Controller{
@@ -43,6 +45,35 @@ class ExamplesController extends Controller{
         );
     }
     /**
+    * @Route("/mopa/bootstrap/forms/extended_view", name="mopa_bootstrap_forms_view_extended")
+     * @Template
+    */
+    public function extended_viewAction(Request $request){
+        $form = $this->createForm($formType = new ExampleExtendedViewFormType());
+        return array(
+        	'form'=>$form->createView(),
+            'formType' => $formType
+        );
+    }
+    /**
+    * @Route("/mopa/bootstrap/forms/errors", name="mopa_bootstrap_forms_errors")
+     * @Template
+    */
+    public function errorsAction(Request $request){
+        $form = $this->createForm($formType = new ExampleErrorsFormType());
+        $form->bind(array(
+        	'textfield1' => 'nix',
+        	'textfield2' => "nothing",
+        	'textfield3' => "nothing"
+        ));
+        $form->isValid();
+        //var_dump($form->getData());
+        return array(
+        	'form'=>$form->createView(),
+            'formType' => $formType
+        );
+    }
+    /**
     * @Route("/mopa/bootstrap/forms/collections", name="mopa_bootstrap_forms_collections")
     * @Template
     */
@@ -65,17 +96,6 @@ class ExamplesController extends Controller{
         return array(
         	'form'=>$form->createView(),
         	'formType' => $formType
-        );
-    }
-    /**
-    * @Route("/mopa/bootstrap/forms/extended_view", name="mopa_bootstrap_forms_view_extended")
-     * @Template
-    */
-    public function extended_viewAction(Request $request){
-        $form = $this->createForm($formType = new ExampleExtendedViewFormType());
-        return array(
-        	'form'=>$form->createView(),
-            'formType' => $formType
         );
     }
     /**
