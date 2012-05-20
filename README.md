@@ -60,6 +60,10 @@ assetic:
             node: /usr/bin/node
             node_paths: [/opt/lessc/lib, /usr/lib/node_modules]
             apply_to: "\.less$"
+
+# activate navbar component
+mopa_bootstrap:
+    navbar: ~
 ```
 
 
