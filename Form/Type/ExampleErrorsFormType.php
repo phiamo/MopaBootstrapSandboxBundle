@@ -6,8 +6,6 @@ use Symfony\Component\Form\FormBuilder;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\MinLength;
 use Symfony\Component\Validator\Constraints\Collection;
-use Symfony\Component\Validator\Constraints\Collection\Required;
-
 class ExampleErrorsFormType extends AbstractType
 {
     public function buildForm(FormBuilder $builder, array $options)
@@ -38,12 +36,12 @@ class ExampleErrorsFormType extends AbstractType
             ))
         ;
     }
-    public function getDefaultOptions()
+    public function getDefaultOptions(array $options)
     {
         $collectionConstraint = new Collection(array(
             'textfield1' => new MinLength(5),
             'textfield2' => new Email(array('message' => 'Invalid email address')),
-            'textfield3' => new Required(array(new Email(array('message' => 'Invalid email address')))),
+            'textfield3' => new Email(array('message' => 'Invalid email address')),
         ));
 
         return array(
