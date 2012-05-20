@@ -20,12 +20,22 @@ To use this in any of your projects (e.g. to make changes in MopaBootstrapBundle
 
 For detailed installation instructions also have a look into [MopaBoostrapBundle Documentation](https://github.com/phiamo/MopaBootstrapBundle/blob/master/Resources/doc/index.md)
 
-just add this to your composer.json
+just add this to your composer.json: 
 
 ``` json
 {
     "require": {
         "mopa/bootstrap-sandbox-bundle": "dev-master"
+    }
+}
+```
+
+if you are using sf 2.0.x use:
+
+``` json
+{
+    "require": {
+        "mopa/bootstrap-sandbox-bundle": "2.0.x-dev"
     }
 }
 ```
