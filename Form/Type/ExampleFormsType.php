@@ -31,7 +31,8 @@ class ExampleFormsType extends AbstractType
     {
         return 'mopa_bootstrap_example_forms';
     }
-    public function getButtonValue() {
+    public function getButtonValue()
+    {
         return ""; # return here the name of the route the form should point to
     }
 }
