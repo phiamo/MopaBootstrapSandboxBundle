@@ -41,11 +41,11 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
 
         // ... add theme change
 
-        $dropdown = $this->createDropdownMenuItem($menu, "Change Theme");
+        $dropdown = $this->createDropdownMenuItem($menu, "Change Theme", true, array('icon'=>'caret'));
         $dropdown->addChild('Bootstrap', array('route' => 'liip_theme_switch', 'routeParameters' => array('theme' => 'bootstrap')));
         $dropdown->addChild('initializr', array('route' => 'liip_theme_switch', 'routeParameters' => array('theme' => 'initializr')));
 
-        $dropdown = $this->createDropdownMenuItem($menu, "Tools Menu", true);
+        $dropdown = $this->createDropdownMenuItem($menu, "Tools Menu", true, array('icon'=>'caret'));
         $dropdown->addChild('Symfony', array('uri' => 'http://www.symfony.com'));
         $dropdown->addChild('bootstrap', array('uri' => 'http://twitter.github.com/bootstrap/'));
         $dropdown->addChild('node.js', array('uri'=>'http://nodejs.org/'));
@@ -55,7 +55,7 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
 
         $dropdown->addChild('google', array('uri'=>'http://www.google.com/'));
 
-        $dropdown = $this->createDropdownMenuItem($menu, "Another Dropdown");
+        $dropdown = $this->createDropdownMenuItem($menu, "Another Dropdown", true, array('icon'=>'caret'));
 
         $dropdown->addChild('node.js', array('uri'=>'http://nodejs.org/'));
 
