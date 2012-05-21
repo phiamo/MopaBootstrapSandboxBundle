@@ -32,10 +32,12 @@ class ExampleSearchFormType extends AbstractType implements NavbarFormInterface
     /**
      * To implement NavbarFormTypeInterface
      */
-    public function getRoute() {
+    public function getRoute()
+    {
         return "mopa_bootstrap_welcome"; # return here the name of the route the form should point to
     }
-    public function getButtonValue() {
+    public function getButtonValue()
+    {
         return ""; # return here the name of the route the form should point to
     }
 }

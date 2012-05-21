@@ -2,9 +2,7 @@
 
 namespace Mopa\Bundle\BootstrapSandboxBundle\Twig\Extension;
 
-use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Bundle\TwigBundle\Loader\FilesystemLoader;
-use Acme\DemoBundle\Twig\Extension\DemoExtension;
 
 class FormSourceExtension extends \Twig_Extension
 {
