@@ -56,7 +56,8 @@ class ExampleHorizontalFormType extends AbstractType
             ))
         ;
     }
-    public function getName() {
+    public function getName()
+    {
         return "Controls_Bootstrap_supports";
     }
 }

@@ -1,7 +1,6 @@
 <?php
 namespace Mopa\Bundle\BootstrapSandboxBundle\Navbar\Example;
 
-use Knp\Menu\FactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Mopa\Bundle\BootstrapBundle\Navbar\AbstractNavbarMenuBuilder;
 

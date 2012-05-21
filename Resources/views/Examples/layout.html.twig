@@ -34,6 +34,16 @@
 {# and define more blocks ... #}
 {% endraw %}
     </pre>
+    <p>or if global title is set in config.yml:</p>
+    <pre>
+{% raw %}
+{% extends 'MopaBootstrapBundle::base_initializr.html.twig' %}
+
+{% block title %}{{ parent() }} - Example subpage{% endblock %}
+
+{# and define more blocks ... #}
+{% endraw %}
+    </pre>
     <p>But you have at least to activate the template variables:</p>
     <pre>
 mopa_bootstrap:
