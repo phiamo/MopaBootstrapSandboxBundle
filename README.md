@@ -30,15 +30,9 @@ just add this to your composer.json:
 }
 ```
 
-if you are using sf 2.0.x use:
+if you are using sf 2.0.x have a look into the README of the v2.0.x branch: 
 
-``` json
-{
-    "require": {
-        "mopa/bootstrap-sandbox-bundle": "2.0.x-dev"
-    }
-}
-```
+https://github.com/phiamo/MopaBootstrapSandboxBundle/tree/v2.0.x
 
 run
 
