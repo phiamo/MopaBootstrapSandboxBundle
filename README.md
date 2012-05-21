@@ -20,17 +20,7 @@ To use this in any of your projects (e.g. to make changes in MopaBootstrapBundle
 
 For detailed installation instructions also have a look into [MopaBoostrapBundle Documentation](https://github.com/phiamo/MopaBootstrapBundle/blob/master/Resources/doc/index.md)
 
-just add this to your composer.json: 
-
-``` json
-{
-    "require": {
-        "mopa/bootstrap-sandbox-bundle": "dev-master"
-    }
-}
-```
-
-if you are using sf 2.0.x use:
+if you are using sf 2.0.x with composer use:
 
 ``` json
 {
@@ -40,10 +30,58 @@ if you are using sf 2.0.x use:
 }
 ```
 
-run
+and run
 
 ``` bash
 composer.phar update
+```
+
+
+if you are using sf 2.0.x with deps use:
+
+```
+
+[MopaBootstrapSandboxBundle] 
+    git=http://github.com/phiamo/MopaBootstrapSandboxBundle.git 
+    target=/bundles/Mopa/Bundle/BootstrapSandboxBundle
+    version=origin/v2.0.x
+    
+[KnpMenuBundle]
+    git = "http://github.com/KnpLabs/KnpMenuBundle.git"
+    target = "/bundles/Knp/Bundle/MenuBundle"
+
+[knp-components]
+    git=http://github.com/KnpLabs/knp-components.git
+    
+[knpmenu]
+    git = "http://github.com/KnpLabs/KnpMenu.git"
+    target = "/knpmenu" 
+```
+
+add to autoload.php
+
+```
+    // ...
+    'Mopa'        => __DIR__.'/../vendor/bundles',
+    'Knp\\Component'   => __DIR__.'/../vendor/knp-components/src',
+    'Knp\\Menu'        => __DIR__.'/../vendor/knpmenu/src',
+    'Knp\\Bundle'      => __DIR__.'/../vendor/bundles',
+    // ...
+```
+
+and to AppKernel.php
+
+``` php
+    // ...
+            new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
+            new Mopa\Bundle\BootstrapSandboxBundle\MopaBootstrapSandboxBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+    // ...
+```
+and run
+
+``` bash
+bin/vendors install
 ```
 
 If you are not using the [https://github.com/phiamo/symfony-bootstrap-sandbox](symfony-bootstrap-sandbox)
