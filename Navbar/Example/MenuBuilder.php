@@ -39,6 +39,12 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
         $menu->setCurrentUri($request->getRequestUri());
         $menu->setChildrenAttribute('class', 'nav pull-right');
 
+        // ... add theme change
+
+        $dropdown = $this->createDropdownMenuItem($menu, "Change Theme");
+        $dropdown->addChild('Bootstrap', array('route' => 'liip_theme_switch', 'routeParameters' => array('theme' => 'bootstrap')));
+        $dropdown->addChild('initializr', array('route' => 'liip_theme_switch', 'routeParameters' => array('theme' => 'initializr')));
+
         $dropdown = $this->createDropdownMenuItem($menu, "Tools Menu", true);
         $dropdown->addChild('Symfony', array('uri' => 'http://www.symfony.com'));
         $dropdown->addChild('bootstrap', array('uri' => 'http://twitter.github.com/bootstrap/'));
@@ -46,6 +52,7 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
         $dropdown->addChild('less', array('uri' => 'http://lesscss.org/'));
         //adding a nice divider
         $this->addDivider($dropdown);
+
         $dropdown->addChild('google', array('uri'=>'http://www.google.com/'));
 
         $dropdown = $this->createDropdownMenuItem($menu, "Another Dropdown");
@@ -57,8 +64,8 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
 
         $dropdown->addChild('Mohrenweiser & Partner', array('uri' => 'http://www.mohrenweiserpartner.de'));
 
-        // ... add more children
 
+        // ... add more children
         return $menu;
     }
 }

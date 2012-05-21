@@ -67,7 +67,6 @@ class ExamplesController extends Controller{
         	'textfield3' => "nothing"
         ));
         $form->isValid();
-        //var_dump($form->getData());
         return array(
         	'form'=>$form->createView(),
             'formType' => $formType

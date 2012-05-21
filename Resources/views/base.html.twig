@@ -1,0 +1,36 @@
+{% extends 'MopaBootstrapBundle::base' ~ theme_type|default('')~ '.html.twig' %}
+
+{% block head_style %}
+{% stylesheets
+       '@MopaBootstrapSandboxBundle/Resources/public/less/mopabootstrapsandboxbundle.less'
+%}
+<link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+{% endstylesheets %}
+{% endblock head_style %}
+
+{% block body %}
+{{ parent() }}
+{% block fork_me %}
+<a href="http://github.com/phiamo/MopaBootstrapBundle"><img style="position: absolute; top: 0; left: 0; border: 0; z-index: 99999;" src="{{ asset('bundles/mopabootstrapsandbox/img/github_forkme_ribbon.png') }}" alt="Fork me on GitHub"></a>
+{% endblock fork_me %}
+{% endblock body%}
+
+{% block content_row %}
+{{ parent() }}
+{% if showTemplate is defined and showForm is defined %}
+<div class="row-fluid">
+    <div class="span6">
+        <p><strong>FormType Code</strong></p>
+        <pre>{{ formCode(showForm)|raw }}</pre>
+    </div>
+    <div class="span6">
+        <p><strong>Template Code</strong></p>
+        <pre>{{ templateCode(showTemplate) }}</pre>
+    </div>
+</div>
+{% endif %}
+{% endblock content_row %}
+
+{% block navbar %}
+{{ mopa_bootstrap_navbar('frontendNavbar') }}
+{% endblock navbar %}
