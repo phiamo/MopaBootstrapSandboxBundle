@@ -24,21 +24,21 @@ class ExampleChoiceFormType extends AbstractType
             ->add('Radio_Buttons', 'choice', array(
                 'label'        => 'Radio buttons',
                 'help_inline'  => 'Expanded',
-                'expanded'	   => true,
+                'expanded'     => true,
                 'choices'      => array('1' => 'one', '2' => 'two'),
             ))
             ->add('Checkboxes', 'choice', array(
                 'label'        => 'Checkboxes',
                 'help_inline'  => 'Expanded and multiple',
                 'multiple'     => true,
-                'expanded'	   => true,
+                'expanded'     => true,
                 'choices'      => array('1' => 'one', '2' => 'two'),
             ))
             ->add('Checkboxes_Inline', 'choice', array(
                 'label'        => 'Inline checkboxes',
                 'help_inline'  => 'Expanded and multiple (inline)',
                 'multiple'     => true,
-                'expanded'	   => true,
+                'expanded'     => true,
                 'choices'      => array('1' => 'one', '2' => 'two'),
                 'widget_type'  => "inline"
             ))
@@ -49,7 +49,7 @@ class ExampleChoiceFormType extends AbstractType
             ))
         ;
     }
-    public function getName(){
+    public function getName() {
         return "MopaBootstraBundle_Choice_Possibilies";
     }
 }

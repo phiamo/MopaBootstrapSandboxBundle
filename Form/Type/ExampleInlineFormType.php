@@ -17,8 +17,8 @@ class ExampleInlineFormType extends AbstractType
                 'widget_controls' => false,
                 'widget_control_group' => false,
                 'attr' => array(
-                	'placeholder' => 'Password',
-                	'class' => 'input-small'
+                    'placeholder' => 'Password',
+                    'class' => 'input-small'
                 ),
             ))
             ->add('Password', null, array(
@@ -26,13 +26,13 @@ class ExampleInlineFormType extends AbstractType
                 'widget_controls' => false,
                 'widget_control_group' => false,
                 'attr' => array(
-                	'placeholder' => 'Email',
-                	'class' => 'input-small'
+                    'placeholder' => 'Email',
+                    'class' => 'input-small'
                 ),
             ))
         ;
     }
-    public function getName(){
+    public function getName() {
         return "MopaBootstraBundle_Inline_Possibilies";
     }
 }

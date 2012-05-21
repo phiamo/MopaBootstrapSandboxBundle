@@ -18,22 +18,22 @@ class ExampleErrorsFormType extends AbstractType
                 'label' => 'Form sizes',
                 'attr' => array(
                     'class' => 'input-mini',
-                	'placeholder' => 'input-mini',
+                    'placeholder' => 'input-mini',
                 )
             ))
             ->add('textfield2', 'text', array(
                 'label_render' => false,
                 'attr' => array(
                     'class' => 'input-medium',
-                	'placeholder' => 'input-medium',
+                    'placeholder' => 'input-medium',
                 )
             ))
             ->add('textfield3', 'text', array(
                 'label_render' => false,
-            	'error_type' => "block",
+                'error_type' => "block",
                 'attr' => array(
                     'class' => 'input-large',
-                	'placeholder' => 'input-large',
+                    'placeholder' => 'input-large',
                 )
             ))
         ;
@@ -47,8 +47,8 @@ class ExampleErrorsFormType extends AbstractType
         ));
 
         return array(
-        		'validation_constraint' => $collectionConstraint,
-        		'csrf_protection' => false // just for demo purpose!
+                'validation_constraint' => $collectionConstraint,
+                'csrf_protection' => false // just for demo purpose!
         );
     }
     public function getName()

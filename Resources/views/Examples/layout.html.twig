@@ -3,8 +3,8 @@
 {% block headline %}The Basic Layout{% endblock headline %}
 {% block content %}
 <div class="span4">
-	<h3>To kick start development</h3>
-	<p>just create a file in app/Resources/MopaBootstrapBundle/views/layout.html.twig</p>
+    <h3>To kick start development</h3>
+    <p>just create a file in app/Resources/MopaBootstrapBundle/views/layout.html.twig</p>
 
     <pre>
 {% raw %}
@@ -22,8 +22,8 @@
     </ul>
 </div>
 <div class="span4">
-	<h3>Use initializr</h3>
-	<p>Same as before just using initializr:</p>
+    <h3>Use initializr</h3>
+    <p>Same as before just using initializr:</p>
 
     <pre>
 {% raw %}
@@ -46,21 +46,21 @@ mopa_bootstrap:
     </ul>
 </div>
 <div class="span4">
-	<h3>Using Bundles</h3>
-	<p>To overwrite the Templates you might either use the app/Resources folder</p>
-	<p>Or create a Bundle AcmeBootstrapSomethingBundle and use the inheritance:</p>
+    <h3>Using Bundles</h3>
+    <p>To overwrite the Templates you might either use the app/Resources folder</p>
+    <p>Or create a Bundle AcmeBootstrapSomethingBundle and use the inheritance:</p>
 
     <pre>
 class AcmeBootstrapSomethingBundle extends Bundle
 {
 
-	public function getParent()
-	{
-		return 'MopaBootstrapBundle';
-	}
+    public function getParent()
+    {
+        return 'MopaBootstrapBundle';
+    }
 }
 
     </pre>
-	<p>But you have to be aware that only one Bundle in your app may extend the BootstrapBundle</p>
+    <p>But you have to be aware that only one Bundle in your app may extend the BootstrapBundle</p>
 </div>
 {% endblock content %}
