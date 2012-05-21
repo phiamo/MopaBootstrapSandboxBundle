@@ -21,7 +21,7 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
         $menu->setChildrenAttribute('class', 'nav');
         $menu->addChild('Layout', array('route' => 'mopa_bootstrap_layout_example'));
 
-        $dropdown = $this->createDropdownMenuItem($menu, "Forms", false);
+        $dropdown = $this->createDropdownMenuItem($menu, "Forms", false, array('icon'=>'caret'));
         $dropdown->addChild('Examples', array('route' => 'mopa_bootstrap_forms_examples'));
         $dropdown->addChild('Horizontal', array('route' => 'mopa_bootstrap_forms_horizontal'));
         $dropdown->addChild('Extended Forms', array('route' => 'mopa_bootstrap_forms_extended'));
@@ -39,16 +39,23 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
         $menu->setCurrentUri($request->getRequestUri());
         $menu->setChildrenAttribute('class', 'nav pull-right');
 
-        $dropdown = $this->createDropdownMenuItem($menu, "Tools Menu", true);
+        // ... add theme change
+
+        $dropdown = $this->createDropdownMenuItem($menu, "Change Theme", true, array('icon'=>'caret'));
+        $dropdown->addChild('Bootstrap', array('route' => 'liip_theme_switch', 'routeParameters' => array('theme' => 'bootstrap')));
+        $dropdown->addChild('initializr', array('route' => 'liip_theme_switch', 'routeParameters' => array('theme' => 'initializr')));
+
+        $dropdown = $this->createDropdownMenuItem($menu, "Tools Menu", true, array('icon'=>'caret'));
         $dropdown->addChild('Symfony', array('uri' => 'http://www.symfony.com'));
         $dropdown->addChild('bootstrap', array('uri' => 'http://twitter.github.com/bootstrap/'));
         $dropdown->addChild('node.js', array('uri'=>'http://nodejs.org/'));
         $dropdown->addChild('less', array('uri' => 'http://lesscss.org/'));
         //adding a nice divider
         $this->addDivider($dropdown);
+
         $dropdown->addChild('google', array('uri'=>'http://www.google.com/'));
 
-        $dropdown = $this->createDropdownMenuItem($menu, "Another Dropdown");
+        $dropdown = $this->createDropdownMenuItem($menu, "Another Dropdown", true, array('icon'=>'caret'));
 
         $dropdown->addChild('node.js', array('uri'=>'http://nodejs.org/'));
 
@@ -57,8 +64,8 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
 
         $dropdown->addChild('Mohrenweiser & Partner', array('uri' => 'http://www.mohrenweiserpartner.de'));
 
-        // ... add more children
 
+        // ... add more children
         return $menu;
     }
 }

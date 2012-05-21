@@ -37,27 +37,27 @@ class ExampleExtendedViewFormType extends AbstractType
             ->add('append2')
             ->add('checkboxesinline', 'choice', array(
                 'multiple'     => true,
-                'expanded'	   => true,
+                'expanded'     => true,
                 'choices'      => array('1' => 'one', '2' => 'two', '3'=>'three')
             ))
             ->add('checkboxes', 'choice', array(
                 'label'        => 'Checkboxes',
                 'multiple'     => true,
-                'expanded'	   => true,
+                'expanded'     => true,
                 'choices'      => array(
-                	'1' => 'Option one is this and that—be sure to include why it`s great',
-                 	'2' => 'Option two can also be checked and included in form results',
-                 	'3' => 'Option three can—yes, you guessed it—also be checked and included in form results'
-             	),
+                    '1' => 'Option one is this and that—be sure to include why it`s great',
+                    '2' => 'Option two can also be checked and included in form results',
+                    '3' => 'Option three can—yes, you guessed it—also be checked and included in form results'
+                ),
             ))
             ->add('radiobuttons', 'choice', array(
                 'label'        => 'Radio buttons',
-                'expanded'	   => true,
+                'expanded'     => true,
                 'choices'      => array(
-                	'1' => 'Option one is this and that—be sure to include why it`s great',
-                 	'2' => 'Option two can also be checked and included in form results',
-                 	'3' => 'Option three can—yes, you guessed it—also be checked and included in form results'
-             	),
+                    '1' => 'Option one is this and that—be sure to include why it`s great',
+                    '2' => 'Option two can also be checked and included in form results',
+                    '3' => 'Option three can—yes, you guessed it—also be checked and included in form results'
+                ),
             ))
         ;
     }

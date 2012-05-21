@@ -4,7 +4,7 @@
 
 {% block example_date_widget %}
 {# block to create the example_date_widget from ExamleDateType #}
-	<div>
+    <div>
     {{ form_widget(form.startAt) }} - {{ form_widget(form.endAt) }}
     </div>
     <div>
@@ -49,22 +49,22 @@
       <pre class="prettyprint
          linenums">
 $builder
-	->add('nice_email_collection','collection', array(
-		'type' => 'email',
-		'allow_add' => true,
-		'allow_delete' => true, // should render default button, change text with widget_remove_btn
-		'prototype' => true,
-		'widget_add_btn' => "add email",
-		'options' => array( // options for collection fields
-			'widget_remove_btn' => "remove this",
-			'attr' => array('class' => 'span3'),
-			'widget_addon' => array(
-				'text' => '@',
-			),
-			'widget_control_group' => false,
-		)
-	))
-	;
+    ->add('nice_email_collection','collection', array(
+        'type' => 'email',
+        'allow_add' => true,
+        'allow_delete' => true, // should render default button, change text with widget_remove_btn
+        'prototype' => true,
+        'widget_add_btn' => "add email",
+        'options' => array( // options for collection fields
+            'widget_remove_btn' => "remove this",
+            'attr' => array('class' => 'span3'),
+            'widget_addon' => array(
+                'text' => '@',
+            ),
+            'widget_control_group' => false,
+        )
+    ))
+    ;
 </pre>
 <p>And in your markup you just need one line: </p>
 <pre class="prettyprint

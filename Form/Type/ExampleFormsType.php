@@ -14,14 +14,14 @@ class ExampleFormsType extends AbstractType
                 'label' => "Label name",
                 'help_inline' => 'Associated help text!',
                 'attr' => array(
-                	'placeholder' => "Some text",
+                    'placeholder' => "Some text",
                 )
             ))
             ->add('Checkboxes_Inline', 'choice', array(
                 'label_render'        => false,
                 'help_block'  => 'Expanded and multiple (inline)',
                 'multiple'     => true,
-                'expanded'	   => true,
+                'expanded'     => true,
                 'choices'      => array('1' => 'one', '2' => 'two'),
                 'widget_type'  => "inline"
             ))
@@ -31,7 +31,7 @@ class ExampleFormsType extends AbstractType
     {
         return 'mopa_bootstrap_example_forms';
     }
-    public function getButtonValue(){
+    public function getButtonValue() {
         return ""; # return here the name of the route the form should point to
     }
 }

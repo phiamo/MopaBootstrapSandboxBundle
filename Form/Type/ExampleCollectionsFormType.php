@@ -15,30 +15,30 @@ class ExampleCollectionsFormType extends AbstractType
                 'allow_add' => true,
                 'allow_delete' => true, // should render default button, change text with widget_remove_btn
                 'prototype' => true,
-				'widget_add_btn' => "add now",
+                'widget_add_btn' => "add now",
                 'show_legend' => false, // dont show another legend of subform
                 'options' => array( // options for collection fields
-                	'label_render' => false,
-                	'widget_control_group' => false,
-					'widget_remove_btn' => "remove now",
-					'attr' => array('class' => 'input-large'),
-				)
+                    'label_render' => false,
+                    'widget_control_group' => false,
+                    'widget_remove_btn' => "remove now",
+                    'attr' => array('class' => 'input-large'),
+                )
             ))
             ->add('nice_email_collection','collection', array(
                 'type' => 'email',
                 'allow_add' => true,
                 'allow_delete' => true, // should render default button, change text with widget_remove_btn
                 'prototype' => true,
-				'widget_add_btn' => "add email",
+                'widget_add_btn' => "add email",
                 'show_legend' => false, // dont show another legend of subform
                 'options' => array( // options for collection fields
-					'widget_remove_btn' => "remove this",
-                	'widget_control_group' => false,
-					'attr' => array('class' => 'input-large'),
-					'widget_addon' => array(
-						'text' => '@',
-					),
-				)
+                    'widget_remove_btn' => "remove this",
+                    'widget_control_group' => false,
+                    'attr' => array('class' => 'input-large'),
+                    'widget_addon' => array(
+                        'text' => '@',
+                    ),
+                )
             ))
             ->add('dates_collection','collection', array(
                 'type' => new ExampleDateFormType(),
@@ -47,9 +47,9 @@ class ExampleCollectionsFormType extends AbstractType
                 'prototype' => true,
                 'show_legend' => false, // dont show another legend of subform
                 'options' => array(
-					'widget_remove_btn' => "icon-remove",
-                	'widget_control_group' => false
-				)
+                    'widget_remove_btn' => "icon-remove",
+                    'widget_control_group' => false
+                )
             ))
         ;
     }
