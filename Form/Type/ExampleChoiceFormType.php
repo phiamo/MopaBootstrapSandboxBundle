@@ -49,7 +49,8 @@ class ExampleChoiceFormType extends AbstractType
             ))
         ;
     }
-    public function getName() {
+    public function getName()
+    {
         return "MopaBootstraBundle_Choice_Possibilies";
     }
 }
