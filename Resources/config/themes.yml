@@ -1,0 +1,11 @@
+
+liip_theme:
+    themes: ['bootstrap', 'initializr']
+    active_theme: 'bootstrap'
+    cookie:
+        name: LiipThemeCookie
+        lifetime: 31536000 # 1 year in seconds
+        path: /
+        domain: ~
+        secure: false
+        http_only: false
