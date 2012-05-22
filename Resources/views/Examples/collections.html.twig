@@ -37,6 +37,40 @@
             <button type="reset" class="btn">Cancel</button>
         </div>
     </form>
+    <div class="row-fluid">
+        <div class="span6">
+         <h3>Button Icons</h3>
+             <p>To make use of the button icons you can either apply them in the FormType:</p>
+
+              <pre class="prettyprint
+         linenums">
+$builder
+    ->add('nice_email_collection','collection', array(
+        'widget_add_btn' => array(
+            'icon' => 'plus-sign',
+            'label' => 'add email'
+         ),
+    ))
+    ;
+             </pre>
+        </div>
+        <div class="span6">
+             <p>Or configure them globally:</p>
+
+              <pre class="prettyprint
+         linenums">
+mopa_bootstrap:
+    form:
+        collection:
+            widget_remove_btn:
+                icon: trash
+                icon_color: white
+            widget_add_btn:
+                icon: plus-sign
+             </pre>
+             <p>And if configured globally you can override them again in the FormType!</p>
+        </div>
+    </div>
 </div>
 <div class="span6">
       <h3>Easy use of collections</h3>
@@ -52,11 +86,11 @@ $builder
     ->add('nice_email_collection','collection', array(
         'type' => 'email',
         'allow_add' => true,
-        'allow_delete' => true, // should render default button, change text with widget_remove_btn
+        'allow_delete' => true,
         'prototype' => true,
-        'widget_add_btn' => "add email",
+        'widget_add_btn' => array('label' => 'add email', 'attr' => array('class' => 'btn btn-primary')),
         'options' => array( // options for collection fields
-            'widget_remove_btn' => "remove this",
+            'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-primary')),
             'attr' => array('class' => 'span3'),
             'widget_addon' => array(
                 'text' => '@',

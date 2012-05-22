@@ -15,12 +15,12 @@ class ExampleCollectionsFormType extends AbstractType
                 'allow_add' => true,
                 'allow_delete' => true, // should render default button, change text with widget_remove_btn
                 'prototype' => true,
-                'widget_add_btn' => "add now",
+                'widget_add_btn' => array('label' => "add now", 'attr' => array('class' => 'btn btn-primary')),
                 'show_legend' => false, // dont show another legend of subform
                 'options' => array( // options for collection fields
                     'label_render' => false,
                     'widget_control_group' => false,
-                    'widget_remove_btn' => "remove now",
+                    'widget_remove_btn' => array('label' => "remove now", 'attr' => array('class' => 'btn')),
                     'attr' => array('class' => 'input-large'),
                 )
             ))
@@ -29,10 +29,10 @@ class ExampleCollectionsFormType extends AbstractType
                 'allow_add' => true,
                 'allow_delete' => true, // should render default button, change text with widget_remove_btn
                 'prototype' => true,
-                'widget_add_btn' => "add email",
+                'widget_add_btn' => array('label' => "add email"),
                 'show_legend' => false, // dont show another legend of subform
                 'options' => array( // options for collection fields
-                    'widget_remove_btn' => "remove this",
+                    'widget_remove_btn' => array('label' => "remove now", 'attr' => array('class' => 'btn')),
                     'widget_control_group' => false,
                     'attr' => array('class' => 'input-large'),
                     'widget_addon' => array(
@@ -45,9 +45,10 @@ class ExampleCollectionsFormType extends AbstractType
                 'allow_add' => true,
                 'allow_delete' => true, // should render default button, change text with widget_remove_btn
                 'prototype' => true,
+                'widget_add_btn' => array('label' => "add date"),
                 'show_legend' => false, // dont show another legend of subform
                 'options' => array(
-                    'widget_remove_btn' => "icon-remove",
+                    'widget_remove_btn' => array('label' => "remove this", "icon" => "pencil", 'attr' => array('class' => 'btn')),
                     'widget_control_group' => false
                 )
             ))

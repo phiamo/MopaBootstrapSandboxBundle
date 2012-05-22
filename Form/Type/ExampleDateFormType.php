@@ -10,7 +10,6 @@ class ExampleDateFormType extends AbstractType
     public function buildForm(FormBuilder $builder, array $options)
     {
         $builder
-            ->setAttribute('widget_remove_btn', 'remove')
             ->add('startAt','date', array(
                 'label_render' => false,
                 'widget_control_group' => false,
@@ -33,7 +32,6 @@ class ExampleDateFormType extends AbstractType
                 'widget_controls' => false,
                 'label'     => 'Special?',
                 'required'  => false,
-                'widget_remove_btn' => 'remove',
             ))
             ;
     }
