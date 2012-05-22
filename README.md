@@ -30,6 +30,15 @@ just add this to your composer.json:
 }
 ```
 
+and add to your AppKernel:
+
+```php
+    // ...
+            new Mopa\Bundle\BootstrapSandboxBundle\MopaBootstrapSandboxBundle(),
+        	new Liip\ThemeBundle\LiipThemeBundle(),
+    // ...
+
+```
 if you are using sf 2.0.x have a look into the README of the v2.0.x branch: 
 
 https://github.com/phiamo/MopaBootstrapSandboxBundle/tree/v2.0.x

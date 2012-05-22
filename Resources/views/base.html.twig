@@ -8,6 +8,10 @@
 {% endstylesheets %}
 {% endblock head_style %}
 
+{% block navbar %}
+{{ mopa_bootstrap_navbar('sandboxFrontendNavbar') }}
+{% endblock navbar %}
+
 {% block body %}
 {{ parent() }}
 {% block fork_me %}
@@ -30,7 +34,3 @@
 </div>
 {% endif %}
 {% endblock content_row %}
-
-{% block navbar %}
-{{ mopa_bootstrap_navbar('frontendNavbar') }}
-{% endblock navbar %}
