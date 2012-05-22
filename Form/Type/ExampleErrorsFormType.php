@@ -36,7 +36,7 @@ class ExampleErrorsFormType extends AbstractType
             ))
         ;
     }
-    public function getDefaultOptions(array $options)
+    public function getDefaultOptions()
     {
         $collectionConstraint = new Collection(array(
             'textfield1' => new MinLength(5),
