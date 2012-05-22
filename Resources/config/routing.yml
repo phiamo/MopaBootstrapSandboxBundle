@@ -1,0 +1,8 @@
+
+MopaBootstrapSandbox:
+    resource: "@MopaBootstrapSandboxBundle/Controller"
+    type:     annotation
+
+liip_theme:
+    resource: "@LiipThemeBundle/Resources/config/routing.xml"
+    prefix: /theme

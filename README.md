@@ -50,8 +50,13 @@ For this to work its required to have less installed:
 config.yml:
 
 ``` yaml
+# import example configs
+imports:
+    - { resource: @MopaBootstrapSandboxBundle/Resources/config/themes.yml }
+    - { resource: @MopaBootstrapSandboxBundle/Resources/config/examples/example_menu.yml }
+    - { resource: @MopaBootstrapSandboxBundle/Resources/config/examples/example_navbar.yml }
 
-# Twig Configuration (as proposed in https://github.com/phiamo/MopaBootstrapBundle/blob/master/README.md)
+# Twig Configuration (as told in https://github.com/phiamo/MopaBootstrapBundle/blob/master/README.md)
 twig:
     form:
         resources:
@@ -75,8 +80,7 @@ routing.yml:
 
 ``` yaml
 MopaBootstrapSandbox:
-    resource: "@MopaBootstrapSandboxBundle/Controller"
-    type:     annotation
+    resource: "@MopaBootstrapSandboxBundle/Resources/config/routing.yml"
 ```
 
 this imports the routes to be abled to access it in your browser via:
