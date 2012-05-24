@@ -15,9 +15,8 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
 {
     public function createMainMenu(Request $request)
     {
-        $menu = $this->factory->createItem('root');
+        $menu = $this->createNavbarMenuItem();
         $menu->setCurrentUri($request->getRequestUri());
-        $menu->setChildrenAttribute('class', 'nav');
         $menu->addChild('Layout', array('route' => 'mopa_bootstrap_layout_example'));
 
         $dropdown = $this->createDropdownMenuItem($menu, "Forms", false, array('icon'=>'caret'));
@@ -69,11 +68,11 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
     }
     public function createSubnavMenu(Request $request)
     {
-        $menu = $this->factory->createItem('root');
+        $menu = $this->createSubnavbarMenuItem();
         $menu->setCurrentUri($request->getRequestUri());
-        $menu->setChildrenAttribute('class', 'nav nav-pills');
-        $menu->addChild('Navbars', array('uri' => '#navbar'));
-        $menu->addChild('Subnav', array('uri' => '#subnav'));
+        $menu->addChild('Navbars', array('uri' => '#navbars'));
+        $menu->addChild('Template', array('uri' => '#template'));
+        $menu->addChild('Menus', array('uri' => '#menus'));
         // ... add more children
         return $menu;
     }

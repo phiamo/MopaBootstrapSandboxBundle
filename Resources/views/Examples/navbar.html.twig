@@ -13,42 +13,66 @@
     </div>
 {% endblock page_header %}
 
+
+{% block body_tag %}
+<body data-spy="scroll" data-target=".subnav" data-offset="50">
+{% endblock body_tag %}
+
 {% block content %}
 <div class="span12">
+    <h4><a id="navbars">Navbars:</a></h4>
     <p>Creating and using Navbars is quite easy:</p>
+    <pre>{{ fileSource('@MopaBootstrapSandboxBundle/Resources/config/examples/example_navbar.yml') }}</pre>
+    </pre>
+    <h4><a id="template">Template:</a></h4>
+    <p>And to show the bar in your template just use</p>
     <pre>
-services:
-    mopa_bootstrap.example.navbar:
-        class: %mopa_bootstrap.navbar.generic%
-        arguments:
-            # first argument: a named array of menues:
-            - { leftmenu: @mopa_bootstrap.examplemenu=, rightmenu: @mopa_bootstrap.exampledropdown= }
-            # second argument: a named array of FormType Classes
-            - { searchform: Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleSearchFormType }
-            # third argument: a named array of options
-            - { title: "MopaBootstrapBundle", titleRoute: "mopa_bootstrap_welcome", fixedTop: true, isFluid: false }
-        tags:
-            # The alias is used to retrieve the navbar in templates
-            - { name: mopa_bootstrap.navbar, alias: frontendNavbar }
+    {% raw %}
+    {% block navbar %}
+    {{ mopa_bootstrap_navbar('frontendSandboxNavbar') }}
+    {% endblock navbar %}
+    {% endraw %}
     </pre>
-    </pre>
-        <p>And to show the bar in your template just use</p>
-        <pre>
-        {% raw %}
-        {% block navbar %}
-        {{ mopa_bootstrap_navbar('frontendNavbar') }}
-        {% endblock navbar %}
-        </pre>
-        {% endraw %}
+    <h4><a id="menus">Menus:</a></h4>
     <p>The menues are created Knpmenu Style and the AbstractNavbarMenuBuilder helps you adding the correct styles to e.g. Dropdown menues:</p>
-    <pre>
-    public function createRightSideDropdownMenu(Request $request)
-    {
-        $menu = $this->factory->createItem('root');
-        $menu->setCurrentUri($request->getRequestUri());
-        $dropdown = $this->createDropdownMenuItem($menu, "Tools Menu", true);
-        $dropdown->addChild('Symfony', array('uri' => 'http://www.symfony.com'));
-        $this->addDivider($dropdown);
-    }
+    <pre>{{ fileSource('@MopaBootstrapSandboxBundle/Navbar/Example/MenuBuilder.php') }}</pre>
 </div>
 {% endblock content %}
+
+{% block foot_script %}
+{{ parent() }}
+<script type="text/javascript">
+!function ($) {
+
+  $(function(){
+    // fix sub nav on scroll
+    var $win = $(window)
+      , $nav = $('.subnav')
+      , navTop = $('.subnav').length && $('.subnav').offset().top - 40
+      , isFixed = 0
+
+    processScroll()
+
+    // hack sad times - holdover until rewrite for 2.1
+    $nav.on('click', function () {
+      if (!isFixed) setTimeout(function () {  $win.scrollTop($win.scrollTop() - 47) }, 10)
+    })
+
+    $win.on('scroll', processScroll)
+
+    function processScroll() {
+      var i, scrollTop = $win.scrollTop()
+      if (scrollTop >= navTop && !isFixed) {
+        isFixed = 1
+        $nav.addClass('subnav-fixed')
+      } else if (scrollTop <= navTop && isFixed) {
+        isFixed = 0
+        $nav.removeClass('subnav-fixed')
+      }
+    }
+
+  })
+
+  }(window.jQuery)
+</script>
+{% endblock foot_script %}

@@ -23,16 +23,20 @@
 
 {% block content_row %}
 {{ parent() }}
-{% if showTemplate is defined and showForm is defined %}
+{% if showTemplate is defined or showForm is defined %}
 <div class="row-fluid">
+    {% if showForm is defined %}
     <div class="span6">
         <p><strong>FormType Code</strong></p>
-        <pre>{{ formCode(showForm)|raw }}</pre>
+        <pre>{{ classSource(showForm) }}</pre>
     </div>
+    {% endif %}
+    {% if showTemplate is defined %}
     <div class="span6">
         <p><strong>Template Code</strong></p>
-        <pre>{{ templateCode(showTemplate) }}</pre>
+        <pre>{{ twigSource(showTemplate) }}</pre>
     </div>
+    {% endif %}
 </div>
 {% endif %}
 {% endblock content_row %}
