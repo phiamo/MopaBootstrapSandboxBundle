@@ -11,3 +11,16 @@ services:
         tags:
             # The alias is used to retrieve the navbar in templates
             - { name: mopa_bootstrap.navbar, alias: sandboxFrontendNavbar }
+
+    mopa_bootstrap.example.subnavbar:
+        class: %mopa_bootstrap.navbar.generic%
+        arguments:
+            # first argument: a named array of menues:
+            - { menu: @mopa_bootstrap.examplesubnavmenu= }
+            - {}
+            # third argument: a named array of options
+            - { fixedTop: true, isFluid: true, template: MopaBootstrapBundle:Navbar:subnavbar.html.twig }
+        tags:
+            # The alias is used to retrieve the navbar in templates
+            - { name: mopa_bootstrap.navbar, alias: sandboxFrontendSubNavbar }
+            

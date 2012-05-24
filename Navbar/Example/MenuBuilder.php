@@ -67,4 +67,14 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
         // ... add more children
         return $menu;
     }
+    public function createSubnavMenu(Request $request)
+    {
+        $menu = $this->factory->createItem('root');
+        $menu->setCurrentUri($request->getRequestUri());
+        $menu->setChildrenAttribute('class', 'nav nav-pills');
+        $menu->addChild('Navbars', array('uri' => '#navbar'));
+        $menu->addChild('Subnav', array('uri' => '#subnav'));
+        // ... add more children
+        return $menu;
+    }
 }
