@@ -48,20 +48,15 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
         $dropdown->addChild('bootstrap', array('uri' => 'http://twitter.github.com/bootstrap/'));
         $dropdown->addChild('node.js', array('uri'=>'http://nodejs.org/'));
         $dropdown->addChild('less', array('uri' => 'http://lesscss.org/'));
+
         //adding a nice divider
         $this->addDivider($dropdown);
-
         $dropdown->addChild('google', array('uri'=>'http://www.google.com/'));
-
-        $dropdown = $this->createDropdownMenuItem($menu, "Another Dropdown", true, array('icon'=>'caret'));
-
         $dropdown->addChild('node.js', array('uri'=>'http://nodejs.org/'));
 
         //adding a nice divider
         $this->addDivider($dropdown);
-
         $dropdown->addChild('Mohrenweiser & Partner', array('uri' => 'http://www.mohrenweiserpartner.de'));
-
 
         // ... add more children
         return $menu;
@@ -70,6 +65,7 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
     {
         $menu = $this->createSubnavbarMenuItem();
         $menu->setCurrentUri($request->getRequestUri());
+        $menu->addChild('Top', array('uri' => '#top'));
         $menu->addChild('Navbars', array('uri' => '#navbars'));
         $menu->addChild('Template', array('uri' => '#template'));
         $menu->addChild('Menus', array('uri' => '#menus'));
