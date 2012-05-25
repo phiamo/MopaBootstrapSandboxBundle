@@ -135,6 +135,18 @@ class ExampleExtendedFormType extends AbstractType
                     'placeholder' => 'input-mini',
                 )
             ))
+            ->add('Money', 'money', array(
+                'attr' => array(
+                    'class' => 'input-mini',
+                    'placeholder' => 'input-mini',
+                )
+            ))
+            ->add('Percent', 'percent', array(
+                'attr' => array(
+                    'class' => 'input-mini',
+                    'placeholder' => 'input-mini',
+                )
+            ))
         ;
     }
     public function getName()
