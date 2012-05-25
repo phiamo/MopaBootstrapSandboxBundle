@@ -5,7 +5,6 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
 use Mopa\Bundle\BootstrapBundle\Navbar\NavbarFormInterface;
 
-
 class ExampleSearchFormType extends AbstractType implements NavbarFormInterface
 {
     public function buildForm(FormBuilder $builder, array $options)
@@ -15,7 +14,6 @@ class ExampleSearchFormType extends AbstractType implements NavbarFormInterface
             ->setAttribute('label_render', false)
             ->setAttribute('show_legend', false)
             ->add('search', 'text', array(
-                'label_render' => false,
                 'widget_control_group' => false,
                 'widget_controls' => false,
                 'attr' => array(
