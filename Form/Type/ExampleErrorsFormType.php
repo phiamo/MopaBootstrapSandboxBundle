@@ -2,13 +2,13 @@
 namespace Mopa\Bundle\BootstrapSandboxBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\MinLength;
 use Symfony\Component\Validator\Constraints\Collection;
 class ExampleErrorsFormType extends AbstractType
 {
-    public function buildForm(FormBuilder $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             // ->setAttribute('error_type', "block") // use this to make all fields of this form error_type block

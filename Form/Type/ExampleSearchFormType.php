@@ -2,12 +2,12 @@
 namespace Mopa\Bundle\BootstrapSandboxBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\Form\FormBuilderInterface;
 use Mopa\Bundle\BootstrapBundle\Navbar\NavbarFormInterface;
 
 class ExampleSearchFormType extends AbstractType implements NavbarFormInterface
 {
-    public function buildForm(FormBuilder $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->setAttribute('render_fieldset', false)
