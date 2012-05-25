@@ -5,37 +5,50 @@
 
 {% block page_header %}
     <div class="page-header">
-        <h1>The Navbars made easy</h1>
-        <p class="lead">Dozens of reusable components are built into Bootstrap to provide navigation</p>
+        <h1>The Navbars made easy
+            <small>Reusable components built into Bootstrap to provide navigation</small>
+        </h1>
+        <p class="lead">Providing programatic ways to create Navbars and Subnavigations, beeing responsive and if wanted also sticky while scrolling.</p>
         {% block subnavbar %}
         {{ mopa_bootstrap_navbar('sandboxFrontendSubNavbar') }}
         {% endblock subnavbar %}
     </div>
 {% endblock page_header %}
 
-
 {% block body_tag %}
-<body data-spy="scroll" data-target=".subnav" data-offset="50">
+<body data-spy="scroll" data-target=".subnav" data-offset="50" id="top">
 {% endblock body_tag %}
 
 {% block content %}
 <div class="span12">
-    <h4><a id="navbars">Navbars:</a></h4>
-    <p>Creating and using Navbars is quite easy:</p>
-    <pre>{{ fileSource('@MopaBootstrapSandboxBundle/Resources/config/examples/example_navbar.yml') }}</pre>
-    </pre>
-    <h4><a id="template">Template:</a></h4>
-    <p>And to show the bar in your template just use</p>
-    <pre>
-    {% raw %}
-    {% block navbar %}
-    {{ mopa_bootstrap_navbar('frontendSandboxNavbar') }}
-    {% endblock navbar %}
-    {% endraw %}
-    </pre>
-    <h4><a id="menus">Menus:</a></h4>
-    <p>The menues are created Knpmenu Style and the AbstractNavbarMenuBuilder helps you adding the correct styles to e.g. Dropdown menues:</p>
-    <pre>{{ fileSource('@MopaBootstrapSandboxBundle/Navbar/Example/MenuBuilder.php') }}</pre>
+    <section  id="navbars">
+        <div class="page-header">
+            <h1>Navbars:</h1>
+        </div>
+        <p>Creating and using Navbars is quite easy:</p>
+        <pre>{{ fileSource('@MopaBootstrapSandboxBundle/Resources/config/examples/example_navbar.yml') }}</pre>
+        </pre>
+    </section>
+        <section id="template">
+        <div class="page-header">
+            <h1>Template:</h1>
+        </div>
+        <p>And to show the bar in your template just use</p>
+        <pre>
+        {% raw %}
+        {% block navbar %}
+        {{ mopa_bootstrap_navbar('frontendSandboxNavbar') }}
+        {% endblock navbar %}
+        {% endraw %}
+        </pre>
+    </section>
+    <section  id="menus">
+        <div class="page-header">
+            <h1>Menus:</h1>
+        </div>
+        <p>The menues are created Knpmenu Style and the AbstractNavbarMenuBuilder helps you adding the correct styles to e.g. Dropdown menues:</p>
+        <pre>{{ fileSource('@MopaBootstrapSandboxBundle/Navbar/Example/MenuBuilder.php') }}</pre>
+    </section>
 </div>
 {% endblock content %}
 
