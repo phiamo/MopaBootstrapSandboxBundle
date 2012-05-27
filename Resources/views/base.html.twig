@@ -3,6 +3,7 @@
 {% block head_style %}
 {% stylesheets
        '@MopaBootstrapSandboxBundle/Resources/public/less/mopabootstrapsandboxbundle.less'
+       '@MopaBootstrapSandboxBundle/Resources/public/css/prettify.css'
 %}
 <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
 {% endstylesheets %}
@@ -28,15 +29,25 @@
     {% if showForm is defined %}
     <div class="span6">
         <p><strong>FormType Code</strong></p>
-        <pre>{{ classSource(showForm) }}</pre>
+        <pre class="prettyprint">{{ classSource(showForm) }}</pre>
     </div>
     {% endif %}
     {% if showTemplate is defined %}
     <div class="span6">
         <p><strong>Template Code</strong></p>
-        <pre>{{ twigSource(showTemplate) }}</pre>
+        <pre class="prettyprint">{{ twigSource(showTemplate) }}</pre>
     </div>
     {% endif %}
 </div>
 {% endif %}
 {% endblock content_row %}
+
+{% block foot_script %}
+{{ parent() }}
+<script type="text/javascript" src="{{ asset('bundles/mopabootstrapsandbox/js/prettify.js') }}"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	window.prettyPrint && prettyPrint();
+});
+</script>
+{% endblock foot_script %}

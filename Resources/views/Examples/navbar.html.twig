@@ -26,15 +26,14 @@
             <h1>Navbars:</h1>
         </div>
         <p>Creating and using Navbars is quite easy:</p>
-        <pre>{{ fileSource('@MopaBootstrapSandboxBundle/Resources/config/examples/example_navbar.yml') }}</pre>
-        </pre>
+        <pre class="prettyprint">{{ fileSource('@MopaBootstrapSandboxBundle/Resources/config/examples/example_navbar.yml') }}</pre>
     </section>
         <section id="template">
         <div class="page-header">
             <h1>Template:</h1>
         </div>
         <p>And to show the bar in your template just use</p>
-        <pre>
+        <pre class="prettyprint">
         {% raw %}
         {% block navbar %}
         {{ mopa_bootstrap_navbar('frontendSandboxNavbar') }}
@@ -47,7 +46,7 @@
             <h1>Menus:</h1>
         </div>
         <p>The menues are created Knpmenu Style and the AbstractNavbarMenuBuilder helps you adding the correct styles to e.g. Dropdown menues:</p>
-        <pre>{{ fileSource('@MopaBootstrapSandboxBundle/Navbar/Example/MenuBuilder.php') }}</pre>
+        <pre class="prettyprint">{{ fileSource('@MopaBootstrapSandboxBundle/Navbar/Example/MenuBuilder.php') }}</pre>
     </section>
 </div>
 {% endblock content %}

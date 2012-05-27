@@ -33,15 +33,13 @@
     <p>All things shown here are directly included via the bundle.</p>
     <p>You can completely drive the appearence within view too, and hopefully updates wont change the anything!!</p>
     <p>An example: to generate a nice input field with appended icon:</p>
-    <pre class="prettyprint
-        linenums">
+    <pre class="prettyprint">
 $builder
     ->add('appendedicon')
 ;
     </pre>
     <p>and in your twig template:</p>
-    <pre class="prettyprint
-        linenums">{% raw %}
+    <pre class="prettyprint">{% raw %}
 {{ form_row(form.appendedicon,
     {'label': 'Appended Icon',
      'widget_addon': {'append': true,

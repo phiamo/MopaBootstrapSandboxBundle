@@ -18,8 +18,7 @@
     <p>All things shown here are directly included via the bundle.</p>
     <p>You can completely drive the appearence within the form classes, and hopefully updates wont change the view!</p>
     <p>An example: to generate nice inputs with icons you dont write one line of html:</p>
-    <pre class="prettyprint
-         linenums">
+    <pre class="prettyprint">
 $builder
     ->add('Appended Icon', 'text', array(
         'widget_addon' => array(
@@ -34,8 +33,7 @@ $builder
 ;
     </pre>
     <p>And in your markup you just need one line: </p>
-    <pre class="prettyprint
- linenums">
+    <pre class="prettyprint">
 {% raw %}
       &lt;form class=&quot;form-horizontal&quot;&gt;
         {{ form_widget(form) }}

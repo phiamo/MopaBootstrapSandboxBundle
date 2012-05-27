@@ -6,7 +6,7 @@
     <h3>To kick start development</h3>
     <p>just create a file in app/Resources/MopaBootstrapBundle/views/layout.html.twig</p>
 
-    <pre>
+    <pre class="prettyprint">
 {% raw %}
 {% extends 'MopaBootstrapBundle::base.html.twig' %}
 
@@ -25,7 +25,7 @@
     <h3>Use initializr</h3>
     <p>Same as before just using initializr:</p>
 
-    <pre>
+    <pre class="prettyprint">
 {% raw %}
 {% extends 'MopaBootstrapBundle::base_initializr.html.twig' %}
 
@@ -35,7 +35,7 @@
 {% endraw %}
     </pre>
     <p>or if global title is set in config.yml:</p>
-    <pre>
+    <pre class="prettyprint">
 {% raw %}
 {% extends 'MopaBootstrapBundle::base_initializr.html.twig' %}
 
@@ -44,8 +44,8 @@
 {# and define more blocks ... #}
 {% endraw %}
     </pre>
-    <p>But you have at least to activate the template variables:</p>
-    <pre>
+    <p>But you have at least to activate the template variables in config.yml:</p>
+    <pre class="prettyprint lang-yaml">
 mopa_bootstrap:
     navbar: ~
     initializr: ~
@@ -60,7 +60,7 @@ mopa_bootstrap:
     <p>To overwrite the Templates you might either use the app/Resources folder</p>
     <p>Or create a Bundle AcmeBootstrapSomethingBundle and use the inheritance:</p>
 
-    <pre>
+    <pre class="prettyprint lang-php">
 class AcmeBootstrapSomethingBundle extends Bundle
 {
 
