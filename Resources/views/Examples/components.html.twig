@@ -1,0 +1,322 @@
+{% extends "MopaBootstrapSandboxBundle::layout.html.twig" %}
+{% from 'MopaBootstrapBundle::flash.html.twig' import flash, advanced_flash, session_flash %}
+{% from 'MopaBootstrapBundle::macros.html.twig' import badge, label %}
+
+{% block headline %}{% endblock headline %}
+
+{% block page_header %}
+    <div class="page-header" id="top">
+        <h1>Components out of the box
+            <small>Reusable components built into Bootstrap </small>
+        </h1>
+        <p class="lead">Providing several components known from bootstrap in a programatic way.</p>
+        <p class="lead">Make sure to have a look into the <a href="https://github.com/phiamo/MopaBootstrapSandboxBundle/blob/master/Resources/views/Examples/components.html.twig">template!</a> to understand!</p>
+        {% block subnavbar %}
+        {{ mopa_bootstrap_navbar('sandboxComponentsSubNavbar') }}
+        {% endblock subnavbar %}
+    </div>
+{% endblock page_header %}
+
+{% block flashes %}
+{% if app.session.flashbag.peekAll|length > 0 %}
+<section id="flashes">
+    <div class="page-header">
+        <h1>Here you can see the session flashes</h1>
+        <p>They are {{ label('ONLY', 'warning') }} available after a redirect!!!</p>
+        <p>Have a look into the <a href="https://github.com/phiamo/MopaBootstrapSandboxBundle/blob/master/Controller/ExamplesController.php#L172">Controller</a><p>
+    </div>
+    <div class="row-fluid" id="flashes">
+        <div class="span12">
+        {{ session_flash() }}
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock flashes %}
+
+{% block body_tag %}
+<body data-spy="scroll" data-target=".subnav" data-offset="50">
+{% endblock body_tag %}
+
+{% block content %}
+<div class="span12">
+    <section id="flashs">
+        <div class="page-header">
+            <h1>Alerts aka Flashes:</h1>
+            <p>Dont forget to import the macro into the current template:
+                <pre class="prettyprint">
+                {%- raw -%}
+                {% from 'MopaBootstrapBundle::flash.html.twig' import flash, advanced_flash %}
+                {%- endraw -%}
+                </pre>
+            </p>
+        </div>
+        <div class="row-fluid">
+            <div class="span4">
+                <h3>Simple Markup</h3>
+                <p>To generate a flash message just use a flash macro:
+                <pre class="prettyprint">
+                {%- raw -%}
+                {{ flash(type, message, close, use_raw) }}
+                {%- endraw -%}
+                </pre>
+                <pre class="prettyprint">
+                {%- raw -%}
+                {{ advanced_flash(type, heading, message, close_tag, use_raw) }}
+                {%- endraw -%}
+                </pre>
+                </p>
+                <h3>Type Options</h3>
+                <p>To omit a special type (giving a yellow box) use false as type</p>
+                <p>To get a red box use 'error' as type</p>
+                <p>To get a green box use 'success' as type</p>
+                <p>To get a blue box use 'info' as type</p>
+                <hr>
+                <h3>Using html inside the message</h3>
+                <p>To use html in the message as we do here set use_raw to true</p>
+                <hr>
+                <h3>Close Button</h3>
+                <p>Bootstrap comes with a great jQuery plugin that supports alert messages, making dismissing them quick and easy.</p>
+                <p>To get the close button set the close argument true</p>
+                <hr>
+                <h3>Advanced heading</h3>
+                <p>If you need more advanced flashed you can set a heading, or even omit it setting heading to false</p>
+                <hr>
+                <h3>Close Tag</h3>
+                <p>The advanced flash macro has the possibility to set a close_tag it should be either 'button' or 'a</p>
+            </div>
+            <div class="span8">
+                <h3>Simple alerts</h3>
+                <p>Supply your type, message and an optional close icon, and {{ label('important', 'important') }}, if you use html inside the message set use_raw to true!:</p>
+                {{ flash(false, '<strong>Warning!</strong> Best check yo self, you\'re not looking too good.', true, true) }}
+                {{ flash('error', '<strong>Oh snap! </strong> Change a few things up and try submitting again.', true, true) }}
+                {{ flash('success', '<strong>Well done!</strong> You successfully read this important alert message.', true, true) }}
+                {{ flash('info', '<strong>Heads up!</strong> This alert needs your attention, but it\'s not super important.', true, true) }}
+            </div>
+            <div class="span8">
+                <h3>Advanced alerts</h3>
+                <p>Supply your type, heading, message and an close tag:</p>
+                {{ advanced_flash(false, 'Warning!', 'Best check yo self, you\'re not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.', true) }}
+                {{ advanced_flash('error', 'Oh snap!', 'Change a few things up and try submitting again. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.', 'a') }}
+                {{ advanced_flash('success', 'Well done!', 'ou successfully read this important alert message. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.', 'button') }}
+                {{ advanced_flash('info', 'Heads up!', 'This alert needs your attention, but it\'s not super important. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.', false) }}
+            </div>
+        </div>
+    </section>
+    <section id="session-flashes">
+        <div class="page-header">
+            <h1>Session flashes:</h1>
+            <p>Dont forget to import the macro into the current template:
+                <pre class="prettyprint">
+                {%- raw -%}
+                {% from 'MopaBootstrapBundle::flash.html.twig' import session %}
+                {%- endraw -%}
+                </pre>
+            </p>
+        </div>
+        <p>A common thing in Symfony2 is to use <a href="http://symfony.com/doc/master/book/controller.html#flash-messages">Session Flashes</a> to provide Messages on the "next request"</p>
+        <p>We provide a block in the template called "session_flash" this looks like</p>
+        <pre class="prettyprint">
+        {%- raw -%}
+{% block flashes %}
+    {% if app.session.flashbag.peekAll|length &gt; 0 %}
+    &lt;div class=&quot;row-fluid&quot;&gt;
+        &lt;div class=&quot;span12&quot;&gt;
+        {{ session_flash() }}
+        &lt;/div&gt;
+    &lt;/div&gt;
+    {% endif %}
+{% endblock flashes %}
+        {%- endraw -%}
+        </pre>
+        <p>To provoke a REDIRECT and see some flashes <a class="btn btn-primary" href="{{ path('mopa_bootstrap_components_setflashs') }}">Click Here</a>
+    </section>
+    <section id="labels-badges">
+        <div class="page-header">
+            <h1>Labels and Badges:</h1>
+        </div>
+        <p></p>
+        <p>
+            Dont forget to import the macro into the current template:
+            <pre class="prettyprint">
+            {%- raw -%}
+            {% from 'MopaBootstrapBundle::macros.html.twig' import label, badge %}
+            {%- endraw -%}
+            </pre>
+        </p>
+        </div>
+        <div class="row-fluid">
+            <div class="span4">
+                <h3>Badges</h3>
+                <p>Badges are small, simple components for displaying an indicator or count of some sort. They're commonly found in email clients like Mail.app or on mobile apps for push notifications.</p>
+            </div><!-- /.span -->
+            <div class="span8">
+                <h3>Available classes</h3>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Example</th>
+                            <th>Markup</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                              Default
+                            </td>
+                        <td>
+                            {{ badge(1) }}
+                        </td>
+                            <td>
+                                <pre class="prettyprint">{% raw %}{{ badge(1) }}{% endraw %}</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Success
+                            </td>
+                            <td>
+                                {{ badge(2, 'success') }}
+                            </td>
+                            <td>
+                                <pre class="prettyprint">{% raw %}{{ badge(2, 'success') }}{% endraw %}</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Warning
+                            </td>
+                            <td>
+                                {{ badge(4,'warning') }}
+                            </td>
+                            <td>
+                                <pre class="prettyprint">{% raw %}{{ badge(4,'warning') }}{% endraw %}</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Important
+                            </td>
+                            <td>
+                                {{ badge(6, 'important') }}
+                            </td>
+                            <td>
+                                <pre class="prettyprint">{% raw %}{{ badge(6, 'important') }}{% endraw %}</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Info
+                            </td>
+                            <td>
+                                {{ badge(8, 'info') }}
+                            </td>
+                            <td>
+                                <pre class="prettyprint">{% raw %}{{ badge(8, 'info') }}{% endraw %}</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Inverse
+                            </td>
+                            <td>
+                                {{ badge(10, 'inverse') }}
+                            </td>
+                            <td>
+                                <pre class="prettyprint">{% raw %}{{ badge(10, 'inverse') }}{% endraw %}</pre>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div><!-- /.span -->
+        </div>
+        <div class="row-fluid">
+            <div class="span4">
+                <h3>Labels</h3>
+                <p>Label annotate text and can simply be used inline</p>
+            </div><!-- /.span -->
+            <div class="span8">
+                <h3>Available classes</h3>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Example</th>
+                            <th>Markup</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                              Default
+                            </td>
+                        <td>
+                            {{ label('Default') }}
+                        </td>
+                            <td>
+                                <pre class="prettyprint">{% raw %}{{ label('Default') }}{% endraw %}</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Success
+                            </td>
+                            <td>
+                                {{ label('Success', 'success') }}
+                            </td>
+                            <td>
+                                <pre class="prettyprint">{% raw %}{{ label('Success', 'success') }}{% endraw %}</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Warning
+                            </td>
+                            <td>
+                                {{ label('Warning','warning') }}
+                            </td>
+                            <td>
+                                <pre class="prettyprint">{% raw %}{{ label('Warning','warning') }}{% endraw %}</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Important
+                            </td>
+                            <td>
+                                {{ label('Important', 'important') }}
+                            </td>
+                            <td>
+                                <pre class="prettyprint">{% raw %}{{ label('Important', 'important') }}{% endraw %}</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Info
+                            </td>
+                            <td>
+                                {{ label('Info', 'info') }}
+                            </td>
+                            <td>
+                                <pre class="prettyprint">{% raw %}{{ label('Info', 'info') }}{% endraw %}</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Inverse
+                            </td>
+                            <td>
+                                {{ label('Inverse', 'inverse') }}
+                            </td>
+                            <td>
+                                <pre class="prettyprint">{% raw %}{{ label('Inverse', 'inverse') }}{% endraw %}</pre>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div><!-- /.span -->
+        </div>
+    </section>
+</div>
+{% endblock content %}

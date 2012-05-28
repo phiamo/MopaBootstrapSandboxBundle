@@ -1,5 +1,6 @@
 <?php
 namespace Mopa\Bundle\BootstrapSandboxBundle\Navbar\Example;
+use Liip\ThemeBundle\ActiveTheme;
 
 use Symfony\Component\HttpFoundation\Request;
 use Mopa\Bundle\BootstrapBundle\Navbar\AbstractNavbarMenuBuilder;
@@ -13,13 +14,14 @@ use Mopa\Bundle\BootstrapBundle\Navbar\AbstractNavbarMenuBuilder;
  */
 class MenuBuilder extends AbstractNavbarMenuBuilder
 {
+
     public function createMainMenu(Request $request)
     {
         $menu = $this->createNavbarMenuItem();
         $menu->setCurrentUri($request->getRequestUri());
         $menu->addChild('Layout', array('route' => 'mopa_bootstrap_layout_example'));
 
-        $dropdown = $this->createDropdownMenuItem($menu, "Forms", false, array('icon'=>'caret'));
+        $dropdown = $this->createDropdownMenuItem($menu, "Forms", false, array('icon' => 'caret'));
         $dropdown->addChild('Examples', array('route' => 'mopa_bootstrap_forms_examples'));
         $dropdown->addChild('Horizontal', array('route' => 'mopa_bootstrap_forms_horizontal'));
         $dropdown->addChild('Extended Forms', array('route' => 'mopa_bootstrap_forms_extended'));
@@ -28,10 +30,12 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
         $dropdown->addChild('Choice Fields', array('route' => 'mopa_bootstrap_forms_choices'));
         $dropdown->addChild('Collections Fields', array('route' => 'mopa_bootstrap_forms_collections'));
         $menu->addChild('Navbars', array('route' => 'mopa_bootstrap_navbar'));
+        $menu->addChild('Macros for components', array('route' => 'mopa_bootstrap_components'));
         // ... add more children
         return $menu;
     }
-    public function createRightSideDropdownMenu(Request $request)
+
+    public function createRightSideDropdownMenu(Request $request, ActiveTheme $activeTheme)
     {
         $menu = $this->factory->createItem('root');
         $menu->setCurrentUri($request->getRequestUri());
@@ -39,20 +43,25 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
 
         // ... add theme change
 
-        $dropdown = $this->createDropdownMenuItem($menu, "Change Theme", true, array('icon'=>'caret'));
-        $dropdown->addChild('Bootstrap', array('route' => 'liip_theme_switch', 'routeParameters' => array('theme' => 'bootstrap')));
-        $dropdown->addChild('initializr', array('route' => 'liip_theme_switch', 'routeParameters' => array('theme' => 'initializr')));
+        $dropdown = $this->createDropdownMenuItem($menu, "Change Theme", true, array('icon' => 'caret'));
+        foreach($activeTheme->getThemes() as $theme){
+            $themeDropdown = $dropdown->addChild($theme, array('route' => 'liip_theme_switch', 'routeParameters' => array('theme' => $theme)));
+            if($activeTheme->getName() === $theme){
+                $themeDropdown->setCurrent(true);
+            }
+            
+        }
 
-        $dropdown = $this->createDropdownMenuItem($menu, "Tools Menu", true, array('icon'=>'caret'));
+        $dropdown = $this->createDropdownMenuItem($menu, "Tools Menu", true, array('icon' => 'caret'));
         $dropdown->addChild('Symfony', array('uri' => 'http://www.symfony.com'));
         $dropdown->addChild('bootstrap', array('uri' => 'http://twitter.github.com/bootstrap/'));
-        $dropdown->addChild('node.js', array('uri'=>'http://nodejs.org/'));
+        $dropdown->addChild('node.js', array('uri' => 'http://nodejs.org/'));
         $dropdown->addChild('less', array('uri' => 'http://lesscss.org/'));
 
         //adding a nice divider
         $this->addDivider($dropdown);
-        $dropdown->addChild('google', array('uri'=>'http://www.google.com/'));
-        $dropdown->addChild('node.js', array('uri'=>'http://nodejs.org/'));
+        $dropdown->addChild('google', array('uri' => 'http://www.google.com/'));
+        $dropdown->addChild('node.js', array('uri' => 'http://nodejs.org/'));
 
         //adding a nice divider
         $this->addDivider($dropdown);
@@ -61,7 +70,8 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
         // ... add more children
         return $menu;
     }
-    public function createSubnavMenu(Request $request)
+
+    public function createNavbarsSubnavMenu(Request $request)
     {
         $menu = $this->createSubnavbarMenuItem();
         $menu->setCurrentUri($request->getRequestUri());
@@ -69,6 +79,18 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
         $menu->addChild('Navbars', array('uri' => '#navbars'));
         $menu->addChild('Template', array('uri' => '#template'));
         $menu->addChild('Menus', array('uri' => '#menus'));
+        // ... add more children
+        return $menu;
+    }
+
+    public function createComponentsSubnavMenu(Request $request)
+    {
+        $menu = $this->createSubnavbarMenuItem();
+        $menu->setCurrentUri($request->getRequestUri());
+        $menu->addChild('Top', array('uri' => '#top'));
+        $menu->addChild('Flashs', array('uri' => '#flashs'));
+        $menu->addChild('Session Flashs', array('uri' => '#session-flashes'));
+        $menu->addChild('Labels & Badges', array('uri' => '#labels-badges'));
         // ... add more children
         return $menu;
     }

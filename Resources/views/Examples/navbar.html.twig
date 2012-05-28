@@ -4,19 +4,19 @@
 {% block headline %}{% endblock headline %}
 
 {% block page_header %}
-    <div class="page-header">
+    <div class="page-header" id="top">
         <h1>The Navbars made easy
-            <small>Reusable components built into Bootstrap to provide navigation</small>
+            <small>Reusable navigation built into</small>
         </h1>
         <p class="lead">Providing programatic ways to create Navbars and Subnavigations, beeing responsive and if wanted also sticky while scrolling.</p>
         {% block subnavbar %}
-        {{ mopa_bootstrap_navbar('sandboxFrontendSubNavbar') }}
+        {{ mopa_bootstrap_navbar('sandboxNavbarsSubNavbar') }}
         {% endblock subnavbar %}
     </div>
 {% endblock page_header %}
 
 {% block body_tag %}
-<body data-spy="scroll" data-target=".subnav" data-offset="50" id="top">
+<body data-spy="scroll" data-target=".subnav" data-offset="50">
 {% endblock body_tag %}
 
 {% block content %}
@@ -34,11 +34,11 @@
         </div>
         <p>And to show the bar in your template just use</p>
         <pre class="prettyprint">
-        {% raw %}
+        {%- raw -%}
         {% block navbar %}
         {{ mopa_bootstrap_navbar('frontendSandboxNavbar') }}
         {% endblock navbar %}
-        {% endraw %}
+        {%- endraw -%}
         </pre>
     </section>
     <section  id="menus">
@@ -50,41 +50,3 @@
     </section>
 </div>
 {% endblock content %}
-
-{% block foot_script %}
-{{ parent() }}
-<script type="text/javascript">
-!function ($) {
-
-  $(function(){
-    // fix sub nav on scroll
-    var $win = $(window)
-      , $nav = $('.subnav')
-      , navTop = $('.subnav').length && $('.subnav').offset().top - 40
-      , isFixed = 0
-
-    processScroll()
-
-    // hack sad times - holdover until rewrite for 2.1
-    $nav.on('click', function () {
-      if (!isFixed) setTimeout(function () {  $win.scrollTop($win.scrollTop() - 47) }, 10)
-    })
-
-    $win.on('scroll', processScroll)
-
-    function processScroll() {
-      var i, scrollTop = $win.scrollTop()
-      if (scrollTop >= navTop && !isFixed) {
-        isFixed = 1
-        $nav.addClass('subnav-fixed')
-      } else if (scrollTop <= navTop && isFixed) {
-        isFixed = 0
-        $nav.removeClass('subnav-fixed')
-      }
-    }
-
-  })
-
-  }(window.jQuery)
-</script>
-{% endblock foot_script %}

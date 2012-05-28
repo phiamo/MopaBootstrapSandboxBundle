@@ -157,5 +157,24 @@ class ExamplesController extends Controller
     {
         return array();
     }
+    /**
+    * @Route("/mopa/bootstrap/components", name="mopa_bootstrap_components")
+    * @Template
+    */
+    public function componentsAction(Request $request)
+    {
+        return array();
+    }
+    /**
+    * @Route("/mopa/bootstrap/components/setflashs", name="mopa_bootstrap_components_setflashs")
+    * @Template
+    */
+    public function componentsSetflashsAction(Request $request)
+    {        
+        $this->get('session')->getFlashBag()->add('alert', 'Your changes were saved!');
+        $this->get('session')->getFlashBag()->add('error', 'But we had an error showing you the wrong thing ;)');
+        $this->get('session')->getFlashBag()->add('info', 'So please have a look into the controller how this works!');
+        return $this->redirect(sprintf('%s#%s', $this->generateUrl('mopa_bootstrap_components'), 'flashes'));
+    }
 
 }
