@@ -65,12 +65,6 @@ imports:
     - { resource: @MopaBootstrapSandboxBundle/Resources/config/examples/example_menu.yml }
     - { resource: @MopaBootstrapSandboxBundle/Resources/config/examples/example_navbar.yml }
 
-# Twig Configuration (as told in https://github.com/phiamo/MopaBootstrapBundle/blob/master/README.md)
-twig:
-    form:
-        resources:
-            - 'MopaBootstrapBundle:Form:fields.html.twig'
-
 # Assetic Configuration
 assetic:
     filters:
@@ -78,12 +72,7 @@ assetic:
             node: /usr/bin/node
             node_paths: [/opt/lessc/lib, /usr/lib/node_modules]
             apply_to: "\.less$"
-
-# activate navbar component
-mopa_bootstrap:
-    navbar: ~
 ```
-
 
 routing.yml:
 
