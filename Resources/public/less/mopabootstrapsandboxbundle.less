@@ -11,9 +11,6 @@
 // Getting the whole mopabootstrapbundle.less
 @import "../../../../../../../../mopa/bootstrap-bundle/Mopa/Bundle/BootstrapBundle/Resources/public/less/mopabootstrapbundle.less";
 
-// Import our variables to overwrite bootstrap settings
-@import 'variables.less';
-
 // some less file from other bundles
 @import 'example.less';
 
@@ -21,4 +18,4 @@
 @import "../../../../../../../../twitter/bootstrap/less/responsive.less";
 
 // if you have any variables.less file INCLUDE IT AFTER EVERYTHING cause responsive.less also overrides it with the one from bootstrap!!!!!
-
+@import 'variables.less';
