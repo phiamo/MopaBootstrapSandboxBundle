@@ -54,6 +54,7 @@ class ExampleExtendedFormType extends AbstractType
             ))
             ->add('Prepended_Text', 'text', array(
                 'widget_addon' => array(
+                    'type' => 'prepend',
                     'text' => '@'
                 ),
                 'attr' => array(
@@ -63,6 +64,7 @@ class ExampleExtendedFormType extends AbstractType
             ))
             ->add('Prepended_Icon', 'text', array(
                 'widget_addon' => array(
+                    'type' => 'prepend',
                     'icon' => 'headphones'
                 ),
                 'attr' => array(
@@ -73,7 +75,7 @@ class ExampleExtendedFormType extends AbstractType
             ->add('Appended_Text', 'text', array(
                 'widget_addon' => array(
                     'text' => '.00',
-                    'append' => true
+                    'type' => 'append',
                 ),
                 'attr' => array(
                     'class' => 'input-mini',
@@ -83,7 +85,7 @@ class ExampleExtendedFormType extends AbstractType
             ->add('Appended_Icon', 'text', array(
                 'widget_addon' => array(
                     'icon' => 'pencil',
-                    'append'=>true
+                    'type' => 'append',
                 ),
                 'attr' => array(
                     'class' => 'input-large',
@@ -135,13 +137,67 @@ class ExampleExtendedFormType extends AbstractType
                     'placeholder' => 'input-mini',
                 )
             ))
-            ->add('Money', 'money', array(
+            ->add('Money_default', 'money', array(
                 'attr' => array(
                     'class' => 'input-mini',
                     'placeholder' => 'input-mini',
                 )
             ))
-            ->add('Percent', 'percent', array(
+            ->add('Money_append', 'money', array(
+                'widget_addon' => array(
+                    'type' => 'append'
+                ),
+                'attr' => array(
+                    'class' => 'input-mini',
+                    'placeholder' => 'input-mini',
+                )
+            ))
+            ->add('Money_prepend', 'money', array(
+                'widget_addon' => array(
+                    'type' => 'prepend'
+                ),
+                'attr' => array(
+                    'class' => 'input-mini',
+                    'placeholder' => 'input-mini',
+                )
+            ))
+            ->add('Money_nothing', 'money', array(
+                'widget_addon' => array(
+                    'type' => false
+                ),
+                'attr' => array(
+                    'class' => 'input-mini',
+                    'placeholder' => 'input-mini',
+                )
+            ))
+            ->add('Percent_default', 'percent', array(
+                'attr' => array(
+                    'class' => 'input-mini',
+                    'placeholder' => 'input-mini',
+                )
+            ))
+            ->add('Percent_append', 'percent', array(
+                'widget_addon' => array(
+                    'type' => 'append'
+                ),
+                'attr' => array(
+                    'class' => 'input-mini',
+                    'placeholder' => 'input-mini',
+                )
+            ))
+            ->add('Percent_prepend', 'percent', array(
+                'widget_addon' => array(
+                    'type' => 'prepend'
+                ),
+                'attr' => array(
+                    'class' => 'input-mini',
+                    'placeholder' => 'input-mini',
+                )
+            ))
+            ->add('Percent_nothing_added', 'percent', array(
+                'widget_addon' => array(
+                    'type' => false
+                ),
                 'attr' => array(
                     'class' => 'input-mini',
                     'placeholder' => 'input-mini',
