@@ -59,6 +59,20 @@ class ExampleExtendedViewFormType extends AbstractType
                     '3' => 'Option three can—yes, you guessed it—also be checked and included in form results'
                 ),
             ))
+            ->add('publicVisible', 'checkbox', array('required'=> false))
+            ->add('time1', 'time', array(
+                'widget' => 'choice',
+            ))
+            ->add('Prefix_Text', 'text')
+            ->add('Suffix_Text', 'text')
+            ->add('Money_default', 'money')
+            ->add('Money_append', 'money')
+            ->add('Money_prepend', 'money')
+            ->add('Money_nothing', 'money')
+            ->add('Percent_default', 'percent')
+            ->add('Percent_append', 'percent')
+            ->add('Percent_prepend', 'percent')
+            ->add('Percent_nothing_added', 'percent')
         ;
     }
     public function getName()
