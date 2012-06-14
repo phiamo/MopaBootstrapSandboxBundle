@@ -37,6 +37,7 @@ class ExampleCollectionsFormType extends AbstractType
                     'attr' => array('class' => 'input-large'),
                     'widget_addon' => array(
                         'text' => '@',
+                        'type' => 'prepend'
                     ),
                 )
             ))
