@@ -30,7 +30,7 @@
 
 {% block content %}
 <div class="span6">
-    <form class="form-horizontal" id="your_form_name">
+    <form class="form-horizontal" id="your_form_name" method="post">
         {{ form_widget(form) }}
         <div class="form-actions">
             <button type="submit" class="btn btn-primary">Save changes</button>
@@ -90,6 +90,7 @@ $builder
             'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-primary')),
             'attr' => array('class' => 'span3'),
             'widget_addon' => array(
+                'type' => 'prepend',
                 'text' => '@',
             ),
             'widget_control_group' => false,
