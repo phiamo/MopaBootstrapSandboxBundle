@@ -203,6 +203,13 @@ class ExampleExtendedFormType extends AbstractType
                     'placeholder' => 'input-mini',
                 )
             ))
+            ->add('Required_false', 'text', array(
+                'required' => false,
+            ))
+            ->add('Required_asterisk_false', 'text', array(
+                'required' => true,
+                'render_required_asterisk' => false
+            ))
         ;
     }
     public function getName()
