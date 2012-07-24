@@ -38,4 +38,10 @@ services:
         scope: request # needed as we have the request as a dependency here
         tags:
             - { name: knp_menu.menu, alias: examplemainsubnav } # The alias is what is used to retrieve the menu
-            
+
+    mopa_bootstrap.examplemenuvoter:
+        class: Mopa\Bundle\BootstrapSandboxBundle\Navbar\Example\Voter\RequestVoter
+        arguments:
+            - @service_container
+        tags:
+            - { name: knp_menu.voter }
