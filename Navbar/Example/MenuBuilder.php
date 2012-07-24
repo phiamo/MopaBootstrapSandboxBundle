@@ -18,7 +18,6 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
     public function createMainMenu(Request $request)
     {
         $menu = $this->createNavbarMenuItem();
-        $menu->setCurrentUri($request->getRequestUri());
         $menu->addChild('Layout', array('route' => 'mopa_bootstrap_layout_example'));
 
         $dropdown = $this->createDropdownMenuItem($menu, "Forms", false, array('icon' => 'caret'));
@@ -38,7 +37,6 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
     public function createRightSideDropdownMenu(Request $request, ActiveTheme $activeTheme)
     {
         $menu = $this->factory->createItem('root');
-        $menu->setCurrentUri($request->getRequestUri());
         $menu->setChildrenAttribute('class', 'nav pull-right');
 
         // ... add theme change
@@ -74,7 +72,6 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
     public function createNavbarsSubnavMenu(Request $request)
     {
         $menu = $this->createSubnavbarMenuItem();
-        $menu->setCurrentUri($request->getRequestUri());
         $menu->addChild('Top', array('uri' => '#top'));
         $menu->addChild('Navbars', array('uri' => '#navbars'));
         $menu->addChild('Template', array('uri' => '#template'));
@@ -86,7 +83,6 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
     public function createComponentsSubnavMenu(Request $request)
     {
         $menu = $this->createSubnavbarMenuItem();
-        $menu->setCurrentUri($request->getRequestUri());
         $menu->addChild('Top', array('uri' => '#top'));
         $menu->addChild('Flashs', array('uri' => '#flashs'));
         $menu->addChild('Session Flashs', array('uri' => '#session-flashes'));
