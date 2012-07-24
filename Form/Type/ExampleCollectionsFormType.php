@@ -51,7 +51,7 @@ class ExampleCollectionsFormType extends AbstractType
                 'options' => array(
                     'widget_remove_btn' => array('label' => "remove this", "icon" => "pencil", 'attr' => array('class' => 'btn')),
                     'widget_control_group' => false
-                )
+              )
             ))
         ;
     }
