@@ -1,6 +1,10 @@
 <?php
 namespace Mopa\Bundle\BootstrapSandboxBundle\Controller;
 
+use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\DateTimeTestType;
+
+use Doctrine\Tests\DBAL\Types\DateTimeTest;
+
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -14,7 +18,6 @@ use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleHorizontalFormType;
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleErrorsFormType;
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleExtendedFormType;
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleExtendedViewFormType;
-
 
 class ExamplesController extends Controller
 {
@@ -32,6 +35,32 @@ class ExamplesController extends Controller
     public function layoutAction(Request $request)
     {
         return array();
+    }
+    /**
+    * @Route("/mopa/bootstrap/forms/embeddedTypes", name="mopa_bootstrap_forms_embeddedtype")
+     * @Template
+    */
+    public function embeddedTypeAction(Request $request)
+    {
+        $dateTime = new \Mopa\Bundle\BootstrapSandboxBundle\Entity\DateTimeTest();
+        $dateTimeType = new \Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleDateTimeTest();
+
+        $form = $this->createForm($dateTimeType, $dateTime);
+        if ($this->getRequest()->getMethod() == 'POST')
+        {
+            $form->bindRequest($this->getRequest());
+
+            if ($form->isValid())
+            {
+                // persist logic
+            }
+        }
+
+        return array(
+                'form' => $form->createView(),
+                'formType' => $dateTimeType,
+                'entity' => $dateTime
+        );
     }
     /**
     * @Route("/mopa/bootstrap/forms/extended", name="mopa_bootstrap_forms_extended")
@@ -170,10 +199,11 @@ class ExamplesController extends Controller
     * @Template
     */
     public function componentsSetflashsAction(Request $request)
-    {        
+    {
         $this->get('session')->getFlashBag()->add('alert', 'Your changes were saved!');
         $this->get('session')->getFlashBag()->add('error', 'But we had an error showing you the wrong thing ;)');
         $this->get('session')->getFlashBag()->add('info', 'So please have a look into the controller how this works!');
+
         return $this->redirect(sprintf('%s#%s', $this->generateUrl('mopa_bootstrap_components'), 'flashes'));
     }
 
