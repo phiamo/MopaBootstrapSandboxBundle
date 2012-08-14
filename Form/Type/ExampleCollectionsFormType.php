@@ -4,7 +4,6 @@ namespace Mopa\Bundle\BootstrapSandboxBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 
-
 class ExampleCollectionsFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -60,4 +59,3 @@ class ExampleCollectionsFormType extends AbstractType
         return 'mopa_bootstrap_example_collections_forms';
     }
 }
-

@@ -54,4 +54,3 @@ class ExampleErrorsFormType extends AbstractType
         return 'mopa_bootstrap_example_error_forms';
     }
 }
-

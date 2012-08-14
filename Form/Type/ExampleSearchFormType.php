@@ -35,4 +35,3 @@ class ExampleSearchFormType extends AbstractType implements NavbarFormInterface
         return "mopa_bootstrap_welcome"; # return here the name of the route the form should point to
     }
 }
-

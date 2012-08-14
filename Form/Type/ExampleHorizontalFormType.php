@@ -4,7 +4,6 @@ namespace Mopa\Bundle\BootstrapSandboxBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 
-
 class ExampleHorizontalFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -61,4 +60,3 @@ class ExampleHorizontalFormType extends AbstractType
         return "Controls_Bootstrap_supports";
     }
 }
-

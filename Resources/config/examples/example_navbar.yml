@@ -23,7 +23,7 @@ services:
         tags:
             # The alias is used to retrieve the navbar in templates
             - { name: mopa_bootstrap.navbar, alias: sandboxNavbarsSubNavbar }
-            
+
     mopa_bootstrap.example.componentssubnavbar:
         class: %mopa_bootstrap.navbar.generic%
         arguments:
@@ -35,4 +35,3 @@ services:
         tags:
             # The alias is used to retrieve the navbar in templates
             - { name: mopa_bootstrap.navbar, alias: sandboxComponentsSubNavbar }
-            
