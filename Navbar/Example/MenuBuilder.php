@@ -25,6 +25,7 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
         $dropdown->addChild('Horizontal', array('route' => 'mopa_bootstrap_forms_horizontal'));
         $dropdown->addChild('Extended Forms', array('route' => 'mopa_bootstrap_forms_extended'));
         $dropdown->addChild('Extended Views', array('route' => 'mopa_bootstrap_forms_view_extended'));
+        $dropdown->addChild('Embedded Type Forms', array('route' => 'mopa_bootstrap_forms_embeddedtype'));
         $dropdown->addChild('Forms Errors', array('route' => 'mopa_bootstrap_forms_errors'));
         $dropdown->addChild('Choice Fields', array('route' => 'mopa_bootstrap_forms_choices'));
         $dropdown->addChild('Collections Fields', array('route' => 'mopa_bootstrap_forms_collections'));
@@ -42,12 +43,12 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
         // ... add theme change
 
         $dropdown = $this->createDropdownMenuItem($menu, "Change Theme", true, array('icon' => 'caret'));
-        foreach($activeTheme->getThemes() as $theme){
+        foreach ($activeTheme->getThemes() as $theme) {
             $themeDropdown = $dropdown->addChild($theme, array('route' => 'liip_theme_switch', 'routeParameters' => array('theme' => $theme)));
-            if($activeTheme->getName() === $theme){
+            if ($activeTheme->getName() === $theme) {
                 $themeDropdown->setCurrent(true);
             }
-            
+
         }
 
         $dropdown = $this->createDropdownMenuItem($menu, "Tools Menu", true, array('icon' => 'caret'));
