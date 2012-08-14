@@ -4,7 +4,6 @@ namespace Mopa\Bundle\BootstrapSandboxBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 
-
 class ExampleExtendedFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -119,8 +118,16 @@ class ExampleExtendedFormType extends AbstractType
                     '3' => 'Option three can—yes, you guessed it—also be checked and included in form results'
                 ),
             ))
-            ->add('publicVisible', 'checkbox', array('required'=> false))
+            ->add('publicVisible', 'checkbox', array(
+                    'required' => false,
+            ))
             ->add('time1', 'time', array(
+                'widget' => 'choice',
+            ))
+            ->add('date1', 'date', array(
+                'widget' => 'choice',
+            ))
+            ->add('date_time1', 'datetime', array(
                 'widget' => 'choice',
             ))
             ->add('Prefix_Text', 'text', array(
@@ -217,4 +224,3 @@ class ExampleExtendedFormType extends AbstractType
         return 'mopa_bootstrap_example_extended_forms';
     }
 }
-
