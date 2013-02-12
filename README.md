@@ -36,6 +36,7 @@ and add to your AppKernel:
     // ...
             new Mopa\Bundle\BootstrapSandboxBundle\MopaBootstrapSandboxBundle(),
         	new Liip\ThemeBundle\LiipThemeBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
     // ...
 
 ```
