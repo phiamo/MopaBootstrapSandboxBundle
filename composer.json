@@ -4,7 +4,6 @@
     "description": "Seperate live docs from code",
     "keywords": ["form", "sandbox", "extra form", "bootstrap", "bootstrap form", "template"],
     "license": "MIT",
-    "version": "master",
     "authors": [
         {
             "name": "Philipp A. Mohrenweiser",
