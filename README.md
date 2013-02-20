@@ -47,7 +47,7 @@ https://github.com/phiamo/MopaBootstrapSandboxBundle/tree/v2.0.x
 run
 
 ``` bash
-composer.phar update
+composer.phar update # --dev if you added it to require-dev
 ```
 
 If you are not using the [https://github.com/phiamo/symfony-bootstrap-sandbox](symfony-bootstrap-sandbox)
