@@ -5,6 +5,7 @@ use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\DateTimeTestType;
 
 use Doctrine\Tests\DBAL\Types\DateTimeTest;
 
+use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -27,7 +28,7 @@ class ExamplesController extends Controller
     */
     public function indexAction(Request $request)
     {
-        return array();
+        return array("version" => Kernel::VERSION);
     }    /**
     * @Route("/mopa/bootstrap/layout", name="mopa_bootstrap_layout_example")
     * @Template
