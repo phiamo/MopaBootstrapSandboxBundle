@@ -18,10 +18,13 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
     public function createMainMenu(Request $request)
     {
         $menu = $this->createNavbarMenuItem();
-        $menu->addChild('Layout', array('route' => 'mopa_bootstrap_layout_example'));
+        $layout = $menu->addChild('Layout', array('route' => 'mopa_bootstrap_layout_example'));
+        
+        $this->addIcon($layout, array('icon' => 'home', 'inverted'=>true, 'append'=>false ));
 
-        $dropdown = $this->createDropdownMenuItem($menu, "Forms", false, array('icon' => 'caret'));
-        $dropdown->addChild('Examples', array('route' => 'mopa_bootstrap_forms_examples'));
+        $dropdown = $this->createDropdownMenuItem($menu, "Forms", false, array('caret' => true));
+        $examples =$dropdown->addChild('Examples', array('route' => 'mopa_bootstrap_forms_examples'));
+        $this->addIcon($examples, array('icon' => 'home'));
         $dropdown->addChild('Horizontal', array('route' => 'mopa_bootstrap_forms_horizontal'));
         $dropdown->addChild('Extended Forms', array('route' => 'mopa_bootstrap_forms_extended'));
         $dropdown->addChild('Extended Views', array('route' => 'mopa_bootstrap_forms_view_extended'));
@@ -42,7 +45,7 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
 
         // ... add theme change
 
-        $dropdown = $this->createDropdownMenuItem($menu, "Change Theme", true, array('icon' => 'caret'));
+        $dropdown = $this->createDropdownMenuItem($menu, "Change Theme", true, array('caret' => true));
         foreach ($activeTheme->getThemes() as $theme) {
             $themeDropdown = $dropdown->addChild($theme, array('route' => 'liip_theme_switch', 'routeParameters' => array('theme' => $theme)));
             if ($activeTheme->getName() === $theme) {
@@ -51,7 +54,7 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
 
         }
 
-        $dropdown = $this->createDropdownMenuItem($menu, "Tools Menu", true, array('icon' => 'caret'));
+        $dropdown = $this->createDropdownMenuItem($menu, "Tools Menu", true, array('caret' => true));
         $dropdown->addChild('Symfony', array('uri' => 'http://www.symfony.com'));
         $dropdown->addChild('bootstrap', array('uri' => 'http://twitter.github.com/bootstrap/'));
         $dropdown->addChild('node.js', array('uri' => 'http://nodejs.org/'));
