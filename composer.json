@@ -22,7 +22,7 @@
     "target-dir": "Mopa/Bundle/BootstrapSandboxBundle",
     "require": {
         "php": ">=5.3.2",
-        "mopa/bootstrap-bundle": "2.2.*",
+        "mopa/bootstrap-bundle": ">=2.2.*",
         "knplabs/knp-menu-bundle": "2.0.x-dev",
         "liip/theme-bundle": "dev-master"
     }
