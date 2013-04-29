@@ -3,14 +3,13 @@ namespace Mopa\Bundle\BootstrapSandboxBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class ExampleInlineFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->setAttribute('show_legend', false)
-            ->setAttribute('render_fieldset', false)
             ->add('Email', null, array(
                 'label_render' => false,
                 'widget_controls' => false,
@@ -30,6 +29,14 @@ class ExampleInlineFormType extends AbstractType
                 ),
             ))
         ;
+    }
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array(
+            'render_fieldset' => true,
+            'label_render' => false,
+            'show_legend' => false,
+        ));
     }
     public function getName()
     {

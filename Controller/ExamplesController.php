@@ -96,16 +96,25 @@ class ExamplesController extends Controller
     public function errorsAction(Request $request)
     {
         $form = $this->createForm($formType = new ExampleErrorsFormType());
-        $form->bind(array(
+        $form->submit(array(
             'textfield1' => 'nix',
             'textfield2' => "nothing",
             'textfield3' => "nothing"
         ));
         $form->isValid();
+        $form2 = $this->createForm($formType2 = new ExampleErrorsFormType(true));
+        $form2->submit(array(
+            'textfield1' => 'nix',
+            'textfield2' => "nothing",
+            'textfield3' => "nothing"
+        ));
+        $form2->isValid();
 
         return array(
             'form'=>$form->createView(),
-            'formType' => $formType
+            'formType' => $formType,
+            'form2'=>$form2->createView(),
+            'formType2' => $formType2
         );
     }
     /**
