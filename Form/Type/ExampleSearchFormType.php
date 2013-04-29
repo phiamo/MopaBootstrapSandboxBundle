@@ -4,24 +4,31 @@ namespace Mopa\Bundle\BootstrapSandboxBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Mopa\Bundle\BootstrapBundle\Navbar\NavbarFormInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class ExampleSearchFormType extends AbstractType implements NavbarFormInterface
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->setAttribute('render_fieldset', false)
-            ->setAttribute('label_render', false)
-            ->setAttribute('show_legend', false)
             ->add('search', 'text', array(
                 'widget_control_group' => false,
                 'widget_controls' => false,
+                'label' => false,
                 'attr' => array(
                     'placeholder' => "search",
                     'class' => "input-medium search-query"
                 )
             ))
         ;
+    }
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array(
+            'render_fieldset' => false,
+            'label_render' => false,
+            'show_legend' => false,
+        ));
     }
     public function getName()
     {
