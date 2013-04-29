@@ -3,7 +3,7 @@ services:
         class: %mopa_bootstrap.navbar.generic%
         arguments:
             # first argument: a named array of menues:
-            - { leftmenu: @mopa_bootstrap.examplemenu=, rightmenu: @mopa_bootstrap.exampledropdown= }
+            - { leftmenu: @mopa_bootstrap.examplemenu, rightmenu: @mopa_bootstrap.exampledropdown }
             # second argument: a named array of FormType Classes
             - { searchform: Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleSearchFormType }
             # third argument: a named array of options

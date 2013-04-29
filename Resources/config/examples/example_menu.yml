@@ -7,8 +7,6 @@ services:
         class: Knp\Menu\MenuItem # the service definition requires setting the class
         factory_service: mopa_bootstrap.examplemenu_builder
         factory_method: createMainMenu
-        arguments: ["@request"]
-        scope: request # needed as we have the request as a dependency here
         tags:
             - { name: knp_menu.menu, alias: examplemain } # The alias is what is used to retrieve the menu
 
@@ -16,8 +14,8 @@ services:
         class: Knp\Menu\MenuItem # the service definition requires setting the class
         factory_service: mopa_bootstrap.examplemenu_builder
         factory_method: createRightSideDropdownMenu
-        arguments: ["@request", "@liip_theme.active_theme"]
-        scope: request # needed as we have the request as a dependency here
+        arguments: ["@liip_theme.active_theme"]
+        #scope: container # needed as we have the request as a dependency here
         tags:
             - { name: knp_menu.menu, alias: exampledropdown } # The alias is what is used to retrieve the menu
 
@@ -25,8 +23,6 @@ services:
         class: Knp\Menu\MenuItem # the service definition requires setting the class
         factory_service: mopa_bootstrap.examplemenu_builder
         factory_method: createNavbarsSubnavMenu
-        arguments: ["@request"]
-        scope: request # needed as we have the request as a dependency here
         tags:
             - { name: knp_menu.menu, alias: examplemainsubnav } # The alias is what is used to retrieve the menu
 
@@ -34,8 +30,6 @@ services:
         class: Knp\Menu\MenuItem # the service definition requires setting the class
         factory_service: mopa_bootstrap.examplemenu_builder
         factory_method: createComponentsSubnavMenu
-        arguments: ["@request"]
-        scope: request # needed as we have the request as a dependency here
         tags:
             - { name: knp_menu.menu, alias: examplemainsubnav } # The alias is what is used to retrieve the menu
 

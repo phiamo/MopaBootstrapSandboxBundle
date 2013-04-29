@@ -15,7 +15,7 @@ use Mopa\Bundle\BootstrapBundle\Navbar\AbstractNavbarMenuBuilder;
 class MenuBuilder extends AbstractNavbarMenuBuilder
 {
 
-    public function createMainMenu(Request $request)
+    public function createMainMenu()
     {
         $menu = $this->createNavbarMenuItem();
         $layout = $menu->addChild('Layout', array('route' => 'mopa_bootstrap_layout_example'));
@@ -38,7 +38,7 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
         return $menu;
     }
 
-    public function createRightSideDropdownMenu(Request $request, ActiveTheme $activeTheme)
+    public function createRightSideDropdownMenu(ActiveTheme $activeTheme)
     {
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttribute('class', 'nav pull-right');
@@ -73,7 +73,7 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
         return $menu;
     }
 
-    public function createNavbarsSubnavMenu(Request $request)
+    public function createNavbarsSubnavMenu()
     {
         $menu = $this->createSubnavbarMenuItem();
         $menu->addChild('Top', array('uri' => '#top'));
@@ -84,7 +84,7 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
         return $menu;
     }
 
-    public function createComponentsSubnavMenu(Request $request)
+    public function createComponentsSubnavMenu()
     {
         $menu = $this->createSubnavbarMenuItem();
         $menu->addChild('Top', array('uri' => '#top'));
