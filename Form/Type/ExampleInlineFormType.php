@@ -33,6 +33,6 @@ class ExampleInlineFormType extends AbstractType
     }
     public function getName()
     {
-        return "MopaBootstraBundle_Inline_Possibilies";
+        return "MopaBootstrap_Bundle_Inline_Possibilies";
     }
 }
