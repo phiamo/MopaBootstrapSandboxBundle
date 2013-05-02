@@ -17,6 +17,7 @@ use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleInlineFormType;
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleSearchFormType;
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleHorizontalFormType;
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleErrorsFormType;
+use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleHelpTextFormType;
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleExtendedFormType;
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleExtendedViewFormType;
 
@@ -115,6 +116,19 @@ class ExamplesController extends Controller
             'formType' => $formType,
             'form2'=>$form2->createView(),
             'formType2' => $formType2
+        );
+    }
+    /**
+     * @Route("/mopa/bootstrap/forms/help_texts", name="mopa_bootstrap_forms_helptexts")
+     * @Template
+     */
+    public function helpTextsAction(Request $request)
+    {
+        $form = $this->createForm($formType = new ExampleHelpTextFormType());
+
+        return array(
+            'form'=>$form->createView(),
+            'formType' => $formType
         );
     }
     /**
