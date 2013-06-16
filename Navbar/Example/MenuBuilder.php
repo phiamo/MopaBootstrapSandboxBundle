@@ -19,7 +19,7 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
     {
         $menu = $this->createNavbarMenuItem();
         $layout = $menu->addChild('Layout', array('route' => 'mopa_bootstrap_layout_example'));
-        
+
         $this->addIcon($layout, array('icon' => 'home', 'inverted'=>true, 'append'=>false ));
 
         $dropdown = $this->createDropdownMenuItem($menu, "Forms", false, array('caret' => true));
@@ -30,6 +30,7 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
         $dropdown->addChild('Extended Views', array('route' => 'mopa_bootstrap_forms_view_extended'));
         $dropdown->addChild('Embedded Type Forms', array('route' => 'mopa_bootstrap_forms_embeddedtype'));
         $dropdown->addChild('Forms Errors', array('route' => 'mopa_bootstrap_forms_errors'));
+        $dropdown->addChild('Help Texts', array('route' => 'mopa_bootstrap_forms_helptexts'));
         $dropdown->addChild('Choice Fields', array('route' => 'mopa_bootstrap_forms_choices'));
         $dropdown->addChild('Collections Fields', array('route' => 'mopa_bootstrap_forms_collections'));
         $menu->addChild('Navbars', array('route' => 'mopa_bootstrap_navbar'));
