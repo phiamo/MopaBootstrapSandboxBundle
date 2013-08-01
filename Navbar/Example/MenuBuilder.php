@@ -18,6 +18,7 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
     public function createMainMenu()
     {
         $menu = $this->createNavbarMenuItem();
+        
         $layout = $menu->addChild('Layout', array('route' => 'mopa_bootstrap_layout_example'));
 
         $this->addIcon($layout, array('icon' => 'home', 'inverted'=>true, 'append'=>false ));
@@ -42,7 +43,7 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
     public function createRightSideDropdownMenu(ActiveTheme $activeTheme)
     {
         $menu = $this->factory->createItem('root');
-        $menu->setChildrenAttribute('class', 'nav pull-right');
+        $menu->setChildrenAttribute('class', 'nav navbar-nav pull-right');
 
         // ... add theme change
 
