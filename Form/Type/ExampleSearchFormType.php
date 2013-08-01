@@ -17,7 +17,7 @@ class ExampleSearchFormType extends AbstractType implements NavbarFormInterface
                 'label' => false,
                 'attr' => array(
                     'placeholder' => "search",
-                    'class' => "input-medium search-query"
+                    'class' => "search-query"
                 )
             ))
         ;

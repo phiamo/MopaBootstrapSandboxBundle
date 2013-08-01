@@ -13,7 +13,7 @@ class ExampleDateFormType extends AbstractType
                 'label_render' => false,
                 'widget_control_group' => false,
                 'widget_controls' => false,
-                'attr' => array('class' => 'startdate span1'),
+                'attr' => array('class' => 'startdate col-sm-1'),
                 'widget' => 'choice',
                 'format' => 'dd MM yyyy',
             ))
@@ -21,7 +21,7 @@ class ExampleDateFormType extends AbstractType
                 'label_render' => false,
                 'widget_control_group' => false,
                 'widget_controls' => false,
-                'attr' => array('class' => 'enddate span2'),
+                'attr' => array('class' => 'enddate col-sm-2'),
                 'widget' => 'choice',
                 'format' => 'dd MM yyyy',
             ))

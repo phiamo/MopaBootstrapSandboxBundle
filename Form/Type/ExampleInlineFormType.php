@@ -16,7 +16,8 @@ class ExampleInlineFormType extends AbstractType
                 'widget_control_group' => false,
                 'attr' => array(
                     'placeholder' => 'Password',
-                    'class' => 'input-small'
+                    'class' => '',
+                    'style' => 'width: 150px', // @TODO: set width better
                 ),
             ))
             ->add('Password', null, array(
@@ -25,7 +26,8 @@ class ExampleInlineFormType extends AbstractType
                 'widget_control_group' => false,
                 'attr' => array(
                     'placeholder' => 'Email',
-                    'class' => 'input-small'
+                    'class' => '',
+                    'style' => 'width: 150px', // @TODO: set width better
                 ),
             ))
         ;
