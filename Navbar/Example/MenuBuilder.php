@@ -33,6 +33,7 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
         $dropdown->addChild('Help Texts', array('route' => 'mopa_bootstrap_forms_helptexts'));
         $dropdown->addChild('Choice Fields', array('route' => 'mopa_bootstrap_forms_choices'));
         $dropdown->addChild('Collections Fields', array('route' => 'mopa_bootstrap_forms_collections'));
+        $dropdown->addChild('Form Tabs', array('route' => 'mopa_bootstrap_forms_tabs'));
         $menu->addChild('Navbars', array('route' => 'mopa_bootstrap_navbar'));
         $menu->addChild('Macros for components', array('route' => 'mopa_bootstrap_components'));
         // ... add more children
