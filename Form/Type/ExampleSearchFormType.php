@@ -12,8 +12,7 @@ class ExampleSearchFormType extends AbstractType implements NavbarFormInterface
     {
         $builder
             ->add('search', 'text', array(
-                'widget_control_group' => false,
-                'widget_controls' => false,
+                'widget_form_group' => false,
                 'label' => false,
                 'attr' => array(
                     'placeholder' => "search",

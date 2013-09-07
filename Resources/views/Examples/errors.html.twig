@@ -4,7 +4,7 @@
 {% block headline %}Errors in forms{% endblock headline %}
 
 {% block content %}
-<div class="span6">
+<div class="col-6">
     <form class="form-horizontal" id="your_form_name" method="POST">
         {{ form_widget(form) }}
         <div class="form-actions">
@@ -20,7 +20,7 @@
         </div>
     </form>
 </div>
-<div class="span6">
+<div class="col-6">
     <h3>The action to generate this page simulates the state after a form submission</h3>
     <p>The fields contain different error styles. Which get applied</p>
 </div>

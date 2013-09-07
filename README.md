@@ -1,4 +1,5 @@
-# README
+# README bootstrap 3.x
+For bootstrap 2.x use branch v2.x
 
 <h2>Live Show</h2>
 

@@ -42,7 +42,7 @@ class MenuBuilder extends AbstractNavbarMenuBuilder
     public function createRightSideDropdownMenu(ActiveTheme $activeTheme)
     {
         $menu = $this->factory->createItem('root');
-        $menu->setChildrenAttribute('class', 'nav pull-right');
+        $menu->setChildrenAttribute('class', 'nav navbar-nav pull-right');
 
         // ... add theme change
 

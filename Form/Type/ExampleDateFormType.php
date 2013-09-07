@@ -11,24 +11,21 @@ class ExampleDateFormType extends AbstractType
         $builder
             ->add('startAt','date', array(
                 'label_render' => false,
-                'widget_control_group' => false,
-                'widget_controls' => false,
+                'widget_form_group' => false,
                 'attr' => array('class' => 'startdate span1'),
                 'widget' => 'choice',
                 'format' => 'dd MM yyyy',
             ))
             ->add('endAt','date', array(
                 'label_render' => false,
-                'widget_control_group' => false,
-                'widget_controls' => false,
+                'widget_form_group' => false,
                 'attr' => array('class' => 'enddate span2'),
                 'widget' => 'choice',
                 'format' => 'dd MM yyyy',
             ))
             ->add('special','checkbox', array(
                 'label_render' => false,
-                'widget_control_group' => false,
-                'widget_controls' => false,
+                'widget_form_group' => false,
                 'label'     => 'Special?',
                 'required'  => false,
             ))

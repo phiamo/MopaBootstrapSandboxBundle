@@ -12,20 +12,16 @@ class ExampleInlineFormType extends AbstractType
         $builder
             ->add('Email', null, array(
                 'label_render' => false,
-                'widget_controls' => false,
-                'widget_control_group' => false,
+                'widget_form_group' => false,
                 'attr' => array(
                     'placeholder' => 'Password',
-                    'class' => 'input-small'
                 ),
             ))
             ->add('Password', null, array(
                 'label_render' => false,
-                'widget_controls' => false,
-                'widget_control_group' => false,
+                'widget_form_group' => false,
                 'attr' => array(
                     'placeholder' => 'Email',
-                    'class' => 'input-small'
                 ),
             ))
         ;
@@ -33,7 +29,7 @@ class ExampleInlineFormType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'render_fieldset' => true,
+            'render_fieldset' => false,
             'label_render' => false,
             'show_legend' => false,
         ));
