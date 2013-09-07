@@ -16,6 +16,8 @@ class ExampleInlineFormType extends AbstractType
                 'attr' => array(
                     'placeholder' => 'Password',
                 ),
+                'horizontal' => false,
+                'inline' => true
             ))
             ->add('Password', null, array(
                 'label_render' => false,
@@ -23,6 +25,8 @@ class ExampleInlineFormType extends AbstractType
                 'attr' => array(
                     'placeholder' => 'Email',
                 ),
+                'inline' => true,
+                'horizontal' => false
             ))
         ;
     }
