@@ -47,7 +47,7 @@ class ExampleErrorsFormType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-             // 'error_type' => "block" # uncomment this to change all of the error messages isn this form to block
+             // 'error_type' => "block" # uncomment this to change all of the error messages in this form to block
             'errors_on_forms' => $this->formErrors,
         ));
     }
