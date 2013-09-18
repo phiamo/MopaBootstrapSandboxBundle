@@ -25,7 +25,7 @@
         "mopa/bootstrap-bundle": "3.*@dev",
         "knplabs/knp-menu-bundle": "2.0.x-dev",
         "liip/theme-bundle": "dev-master"
-    }
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "3.0.x-dev"
