@@ -1,23 +1,23 @@
-{% extends "MopaBootstrapSandboxBundle::layout.html.twig" %}
+{% extends "MopaBootstrapSandboxBundle::base.html.twig" %}
 {% from 'MopaBootstrapBundle::flash.html.twig' import session_flash %}
 
 {% block headline %}Horizontal forms{% endblock headline %}
 
-{% block content %}
-<div class="span6">
-    <form class="form-horizontal">
-        {{ form_widget(form) }}
-        <div class="form-actions">
+{% block content_row %}
+<form class="bs-example form-horizontal">
+    {{ form_widget(form) }}
+    <div class="form-group">
+        <div class="col-offset-3 col-lg-9">
             <button type="submit" class="btn btn-primary">Save changes</button>
             <button type="reset" class="btn">Cancel</button>
         </div>
-    </form>
-</div>
-<div class="span6">
+    </div>
+</form>
+<div class="col-lg-6">
     <h3>What's included</h3>
     <p>Shown on the left are some of the default form controls supported</p>
     <p>Watch out that every control has a bunch of options to define in the form classes</p>
 </div>
-{% endblock content %}
+{% endblock content_row %}
 
 {% set showTemplate = _self %}{% set showForm = formType %}

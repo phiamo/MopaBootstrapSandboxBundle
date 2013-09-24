@@ -1,24 +1,22 @@
 <?php
 namespace Mopa\Bundle\BootstrapSandboxBundle\Controller;
 
-use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\DateTimeTestType;
-
-use Doctrine\Tests\DBAL\Types\DateTimeTest;
-
-use Symfony\Component\HttpKernel\Kernel;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleFormsType;
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleChoiceFormType;
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleCollectionsFormType;
-use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleInlineFormType;
-use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleSearchFormType;
-use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleHorizontalFormType;
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleErrorsFormType;
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleExtendedFormType;
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleExtendedViewFormType;
+use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleFormsType;
+use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleHelpTextFormType;
+use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleHorizontalFormType;
+use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleInlineFormType;
+use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleSearchFormType;
+use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleTabsFormType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Kernel;
 
 class ExamplesController extends Controller
 {
@@ -96,12 +94,34 @@ class ExamplesController extends Controller
     public function errorsAction(Request $request)
     {
         $form = $this->createForm($formType = new ExampleErrorsFormType());
-        $form->bind(array(
+        $form->submit(array(
             'textfield1' => 'nix',
             'textfield2' => "nothing",
             'textfield3' => "nothing"
         ));
         $form->isValid();
+        $form2 = $this->createForm($formType2 = new ExampleErrorsFormType(true));
+        $form2->submit(array(
+            'textfield1' => 'nix',
+            'textfield2' => "nothing",
+            'textfield3' => "nothing"
+        ));
+        $form2->isValid();
+
+        return array(
+            'form'=>$form->createView(),
+            'formType' => $formType,
+            'form2'=>$form2->createView(),
+            'formType2' => $formType2
+        );
+    }
+    /**
+     * @Route("/mopa/bootstrap/forms/help_texts", name="mopa_bootstrap_forms_helptexts")
+     * @Template
+     */
+    public function helpTextsAction(Request $request)
+    {
+        $form = $this->createForm($formType = new ExampleHelpTextFormType());
 
         return array(
             'form'=>$form->createView(),
@@ -206,6 +226,24 @@ class ExamplesController extends Controller
         $this->get('session')->getFlashBag()->add('info', 'So please have a look into the controller how this works!');
 
         return $this->redirect(sprintf('%s#%s', $this->generateUrl('mopa_bootstrap_components'), 'flashes'));
+    }
+
+    /**
+     * @Route("/mopa/bootstrap/tabs", name="mopa_bootstrap_forms_tabs")
+     * @Template()
+     */
+    public function tabsAction(Request $request)
+    {
+        $form = $this->createForm($formType = new ExampleTabsFormType());
+
+        if ($request->getMethod() === 'POST') {
+            $form->handleRequest($request);
+        }
+
+        return array(
+            'formType' => $formType,
+            'form' => $form->createView(),
+        );
     }
 
 }

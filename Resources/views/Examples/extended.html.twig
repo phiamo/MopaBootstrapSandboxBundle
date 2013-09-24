@@ -1,10 +1,10 @@
-{% extends "MopaBootstrapSandboxBundle::layout.html.twig" %}
+{% extends "MopaBootstrapSandboxBundle::base.html.twig" %}
 {% from 'MopaBootstrapBundle::flash.html.twig' import session_flash %}
 
 {% block headline %}Extended forms Example{% endblock headline %}
 
 {% block content %}
-<div class="span6">
+<div class="col-lg-6">
     <form class="form-horizontal" id="your_form_name">
         {{ form_widget(form) }}
         <div class="form-actions">
@@ -13,7 +13,7 @@
         </div>
     </form>
 </div>
-<div class="span6">
+<div class="col-lg-6">
     <h3>Everything's included</h3>
     <p>All things shown here are directly included via the bundle.</p>
     <p>You can completely drive the appearence within the form classes, and hopefully updates wont change the view!</p>
@@ -26,8 +26,8 @@ $builder
             'type' => 'append'
         ),
         'attr' => array(
-            'class'       => 'span1',
-            'placeholder' => 'span1'
+            'class'       => 'col-lg-1',
+            'placeholder' => 'col-lg-1'
         )
     ))
 ;

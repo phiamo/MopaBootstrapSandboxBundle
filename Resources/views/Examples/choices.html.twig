@@ -1,10 +1,10 @@
-{% extends "MopaBootstrapSandboxBundle::layout.html.twig" %}
+{% extends "MopaBootstrapSandboxBundle::base.html.twig" %}
 {% from 'MopaBootstrapBundle::flash.html.twig' import session_flash %}
 
 {% block headline %}Choice Widgets{% endblock headline %}
 
 {% block content %}
-<div class="span6">
+<div class="col-6">
     <form action="#" class="form-horizontal" method="post" {{ form_enctype(form) }}>
         {{ form_widget(form) }}
 
@@ -14,7 +14,7 @@
         </div>
     </form>
 </div>
-<div class="span6">
+<div class="col-6">
     <h3>Choice form widgets</h3>
     <p>Here we try to show all possible choice form widgets</p>
     <hr>

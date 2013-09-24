@@ -3,33 +3,40 @@ namespace Mopa\Bundle\BootstrapSandboxBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class ExampleInlineFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->setAttribute('show_legend', false)
-            ->setAttribute('render_fieldset', false)
             ->add('Email', null, array(
                 'label_render' => false,
-                'widget_controls' => false,
-                'widget_control_group' => false,
+                'widget_form_group' => false,
                 'attr' => array(
                     'placeholder' => 'Password',
-                    'class' => 'input-small'
                 ),
+                'horizontal' => false,
+                'inline' => true
             ))
             ->add('Password', null, array(
                 'label_render' => false,
-                'widget_controls' => false,
-                'widget_control_group' => false,
+                'widget_form_group' => false,
                 'attr' => array(
                     'placeholder' => 'Email',
-                    'class' => 'input-small'
                 ),
+                'inline' => true,
+                'horizontal' => false
             ))
         ;
+    }
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array(
+            'render_fieldset' => false,
+            'label_render' => false,
+            'show_legend' => false,
+        ));
     }
     public function getName()
     {

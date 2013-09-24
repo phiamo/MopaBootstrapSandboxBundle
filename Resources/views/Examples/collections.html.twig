@@ -1,4 +1,4 @@
-{% extends "MopaBootstrapSandboxBundle::layout.html.twig" %}
+{% extends "MopaBootstrapSandboxBundle::base.html.twig" %}
 {% from 'MopaBootstrapBundle::flash.html.twig' import session_flash %}
 {% form_theme form _self %}
 
@@ -29,7 +29,7 @@
 {% block headline %}Collection Forms{% endblock headline %}
 
 {% block content %}
-<div class="span6">
+<div class="col-lg-6">
     <form class="form-horizontal" id="your_form_name" method="post">
         {{ form_widget(form) }}
         <div class="form-actions">
@@ -37,8 +37,8 @@
             <button type="reset" class="btn">Cancel</button>
         </div>
     </form>
-    <div class="row-fluid">
-        <div class="span6">
+    <div class="row">
+        <div class="col-lg-6">
          <h3>Button Icons</h3>
              <p>To make use of the button icons you can either apply them in the FormType:</p>
 
@@ -53,7 +53,7 @@ $builder
     ;
              </pre>
         </div>
-        <div class="span6">
+        <div class="col-lg-6">
              <p>Or configure them globally:</p>
 
               <pre class="prettyprint">
@@ -70,7 +70,7 @@ mopa_bootstrap:
         </div>
     </div>
 </div>
-<div class="span6">
+<div class="col-lg-6">
       <h3>Easy use of collections</h3>
       <p>We often saw probs when using collection, so we added some code to ease the use</p>
       <p>Please review your javascript includes, we provide a new mopabotstrap-collection.js<p>
@@ -88,12 +88,12 @@ $builder
         'widget_add_btn' => array('label' => 'add email', 'attr' => array('class' => 'btn btn-primary')),
         'options' => array( // options for collection fields
             'widget_remove_btn' => array('label' => 'remove', 'attr' => array('class' => 'btn btn-primary')),
-            'attr' => array('class' => 'span3'),
+            'attr' => array('class' => 'col-lg-3'),
             'widget_addon' => array(
                 'type' => 'prepend',
                 'text' => '@',
             ),
-            'widget_control_group' => false,
+            'widget_form_group' => false,
         )
     ))
     ;

@@ -3,6 +3,7 @@ namespace Mopa\Bundle\BootstrapSandboxBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class ExampleHorizontalFormType extends AbstractType
 {
@@ -18,13 +19,13 @@ class ExampleHorizontalFormType extends AbstractType
             ))
             ->add('Checkboxes', 'choice', array(
                 'label'        => 'Checkbox',
-                'help_inline'  => 'Expanded and multiple',
+                'help_inline'  => 'Choice widget, expanded and multiple',
                 'multiple'     => true,
                 'expanded'     => true,
                 'choices'      => array('1' => "Option one is this and that—be sure to include why it's great"),
             ))
             ->add('Select_list', 'choice', array(
-                'label'        => 'Checkbox',
+                'label'        => 'Select list',
                 'choices'      => array(
                     '1' => "something",
                     '2' => "2",
@@ -54,6 +55,13 @@ class ExampleHorizontalFormType extends AbstractType
                 )
             ))
         ;
+    }
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array(
+            'render_fieldset' => false,
+            'show_legend' => false,
+        ));
     }
     public function getName()
     {

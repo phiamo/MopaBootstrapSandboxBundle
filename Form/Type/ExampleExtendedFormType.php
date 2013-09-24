@@ -3,6 +3,7 @@ namespace Mopa\Bundle\BootstrapSandboxBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class ExampleExtendedFormType extends AbstractType
 {
@@ -11,54 +12,48 @@ class ExampleExtendedFormType extends AbstractType
         $builder
             ->add('textfield1', 'text', array(
                 'label' => 'Form sizes',
+                'horizontal_input_wrapper_class' => 'col-lg-4',
                 'attr' => array(
-                    'class' => 'input-mini',
-                    'placeholder' => 'input-mini',
+                    'placeholder' => 'col-lg-4',
                 )
             ))
             ->add('textfield2', 'text', array(
                 'label_render' => false,
+                'horizontal_input_wrapper_class' => 'col-lg-6',
                 'attr' => array(
-                    'class' => 'input-medium',
-                    'placeholder' => 'input-medium',
+                    'placeholder' => 'col-lg-6',
                 )
             ))
             ->add('textfield3', 'text', array(
                 'label_render' => false,
+                'horizontal_input_wrapper_class' => 'col-lg-9',
                 'attr' => array(
-                    'class' => 'input-large',
-                    'placeholder' => 'input-large',
+                    'placeholder' => 'col-lg-9',
                 )
             ))
             ->add('select1', 'choice', array(
                 'label_render'        => false,
                 'choices'      => array('1' => 'one', '2' => 'two'),
-                'attr' => array(
-                    'class' => 'input-mini',
-                )
+                'horizontal_input_wrapper_class' => 'col-lg-4',
             ))
             ->add('select2', 'choice', array(
                 'label_render'        => false,
                 'choices'      => array('1' => 'one', '2' => 'two'),
-                'attr' => array(
-                    'class' => 'input-medium',
-                )
+                'horizontal_input_wrapper_class' => 'col-lg-6',
             ))
             ->add('select3', 'choice', array(
                 'label_render'        => false,
                 'choices'      => array('1' => 'one', '2' => 'two'),
-                'attr' => array(
-                    'class' => 'input-large',
-                )
+                'horizontal_input_wrapper_class' => 'col-lg-9',
             ))
             ->add('Prepended_Text', 'text', array(
                 'widget_addon' => array(
                     'type' => 'prepend',
                     'text' => '@'
                 ),
+                'horizontal_input_wrapper_class' => 'col-lg-4',
                 'attr' => array(
-                    'class' => 'input-mini',
-                    'placeholder' => 'input-mini',
+                    'placeholder' => 'col-lg-4',
                 )
             ))
             ->add('Prepended_Icon', 'text', array(
@@ -66,8 +61,8 @@ class ExampleExtendedFormType extends AbstractType
                     'type' => 'prepend',
                     'icon' => 'headphones'
                 ),
+                'horizontal_input_wrapper_class' => 'col-lg-9',
                 'attr' => array(
-                    'class' => 'input-lage',
                     'placeholder' => 'Which kind of music?',
                 )
             ))
@@ -76,9 +71,9 @@ class ExampleExtendedFormType extends AbstractType
                     'text' => '.00',
                     'type' => 'append',
                 ),
+                'horizontal_input_wrapper_class' => 'col-lg-4',
                 'attr' => array(
-                    'class' => 'input-mini',
-                    'placeholder' => 'input-mini',
+                    'placeholder' => 'col-lg-4',
                 )
             ))
             ->add('Appended_Icon', 'text', array(
@@ -86,8 +81,8 @@ class ExampleExtendedFormType extends AbstractType
                     'icon' => 'pencil',
                     'type' => 'append',
                 ),
+                'horizontal_input_wrapper_class' => 'col-lg-9',
                 'attr' => array(
-                    'class' => 'input-large',
                     'placeholder' => 'Which kind of books?',
                 )
             ))
@@ -119,7 +114,7 @@ class ExampleExtendedFormType extends AbstractType
                 ),
             ))
             ->add('publicVisible', 'checkbox', array(
-                    'required' => false,
+                'required' => false,
             ))
             ->add('time1', 'time', array(
                 'widget' => 'choice',
@@ -132,82 +127,82 @@ class ExampleExtendedFormType extends AbstractType
             ))
             ->add('Prefix_Text', 'text', array(
                 'widget_prefix' => "Prefix Text",
+                'horizontal_input_wrapper_class' => 'col-lg-4',
                 'attr' => array(
-                    'class' => 'input-mini',
-                    'placeholder' => 'input-mini',
+                    'placeholder' => 'col-lg-4',
                 )
             ))
             ->add('Suffix_Text', 'text', array(
                 'widget_suffix' => "Suffix Text",
                 'attr' => array(
-                    'class' => 'input-mini',
-                    'placeholder' => 'input-mini',
+                    'class' => 'col-lg-4',
+                    'placeholder' => 'col-lg-4',
                 )
             ))
             ->add('Money_default', 'money', array(
+                'horizontal_input_wrapper_class' => 'col-lg-4',
                 'attr' => array(
-                    'class' => 'input-mini',
-                    'placeholder' => 'input-mini',
+                    'placeholder' => 'col-lg-4',
                 )
             ))
             ->add('Money_append', 'money', array(
                 'widget_addon' => array(
                     'type' => 'append'
                 ),
+                'horizontal_input_wrapper_class' => 'col-lg-4',
                 'attr' => array(
-                    'class' => 'input-mini',
-                    'placeholder' => 'input-mini',
+                    'placeholder' => 'col-lg-4',
                 )
             ))
             ->add('Money_prepend', 'money', array(
                 'widget_addon' => array(
                     'type' => 'prepend'
                 ),
+                'horizontal_input_wrapper_class' => 'col-lg-4',
                 'attr' => array(
-                    'class' => 'input-mini',
-                    'placeholder' => 'input-mini',
+                    'placeholder' => 'col-lg-4',
                 )
             ))
             ->add('Money_nothing', 'money', array(
                 'widget_addon' => array(
                     'type' => false
                 ),
+                'horizontal_input_wrapper_class' => 'col-lg-4',
                 'attr' => array(
-                    'class' => 'input-mini',
-                    'placeholder' => 'input-mini',
+                    'placeholder' => 'col-lg-4',
                 )
             ))
             ->add('Percent_default', 'percent', array(
+                'horizontal_input_wrapper_class' => 'col-lg-4',
                 'attr' => array(
-                    'class' => 'input-mini',
-                    'placeholder' => 'input-mini',
+                    'placeholder' => 'col-lg-4',
                 )
             ))
             ->add('Percent_append', 'percent', array(
                 'widget_addon' => array(
                     'type' => 'append'
                 ),
+                'horizontal_input_wrapper_class' => 'col-lg-4',
                 'attr' => array(
-                    'class' => 'input-mini',
-                    'placeholder' => 'input-mini',
+                    'placeholder' => 'col-lg-4',
                 )
             ))
             ->add('Percent_prepend', 'percent', array(
                 'widget_addon' => array(
                     'type' => 'prepend'
                 ),
+                'horizontal_input_wrapper_class' => 'col-lg-4',
                 'attr' => array(
-                    'class' => 'input-mini',
-                    'placeholder' => 'input-mini',
+                    'placeholder' => 'col-lg-4',
                 )
             ))
             ->add('Percent_nothing_added', 'percent', array(
                 'widget_addon' => array(
                     'type' => false
                 ),
+                'horizontal_input_wrapper_class' => 'col-lg-4',
                 'attr' => array(
-                    'class' => 'input-mini',
-                    'placeholder' => 'input-mini',
+                    'placeholder' => 'col-lg-4',
                 )
             ))
             ->add('Required_false', 'text', array(
@@ -218,6 +213,13 @@ class ExampleExtendedFormType extends AbstractType
                 'render_required_asterisk' => false
             ))
         ;
+    }
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array(
+            'render_fieldset' => false,
+            'show_legend' => false,
+        ));
     }
     public function getName()
     {

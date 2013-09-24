@@ -1,4 +1,4 @@
-{% extends "MopaBootstrapSandboxBundle::layout.html.twig" %}
+{% extends "MopaBootstrapSandboxBundle::base.html.twig" %}
 {% from 'MopaBootstrapBundle::flash.html.twig' import session_flash %}
 
 {% block headline %}{% endblock headline %}
@@ -46,7 +46,7 @@
             <h1>Menus:</h1>
         </div>
         <p>The menues are created Knpmenu Style and the AbstractNavbarMenuBuilder helps you adding the correct styles to e.g. Dropdown menues:</p>
-        <pre class="prettyprint">{{ fileSource('@MopaBootstrapSandboxBundle/Navbar/Example/MenuBuilder.php') }}</pre>
+        <pre class="prettyprint">{{ fileSource('@MopaBootstrapSandboxBundle/Menu/Builder.php') }}</pre>
     </section>
 </div>
 {% endblock content %}

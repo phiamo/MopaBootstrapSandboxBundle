@@ -3,7 +3,7 @@ services:
         class: %mopa_bootstrap.navbar.generic%
         arguments:
             # first argument: a named array of menues:
-            - { leftmenu: @mopa_bootstrap.examplemenu, rightmenu: @mopa_bootstrap.exampledropdown }
+            - { leftmenu: "MopaBootstrapSandboxBundle:Builder:createMainMenu", rightmenu: "@mopa_bootstrap.exampledropdown" }
             # second argument: a named array of FormType Classes
             - { searchform: Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleSearchFormType }
             # third argument: a named array of options
@@ -16,7 +16,7 @@ services:
         class: %mopa_bootstrap.navbar.generic%
         arguments:
             # first argument: a named array of menues:
-            - { menu: @mopa_bootstrap.examplenavbarsubnavmenu= }
+            - { menu: "MopaBootstrapSandboxBundle:Builder:createNavbarsSubnavMenu" }
             - {}
             # third argument: a named array of options
             - { fixedTop: true, isFluid: true, template: MopaBootstrapBundle:Navbar:subnavbar.html.twig }
@@ -28,7 +28,7 @@ services:
         class: %mopa_bootstrap.navbar.generic%
         arguments:
             # first argument: a named array of menues:
-            - { menu: @mopa_bootstrap.examplecomponentssubnavmenu= }
+            - { menu: "MopaBootstrapSandboxBundle:Builder:createComponentsSubnavMenu" }
             - {}
             # third argument: a named array of options
             - { fixedTop: true, isFluid: true, template: MopaBootstrapBundle:Navbar:subnavbar.html.twig }
