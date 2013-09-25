@@ -19,13 +19,23 @@
        '@MopaBootstrapSandboxBundle/Resources/public/less/mopabootstrapsandboxbundle.less'
        '@MopaBootstrapSandboxBundle/Resources/public/css/prettify.css'
        '@MopaBootstrapBundle/Resources/bootstrap/assets/css/docs.css'
+       '@MopaBootstrapBundle/Resources/public/less/mopabootstrapbundle.less'
 %}
 <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
 {% endstylesheets %}
 {% endblock head_style %}
 
 {% block navbar %}
-{{ mopa_bootstrap_navbar('sandboxFrontendNavbar') }}
+{% embed '@MopaBootstrap/Navbar/navbar.html.twig' with { fixedTop: true, inverse: true } %}
+    {% block brand %}
+        <a class="navbar-brand" href="#">Mopa Bootstrap</a>
+    {% endblock %}
+
+    {% block menu %}
+        {{ mopa_bootstrap_navbar('MopaBootstrapSandboxBundle:Builder:createMainMenu') }}
+        {{ mopa_bootstrap_navbar('exampledropdown') }}
+    {% endblock %}
+{% endembed %}
 {% endblock navbar %}
 
 {% block body %}

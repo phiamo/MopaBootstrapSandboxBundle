@@ -12,8 +12,13 @@
         </h1>
         <p class="lead">Providing several components known from bootstrap in a programatic way.</p>
         <p class="lead">Make sure to have a look into the <a href="https://github.com/phiamo/MopaBootstrapSandboxBundle/blob/master/Resources/views/Examples/components.html.twig">template!</a> to understand!</p>
+
         {% block subnavbar %}
-        {{ mopa_bootstrap_navbar('sandboxComponentsSubNavbar') }}
+            {% embed '@MopaBootstrap/Navbar/subnavbar.html.twig' %}
+                {% block menu %}
+                    {{ mopa_bootstrap_navbar('MopaBootstrapSandboxBundle:Builder:createComponentsSubnavMenu') }}
+                {% endblock %}
+            {% endembed %}
         {% endblock subnavbar %}
     </div>
 </section>

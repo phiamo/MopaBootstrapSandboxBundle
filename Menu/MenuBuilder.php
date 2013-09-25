@@ -25,6 +25,7 @@ class MenuBuilder
     {
         $menu = $this->factory->createItem('root', array(
             'navbar' => true,
+            'push_right' => true,
         ));
 
         // ... add theme change
@@ -50,19 +51,19 @@ class MenuBuilder
             'caret' => true,
         ));
 
-        $dropdown->addChild('Symfony', array('uri' => 'http://www.symfony.com'));
-        $dropdown->addChild('bootstrap', array('uri' => 'http://twitter.github.com/bootstrap/'));
-        $dropdown->addChild('node.js', array('uri' => 'http://nodejs.org/'));
-        $dropdown->addChild('less', array('uri' => 'http://lesscss.org/'));
+        $tools->addChild('Symfony', array('uri' => 'http://www.symfony.com'));
+        $tools->addChild('bootstrap', array('uri' => 'http://twitter.github.com/bootstrap/'));
+        $tools->addChild('node.js', array('uri' => 'http://nodejs.org/'));
+        $tools->addChild('less', array('uri' => 'http://lesscss.org/'));
 
         //adding a nice divider
-        $dropdown->addChild('divider_1', array('divider' => true));
-        $dropdown->addChild('google', array('uri' => 'http://www.google.com/'));
-        $dropdown->addChild('node.js', array('uri' => 'http://nodejs.org/'));
+        $tools->addChild('divider_1', array('divider' => true));
+        $tools->addChild('google', array('uri' => 'http://www.google.com/'));
+        $tools->addChild('node.js', array('uri' => 'http://nodejs.org/'));
 
         //adding a nice divider
-        $dropdown->addChild('divider_2', array('divider' => true));
-        $dropdown->addChild('Mohrenweiser & Partner', array('uri' => 'http://www.mohrenweiserpartner.de'));
+        $tools->addChild('divider_2', array('divider' => true));
+        $tools->addChild('Mohrenweiser & Partner', array('uri' => 'http://www.mohrenweiserpartner.de'));
 
         // ... add more children
         return $menu;
