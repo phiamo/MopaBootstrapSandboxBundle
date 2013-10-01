@@ -30,7 +30,7 @@ class Builder
         ));
 
         $dropdown->addChild('Examples', array('route' => 'mopa_bootstrap_forms_examples'));
-        $dropdown->addChild('Horizontal', array('uri' => '#'));
+        $dropdown->addChild('Horizontal', array('route' => 'mopa_bootstrap_forms_horizontal'));
         $dropdown->addChild('Extended Forms', array('route' => 'mopa_bootstrap_forms_extended'));
         $dropdown->addChild('Extended Views', array('route' => 'mopa_bootstrap_forms_view_extended'));
         $dropdown->addChild('Embedded Type Forms', array('route' => 'mopa_bootstrap_forms_embeddedtype'));

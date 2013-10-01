@@ -34,9 +34,8 @@ class ExampleCollectionsFormType extends AbstractType
                     'widget_remove_btn' => array('label' => "remove now", 'attr' => array('class' => 'btn')),
                     'widget_form_group' => false,
                     'attr' => array('class' => 'input-large'),
-                    'widget_addon' => array(
+                    'widget_addon_prepend' => array(
                         'text' => '@',
-                        'type' => 'prepend'
                     ),
                 )
             ))

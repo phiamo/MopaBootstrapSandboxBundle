@@ -50,7 +50,6 @@ class ExampleHorizontalFormType extends AbstractType
             ->add('Textarea', 'textarea', array(
                 'help_inline' => "Some inline help",
                 'attr'  => array(
-                    'class' => 'input-xlarge',
                     'rows'  => 3
                 )
             ))

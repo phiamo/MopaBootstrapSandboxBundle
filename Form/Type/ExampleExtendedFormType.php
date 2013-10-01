@@ -47,8 +47,7 @@ class ExampleExtendedFormType extends AbstractType
                 'horizontal_input_wrapper_class' => 'col-lg-9',
             ))
             ->add('Prepended_Text', 'text', array(
-                'widget_addon' => array(
-                    'type' => 'prepend',
+                'widget_addon_prepend' => array(
                     'text' => '@'
                 ),
                 'horizontal_input_wrapper_class' => 'col-lg-4',
@@ -57,8 +56,7 @@ class ExampleExtendedFormType extends AbstractType
                 )
             ))
             ->add('Prepended_Icon', 'text', array(
-                'widget_addon' => array(
-                    'type' => 'prepend',
+                'widget_addon_prepend' => array(
                     'icon' => 'headphones'
                 ),
                 'horizontal_input_wrapper_class' => 'col-lg-9',
@@ -67,9 +65,8 @@ class ExampleExtendedFormType extends AbstractType
                 )
             ))
             ->add('Appended_Text', 'text', array(
-                'widget_addon' => array(
+                'widget_addon_append' => array(
                     'text' => '.00',
-                    'type' => 'append',
                 ),
                 'horizontal_input_wrapper_class' => 'col-lg-4',
                 'attr' => array(
@@ -77,7 +74,7 @@ class ExampleExtendedFormType extends AbstractType
                 )
             ))
             ->add('Appended_Icon', 'text', array(
-                'widget_addon' => array(
+                'widget_addon_append' => array(
                     'icon' => 'pencil',
                     'type' => 'append',
                 ),
@@ -104,6 +101,12 @@ class ExampleExtendedFormType extends AbstractType
                     '3' => 'Option three can—yes, you guessed it—also be checked and included in form results'
                 ),
             ))
+            ->add('Radio_Buttons_Inline', 'choice', array(
+                'label'        => 'Inline Radio buttons',
+                'expanded'     => true,
+                'choices'      => array('1' => 'one', '2' => 'two', '3'=>'three'),
+                'widget_type'  => 'inline'
+            ))
             ->add('Radio_Buttons', 'choice', array(
                 'label'        => 'Radio buttons',
                 'expanded'     => true,
@@ -118,12 +121,15 @@ class ExampleExtendedFormType extends AbstractType
             ))
             ->add('time1', 'time', array(
                 'widget' => 'choice',
+                'horizontal_input_wrapper_class' => 'col-lg-2'
             ))
             ->add('date1', 'date', array(
+                'horizontal_input_wrapper_class' => 'col-lg-2',
                 'widget' => 'choice',
             ))
             ->add('date_time1', 'datetime', array(
                 'widget' => 'choice',
+                'horizontal_input_wrapper_class' => 'col-lg-2'
             ))
             ->add('Prefix_Text', 'text', array(
                 'widget_prefix' => "Prefix Text",
@@ -133,6 +139,7 @@ class ExampleExtendedFormType extends AbstractType
                 )
             ))
             ->add('Suffix_Text', 'text', array(
+                'horizontal_input_wrapper_class' => 'col-lg-4',
                 'widget_suffix' => "Suffix Text",
                 'attr' => array(
                     'class' => 'col-lg-4',
@@ -145,61 +152,7 @@ class ExampleExtendedFormType extends AbstractType
                     'placeholder' => 'col-lg-4',
                 )
             ))
-            ->add('Money_append', 'money', array(
-                'widget_addon' => array(
-                    'type' => 'append'
-                ),
-                'horizontal_input_wrapper_class' => 'col-lg-4',
-                'attr' => array(
-                    'placeholder' => 'col-lg-4',
-                )
-            ))
-            ->add('Money_prepend', 'money', array(
-                'widget_addon' => array(
-                    'type' => 'prepend'
-                ),
-                'horizontal_input_wrapper_class' => 'col-lg-4',
-                'attr' => array(
-                    'placeholder' => 'col-lg-4',
-                )
-            ))
-            ->add('Money_nothing', 'money', array(
-                'widget_addon' => array(
-                    'type' => false
-                ),
-                'horizontal_input_wrapper_class' => 'col-lg-4',
-                'attr' => array(
-                    'placeholder' => 'col-lg-4',
-                )
-            ))
             ->add('Percent_default', 'percent', array(
-                'horizontal_input_wrapper_class' => 'col-lg-4',
-                'attr' => array(
-                    'placeholder' => 'col-lg-4',
-                )
-            ))
-            ->add('Percent_append', 'percent', array(
-                'widget_addon' => array(
-                    'type' => 'append'
-                ),
-                'horizontal_input_wrapper_class' => 'col-lg-4',
-                'attr' => array(
-                    'placeholder' => 'col-lg-4',
-                )
-            ))
-            ->add('Percent_prepend', 'percent', array(
-                'widget_addon' => array(
-                    'type' => 'prepend'
-                ),
-                'horizontal_input_wrapper_class' => 'col-lg-4',
-                'attr' => array(
-                    'placeholder' => 'col-lg-4',
-                )
-            ))
-            ->add('Percent_nothing_added', 'percent', array(
-                'widget_addon' => array(
-                    'type' => false
-                ),
                 'horizontal_input_wrapper_class' => 'col-lg-4',
                 'attr' => array(
                     'placeholder' => 'col-lg-4',

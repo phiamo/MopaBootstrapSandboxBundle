@@ -16,7 +16,7 @@
         {% block subnavbar %}
             {% embed '@MopaBootstrap/Navbar/subnavbar.html.twig' %}
                 {% block menu %}
-                    {{ mopa_bootstrap_navbar('MopaBootstrapSandboxBundle:Builder:createComponentsSubnavMenu') }}
+                    {{ mopa_bootstrap_menu('MopaBootstrapSandboxBundle:Builder:createComponentsSubnavMenu') }}
                 {% endblock %}
             {% endembed %}
         {% endblock subnavbar %}
@@ -74,8 +74,8 @@
                 </pre>
                 </p>
                 <h3>Type Options</h3>
-                <p>To omit a special type (giving a yellow box) use false as type</p>
-                <p>To get a red box use 'error' as type</p>
+                <p>To get a yellow box use 'warning' as type</p>
+                <p>To get a red box use 'danger' as type</p>
                 <p>To get a green box use 'success' as type</p>
                 <p>To get a blue box use 'info' as type</p>
                 <hr>
@@ -95,16 +95,16 @@
             <div class="col-lg-8">
                 <h3>Simple alerts</h3>
                 <p>Supply your type, message and an optional close icon, and {{ label('important', 'important') }}, if you use html inside the message set use_raw to true!:</p>
-                {{ flash(false, '<strong>Warning!</strong> Best check yo self, you\'re not looking too good.', true, true) }}
-                {{ flash('error', '<strong>Oh snap! </strong> Change a few things up and try submitting again.', true, true) }}
+                {{ flash('warning', '<strong>Warning!</strong> Best check yo self, you\'re not looking too good.', true, true) }}
+                {{ flash('danger', '<strong>Oh snap! </strong> Change a few things up and try submitting again.', true, true) }}
                 {{ flash('success', '<strong>Well done!</strong> You successfully read this important alert message.', true, true) }}
                 {{ flash('info', '<strong>Heads up!</strong> This alert needs your attention, but it\'s not super important.', true, true) }}
             </div>
             <div class="col-lg-8">
                 <h3>Advanced alerts</h3>
                 <p>Supply your type, heading, message and an close tag:</p>
-                {{ advanced_flash(false, 'Warning!', 'Best check yo self, you\'re not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.', true) }}
-                {{ advanced_flash('error', 'Oh snap!', 'Change a few things up and try submitting again. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.', 'a') }}
+                {{ advanced_flash('warning', 'Warning!', 'Best check yo self, you\'re not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.', true) }}
+                {{ advanced_flash('danger', 'Oh snap!', 'Change a few things up and try submitting again. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.', 'a') }}
                 {{ advanced_flash('success', 'Well done!', 'ou successfully read this important alert message. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.', 'button') }}
                 {{ advanced_flash('info', 'Heads up!', 'This alert needs your attention, but it\'s not super important. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.', false) }}
             </div>

@@ -65,13 +65,7 @@ class ExampleExtendedViewFormType extends AbstractType
             ->add('Prefix_Text', 'text')
             ->add('Suffix_Text', 'text')
             ->add('Money_default', 'money')
-            ->add('Money_append', 'money')
-            ->add('Money_prepend', 'money')
-            ->add('Money_nothing', 'money')
             ->add('Percent_default', 'percent')
-            ->add('Percent_append', 'percent')
-            ->add('Percent_prepend', 'percent')
-            ->add('Percent_nothing_added', 'percent')
         ;
     }
     public function getName()

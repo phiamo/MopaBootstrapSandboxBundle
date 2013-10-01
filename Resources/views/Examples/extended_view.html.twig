@@ -8,31 +8,25 @@
     <form class="form-horizontal">
         <fieldset>
             <legend>Example extended forms via view</legend>
-            {{ form_row(form.textfield1, {'attr': {'class': 'input-mini', 'placeholder': 'input-mini'}}) }}
-            {{ form_row(form.textfield2, {'attr': {'class': 'input-medium', 'placeholder': 'input-medium'}}) }}
-            {{ form_row(form.textfield3, {'attr': {'class': 'input-large', 'placeholder': 'input-large'}}) }}
-            {{ form_row(form.select1, {'attr': {'class': 'input-mini'}}) }}
-            {{ form_row(form.select2, {'attr': {'class': 'input-medium'}}) }}
-            {{ form_row(form.select3, {'attr': {'class': 'input-large'}}) }}
-            {{ form_row(form.prepend1, {'label': 'Prepended Text', 'widget_addon': {'type': 'prepend', 'text': '@'}, 'attr': {'class': 'input-mini', 'placeholder': 'input-mini'}}) }}
-            {{ form_row(form.prepend2, {'label': 'Prepended Icon', 'widget_addon': {'type': 'prepend', 'icon': 'headphones'}, 'attr': {'class': 'input-large', 'placeholder': 'Which kind of music?'}}) }}
-            {{ form_row(form.append1, {'label': 'Appended Text', 'widget_addon': {'type': 'append', 'text': '.00'}, 'attr': {'class': 'input-mini', 'placeholder': 'input-mini'}}) }}
-            {{ form_row(form.append2, {'label': 'Appended Icon', 'widget_addon': {'type': 'append', 'icon': 'pencil'}, 'attr': {'class': 'input-large', 'placeholder': 'Which kind of books?'}}) }}
+            {{ form_row(form.textfield1, {'horizontal_input_wrapper_class': 'col-lg-4', 'attr': {'placeholder': 'col-lg-4'}}) }}
+            {{ form_row(form.textfield2, {'horizontal_input_wrapper_class': 'col-lg-6', 'attr': {'placeholder': 'col-lg-6'}}) }}
+            {{ form_row(form.textfield3, {'horizontal_input_wrapper_class': 'col-lg-9', 'attr': {'placeholder': 'col-lg-9'}}) }}
+            {{ form_row(form.select1, {'horizontal_input_wrapper_class': 'col-lg-4'}) }}
+            {{ form_row(form.select2, {'horizontal_input_wrapper_class': 'col-lg-6'}) }}
+            {{ form_row(form.select3, {'horizontal_input_wrapper_class': 'col-lg-9'}) }}
+            {{ form_row(form.prepend1, {'label': 'Prepended Text', 'widget_addon_prepend': {'text': '@'}, 'horizontal_input_wrapper_class': 'col-lg-4'}) }}
+            {{ form_row(form.prepend2, {'label': 'Prepended Icon', 'widget_addon_prepend': {'icon': 'headphones'}, 'attr': {'placeholder': 'Which kind of music?'}}) }}
+            {{ form_row(form.append1, {'label': 'Appended Text', 'widget_addon_append': {'text': '.00'}, 'attr': { 'placeholder': 'col-lg-4'},'horizontal_input_wrapper_class': 'col-lg-5'}) }}
+            {{ form_row(form.append2, {'label': 'Appended Icon', 'widget_addon_append': {'icon': 'pencil'}, 'attr': {'placeholder': 'Which kind of books?'}}) }}
             {{ form_row(form.checkboxesinline, {'label': 'Inline Checkboxes', 'widget_type': 'inline'}) }}
             {{ form_row(form.checkboxes, {'label': 'Checkboxes'}) }}
             {{ form_row(form.radiobuttons, {'help_block': '<strong>Note:</strong> Labels surround all the options for much larger click areas and a more usable form.'}) }}
             {{ form_row(form.publicVisible, {'label': 'publicVisible', 'required': 'false'}) }}
-            {{ form_row(form.time1, {}) }}
-            {{ form_row(form.Prefix_Text, {'widget_prefix': "Prefix Text", 'attr': {'class': 'input-mini', 'placeholder': 'input-mini'}}) }}
-            {{ form_row(form.Suffix_Text, {'widget_suffix': "Suffix Text", 'attr': {'class': 'input-mini', 'placeholder': 'input-mini'}}) }}
-            {{ form_row(form.Money_default, {'attr': {'class': 'input-mini', 'placeholder': 'input-mini'}}) }}
-            {{ form_row(form.Money_append, {'attr': {'class': 'input-mini', 'placeholder': 'input-mini'}, 'widget_addon': {'type': 'append'}}) }}
-            {{ form_row(form.Money_prepend, {'attr': {'class': 'input-mini', 'placeholder': 'input-mini'}, 'widget_addon': {'type': 'prepend'}}) }}
-            {{ form_row(form.Money_nothing, {'attr': {'class': 'input-mini', 'placeholder': 'input-mini'}, 'widget_addon': {'type': false}}) }}
-            {{ form_row(form.Percent_default, {'attr': {'class': 'input-mini', 'placeholder': 'input-mini'}}) }}
-            {{ form_row(form.Percent_append, {'attr': {'class': 'input-mini', 'placeholder': 'input-mini'}, 'widget_addon': {'type': 'append'}}) }}
-            {{ form_row(form.Percent_prepend, {'attr': {'class': 'input-mini', 'placeholder': 'input-mini'}, 'widget_addon': {'type': 'prepend'}}) }}
-            {{ form_row(form.Percent_nothing_added, {'attr': {'class': 'input-mini', 'placeholder': 'input-mini'}, 'widget_addon': {'type': false}}) }}
+            {{ form_row(form.time1, {'horizontal_input_wrapper_class': 'col-lg-4'}) }}
+            {{ form_row(form.Prefix_Text, {'widget_prefix': "Prefix Text", 'attr': {'placeholder': 'col-lg-4'}, 'horizontal_input_wrapper_class': 'col-lg-4'}) }}
+            {{ form_row(form.Suffix_Text, {'widget_suffix': "Suffix Text", 'attr': {'placeholder': 'col-lg-4'}, 'horizontal_input_wrapper_class': 'col-lg-4'}) }}
+            {{ form_row(form.Money_default, {'attr': {'placeholder': 'col-lg-4'}, 'horizontal_input_wrapper_class': 'col-lg-4'}) }}
+            {{ form_row(form.Percent_default, {'attr': {'placeholder': 'col-lg-4'}, 'horizontal_input_wrapper_class': 'col-lg-4'}) }}
             <div class="form-actions">
                 <button type="submit" class="btn btn-primary">Save changes</button>
                 <button type="reset" class="btn">Cancel</button>
