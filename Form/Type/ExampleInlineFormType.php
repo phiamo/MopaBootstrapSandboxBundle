@@ -12,20 +12,16 @@ class ExampleInlineFormType extends AbstractType
         $builder
             ->add('Email', null, array(
                 'label_render' => false,
-                'widget_form_group' => false,
                 'attr' => array(
                     'placeholder' => 'Password',
                 ),
                 'horizontal' => false,
-                'inline' => true
             ))
             ->add('Password', null, array(
                 'label_render' => false,
-                'widget_form_group' => false,
                 'attr' => array(
                     'placeholder' => 'Email',
                 ),
-                'inline' => true,
                 'horizontal' => false
             ))
         ;
