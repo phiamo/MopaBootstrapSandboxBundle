@@ -162,76 +162,17 @@
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>Name</th>
                             <th>Example</th>
                             <th>Markup</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
+                                <td>
+                                    {{ badge(42) }}
+                                </td>
                             <td>
-                              Default
-                            </td>
-                        <td>
-                            {{ badge(1) }}
-                        </td>
-                            <td>
-                                <pre class="prettyprint">{% raw %}{{ badge(1) }}{% endraw %}</pre>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Success
-                            </td>
-                            <td>
-                                {{ badge(2, 'success') }}
-                            </td>
-                            <td>
-                                <pre class="prettyprint">{% raw %}{{ badge(2, 'success') }}{% endraw %}</pre>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Warning
-                            </td>
-                            <td>
-                                {{ badge(4,'warning') }}
-                            </td>
-                            <td>
-                                <pre class="prettyprint">{% raw %}{{ badge(4,'warning') }}{% endraw %}</pre>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Important
-                            </td>
-                            <td>
-                                {{ badge(6, 'important') }}
-                            </td>
-                            <td>
-                                <pre class="prettyprint">{% raw %}{{ badge(6, 'important') }}{% endraw %}</pre>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Info
-                            </td>
-                            <td>
-                                {{ badge(8, 'info') }}
-                            </td>
-                            <td>
-                                <pre class="prettyprint">{% raw %}{{ badge(8, 'info') }}{% endraw %}</pre>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Inverse
-                            </td>
-                            <td>
-                                {{ badge(10, 'inverse') }}
-                            </td>
-                            <td>
-                                <pre class="prettyprint">{% raw %}{{ badge(10, 'inverse') }}{% endraw %}</pre>
+                                <pre class="prettyprint">{% raw %}{{ badge(42) }}{% endraw %}</pre>
                             </td>
                         </tr>
                     </tbody>
@@ -267,6 +208,17 @@
                         </tr>
                         <tr>
                             <td>
+                                Primary
+                            </td>
+                            <td>
+                                {{ label('Primary', 'primary') }}
+                            </td>
+                            <td>
+                                <pre class="prettyprint">{% raw %}{{ label('Primary', 'primary') }}{% endraw %}</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
                                 Success
                             </td>
                             <td>
@@ -274,28 +226,6 @@
                             </td>
                             <td>
                                 <pre class="prettyprint">{% raw %}{{ label('Success', 'success') }}{% endraw %}</pre>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Warning
-                            </td>
-                            <td>
-                                {{ label('Warning','warning') }}
-                            </td>
-                            <td>
-                                <pre class="prettyprint">{% raw %}{{ label('Warning','warning') }}{% endraw %}</pre>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Important
-                            </td>
-                            <td>
-                                {{ label('Important', 'important') }}
-                            </td>
-                            <td>
-                                <pre class="prettyprint">{% raw %}{{ label('Important', 'important') }}{% endraw %}</pre>
                             </td>
                         </tr>
                         <tr>
@@ -311,13 +241,24 @@
                         </tr>
                         <tr>
                             <td>
-                                Inverse
+                                Warning
                             </td>
                             <td>
-                                {{ label('Inverse', 'inverse') }}
+                                {{ label('Warning','warning') }}
                             </td>
                             <td>
-                                <pre class="prettyprint">{% raw %}{{ label('Inverse', 'inverse') }}{% endraw %}</pre>
+                                <pre class="prettyprint">{% raw %}{{ label('Warning','warning') }}{% endraw %}</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Danger
+                            </td>
+                            <td>
+                                {{ label('Danger', 'danger') }}
+                            </td>
+                            <td>
+                                <pre class="prettyprint">{% raw %}{{ label('Danger', 'danger') }}{% endraw %}</pre>
                             </td>
                         </tr>
                     </tbody>
