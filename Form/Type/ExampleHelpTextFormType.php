@@ -8,14 +8,14 @@ class ExampleHelpTextFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder/*
+        $builder
             ->add('textfield_block', 'text', array(
                 'label' => "Block Label name",
                 'help_block' => 'Block help text, can inlude <strong>HTML formatting</strong>',
                 'attr' => array(
                     'placeholder' => "Some text",
                 )
-            ))*/
+            ))
             ->add('textfield_label', 'text', array(
                 'label' => "Label help",
                 'help_label' => 'Label help text',
@@ -23,15 +23,27 @@ class ExampleHelpTextFormType extends AbstractType
                     'placeholder' => "Some text",
                 )
             ))
-            ->add('textfield_label_tootltip', 'text', array(
+            ->add('textfield_label_tooltip', 'text', array(
                 'label' => "Label tooltip help",
                 'help_label_tooltip' => array(
-                    'title' => 'Label tooltip text'
+                    'title' => 'Label tooltip text',
                 ),
                 'attr' => array(
                     'placeholder' => "Some text",
                 )
             ))
+            ->add('textfield_label_tooltip_noicon', 'text', array(
+                'label' => "Label tooltip help",
+                'help_label_tooltip' => array(
+                    'title' => 'Label tooltip text',
+                    'text' => 'help?',
+                    'icon' => false,
+                ),
+                'attr' => array(
+                    'placeholder' => "Some text",
+                )
+            ))
+            
             ->add('textfield_label_popover', 'text', array(
                 'label' => "Label popover help",
                 'help_label_popover' => array(
@@ -47,7 +59,7 @@ class ExampleHelpTextFormType extends AbstractType
                 'help_label_popover' => array(
                     'title' => 'Label popover title to the right',
                     'placement' => 'right',
-                    'icon' => 'icon-ok-sign',
+                    'icon' => 'ok-sign',
                     'content' => 'Content for popover help, can include <strong>HTML</strong>'
                 ),
                 'attr' => array(
@@ -62,6 +74,17 @@ class ExampleHelpTextFormType extends AbstractType
                     'title' => 'help tooltip text'
                 ),
                 'help_label_popover' => array(
+                    'title' => 'help popover text',
+                    'content' => 'beautiful, isn\'t it?'
+                ),
+                'attr' => array(
+                    'placeholder' => "Some text",
+                )
+            ))
+            
+            ->add('textfield_wiget_help', 'text', array(
+                'label' => "Help right of widget",
+                'help_widget_popover' => array(
                     'title' => 'help popover text',
                     'content' => 'beautiful, isn\'t it?'
                 ),
