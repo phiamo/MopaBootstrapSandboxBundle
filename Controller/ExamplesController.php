@@ -134,6 +134,8 @@ class ExamplesController extends Controller
     */
     public function collectionsAction(Request $request)
     {
+        $this->get('twig')->addExtension(new \Twig_Extension_Debug);
+
         $form = $this->createForm($formType = new ExampleCollectionsFormType());
         $form->setData(array(
             "email_collection" => array(

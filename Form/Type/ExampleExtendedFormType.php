@@ -19,6 +19,7 @@ class ExampleExtendedFormType extends AbstractType
             ))
             ->add('textfield2', 'text', array(
                 'label_render' => false,
+                'horizontal_label_class' => 'col-lg-offset-3',
                 'horizontal_input_wrapper_class' => 'col-lg-6',
                 'attr' => array(
                     'placeholder' => 'col-lg-6',
@@ -26,6 +27,7 @@ class ExampleExtendedFormType extends AbstractType
             ))
             ->add('textfield3', 'text', array(
                 'label_render' => false,
+                'horizontal_label_class' => 'col-lg-offset-3',
                 'horizontal_input_wrapper_class' => 'col-lg-9',
                 'attr' => array(
                     'placeholder' => 'col-lg-9',
@@ -34,16 +36,19 @@ class ExampleExtendedFormType extends AbstractType
             ->add('select1', 'choice', array(
                 'label_render'        => false,
                 'choices'      => array('1' => 'one', '2' => 'two'),
+                'horizontal_label_class' => 'col-lg-offset-3',
                 'horizontal_input_wrapper_class' => 'col-lg-4',
             ))
             ->add('select2', 'choice', array(
                 'label_render'        => false,
                 'choices'      => array('1' => 'one', '2' => 'two'),
+                'horizontal_label_class' => 'col-lg-offset-3',
                 'horizontal_input_wrapper_class' => 'col-lg-6',
             ))
             ->add('select3', 'choice', array(
                 'label_render'        => false,
                 'choices'      => array('1' => 'one', '2' => 'two'),
+                'horizontal_label_class' => 'col-lg-offset-3',
                 'horizontal_input_wrapper_class' => 'col-lg-9',
             ))
             ->add('Prepended_Text', 'text', array(

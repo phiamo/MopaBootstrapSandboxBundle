@@ -10,10 +10,17 @@ class ExampleDateTimeTest extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-                ->add('name', null, array('label' => 'Name Label'))
-
-                ->add('start', null, array('label' => 'Start Label'))
-                ->add('end', null, array('label' => 'End Label'))
+                ->add('name', null, array(
+                    'label' => 'Name Label',
+                ))
+                ->add('start', null, array(
+                    'label' => 'Start Label',
+                    'horizontal_input_wrapper_class' => 'col-lg-2'
+                ))
+                ->add('end', null, array(
+                    'label' => 'End Label',
+                    'horizontal_input_wrapper_class' => 'col-lg-2'
+                ))
         ;
     }
 

@@ -9,7 +9,7 @@
         <fieldset>
             <legend>Example extended forms via view</legend>
             {{ form_row(form.textfield1, {'horizontal_input_wrapper_class': 'col-lg-4', 'attr': {'placeholder': 'col-lg-4'}}) }}
-            {{ form_row(form.textfield2, {'horizontal_input_wrapper_class': 'col-lg-6', 'attr': {'placeholder': 'col-lg-6'}}) }}
+            {{ form_row(form.textfield2, {'horizontal_input_wrapper_class': 'col-lg-6', 'horizontal_label_class': 'col-lg-offset-3', 'attr': {'placeholder': 'col-lg-6'}}) }}
             {{ form_row(form.textfield3, {'horizontal_input_wrapper_class': 'col-lg-9', 'attr': {'placeholder': 'col-lg-9'}}) }}
             {{ form_row(form.select1, {'horizontal_input_wrapper_class': 'col-lg-4'}) }}
             {{ form_row(form.select2, {'horizontal_input_wrapper_class': 'col-lg-6'}) }}
