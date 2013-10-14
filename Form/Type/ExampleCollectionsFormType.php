@@ -8,7 +8,7 @@ class ExampleCollectionsFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder
+        $builder/*
             ->add('email_collection','collection', array(
                 'type' => 'email',
                 'allow_add' => true,
@@ -22,7 +22,7 @@ class ExampleCollectionsFormType extends AbstractType
                     'widget_remove_btn' => array('label' => "remove now", 'attr' => array('class' => 'btn')),
                     'attr' => array('class' => 'input-large'),
                 )
-            ))
+            ))/*
             ->add('nice_email_collection','collection', array(
                 'type' => 'email',
                 'allow_add' => true,
@@ -38,7 +38,7 @@ class ExampleCollectionsFormType extends AbstractType
                         'text' => '@',
                     ),
                 )
-            ))
+            ))*/
             ->add('dates_collection','collection', array(
                 'type' => new ExampleDateFormType(),
                 'allow_add' => true,
@@ -47,7 +47,7 @@ class ExampleCollectionsFormType extends AbstractType
                 'widget_add_btn' => array('label' => "add date"),
                 'show_legend' => false, // dont show another legend of subform
                 'options' => array(
-                    'widget_remove_btn' => array('label' => "remove this", "icon" => "pencil", 'attr' => array('class' => 'btn')),
+                    'widget_remove_btn' => array('label' => "remove this", "icon" => "pencil", 'attr' => array('class' => 'btn btn-danger')),
                     'widget_form_group' => false
               )
             ))
