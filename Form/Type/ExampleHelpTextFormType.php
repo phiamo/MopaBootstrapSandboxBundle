@@ -8,21 +8,14 @@ class ExampleHelpTextFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder
-            ->add('textfield_inline', 'text', array(
-                'label' => "Inline Label name",
-                'help_inline' => 'Inline help text!',
-                'attr' => array(
-                    'placeholder' => "Some text",
-                )
-            ))
+        $builder/*
             ->add('textfield_block', 'text', array(
                 'label' => "Block Label name",
                 'help_block' => 'Block help text, can inlude <strong>HTML formatting</strong>',
                 'attr' => array(
                     'placeholder' => "Some text",
                 )
-            ))
+            ))*/
             ->add('textfield_label', 'text', array(
                 'label' => "Label help",
                 'help_label' => 'Label help text',
@@ -63,7 +56,6 @@ class ExampleHelpTextFormType extends AbstractType
             ))
             ->add('textfield_combined', 'text', array(
                 'label' => "Combined label",
-                'help_inline' => 'inline help',
                 'help_block' => 'block help',
                 'help_label' => 'label help',
                 'help_label_tooltip' => array(

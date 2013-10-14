@@ -19,7 +19,7 @@ class ExampleHorizontalFormType extends AbstractType
             ))
             ->add('Checkboxes', 'choice', array(
                 'label'        => 'Checkbox',
-                'help_inline'  => 'Choice widget, expanded and multiple',
+                'help_block'  => 'Choice widget, expanded and multiple',
                 'multiple'     => true,
                 'expanded'     => true,
                 'choices'      => array('1' => "Option one is this and that—be sure to include why it's great"),
@@ -48,7 +48,7 @@ class ExampleHorizontalFormType extends AbstractType
             ->add('File', 'file', array(
             ))
             ->add('Textarea', 'textarea', array(
-                'help_inline' => "Some inline help",
+                'help_block' => "Some inline help",
                 'attr'  => array(
                     'rows'  => 3
                 )

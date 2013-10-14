@@ -11,7 +11,7 @@ class ExampleFormsType extends AbstractType
         $builder
             ->add('textfield', 'text', array(
                 'label' => "Label name",
-                'help_inline' => 'Associated help text!',
+                'help_block' => 'Associated help text!',
                 'attr' => array(
                     'placeholder' => "Some text",
                 )
