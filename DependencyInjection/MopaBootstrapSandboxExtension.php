@@ -16,7 +16,6 @@ class MopaBootstrapSandboxExtension extends Extension
         $loader->load('services.xml');
         $yamlloader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config/examples'));
         $yamlloader->load("example_menu.yml");
-        $yamlloader->load("example_navbar.yml");
     }
     public function getAlias()
     {

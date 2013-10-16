@@ -26,7 +26,15 @@
 {% block container_class %}container{% endblock container_class %}
 
 {% block navbar %}
-{{ mopa_bootstrap_navbar('sandboxFrontendNavbar') }}
+{% embed '@MopaBootstrap/Navbar/navbar.html.twig' with { fixedTop: true, inverse: true } %}
+    {% block brand %}
+        <a class="brand" href="{{ path('_welcome') }}">Mopa Bootstrap</a>
+    {% endblock %}
+    {% block menu %}
+        {{ mopa_bootstrap_menu('MopaBootstrapSandboxBundle:Builder:createMainMenu') }}
+        {{ mopa_bootstrap_menu('exampledropdown') }}
+    {% endblock %}
+{% endembed %}
 {% endblock navbar %}
 
 {% block body %}

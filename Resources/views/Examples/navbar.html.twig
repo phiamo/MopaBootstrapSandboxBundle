@@ -10,8 +10,13 @@
         </h1>
         <p class="lead">Providing programatic ways to create Navbars and Subnavigations, beeing responsive and if wanted also sticky while scrolling.</p>
         {% block subnavbar %}
-        {{ mopa_bootstrap_navbar('sandboxNavbarsSubNavbar') }}
+            {% embed '@MopaBootstrap/Navbar/subnavbar.html.twig' %}
+                {% block menu %}
+                    {{ mopa_bootstrap_menu('MopaBootstrapSandboxBundle:Builder:createNavbarsSubnavMenu') }}
+                {% endblock %}
+            {% endembed %}
         {% endblock subnavbar %}
+        
     </div>
 {% endblock page_header %}
 
@@ -25,8 +30,6 @@
         <div class="page-header">
             <h1>Navbars:</h1>
         </div>
-        <p>Creating and using Navbars is quite easy:</p>
-        <pre class="prettyprint">{{ fileSource('@MopaBootstrapSandboxBundle/Resources/config/examples/example_navbar.yml') }}</pre>
     </section>
         <section id="template">
         <div class="page-header">
@@ -35,10 +38,17 @@
         <p>And to show the bar in your template just use</p>
         <pre class="prettyprint">
 {%- raw -%}
-{% block navbar %}
-        {{ mopa_bootstrap_navbar('frontendSandboxNavbar') }}
-{% endblock navbar %}
+{% embed '@MopaBootstrap/Navbar/navbar.html.twig' with { fixedTop: true } %}
+    {% block brand %}
+        &lt;a class="navbar-brand" href="#"&gt;Acme&lt;/a&gt;
+    {% endblock %}
+
+    {% block menu %}
+        {{ mopa_bootstrap_navbar('AcmeBundle:Builder:mainMenu') }}
+    {% endblock %}
+{% endembed %}
 {%- endraw -%}
+
         </pre>
     </section>
     <section  id="menus">
