@@ -8,7 +8,7 @@
         <h1>The Navbars made easy
             <small>Reusable navigation built into</small>
         </h1>
-        <p class="lead">Providing programatic ways to create Navbars and Subnavigations, beeing responsive and if wanted also sticky while scrolling.</p>
+        <p class="lead">Providing programatic ways to create Menus, Navbars and Subnavigations, beeing responsive and if wanted also sticky while scrolling.</p>
 
         {% block subnavbar %}
             {% embed '@MopaBootstrap/Navbar/subnavbar.html.twig' %}
@@ -25,18 +25,55 @@
 {% endblock body_tag %}
 
 {% block content %}
-<div class="span12">
-    <section  id="navbars">
+<div class="col-lg-6">
+    <section  id="menus">
         <div class="page-header">
-            <h1>Navbars:</h1>
+            <h1>Menus:</h1>
+            <p>Menus provides serveral ways to get Bootstrap 3 Menus</p>
+            <p>You need to enable the extension by addint to your config.yml:</p>
+            <pre class="prettyprint">mopa_bootstrap:
+    menu': ~
+            </pre>
+            <p>Then you can use the mopa_boostrap_menu twig function:</p>
+
+<pre class="prettyprint">
+{%- raw -%}
+{{ mopa_bootstrap_menu('mymenu') }}
+{%- endraw -%}
+</pre>
+<p>this will add everything necessary to show menu in the navbar</p>
+<pre class="prettyprint">
+{%- raw -%}
+{{ mopa_bootstrap_menu('mymenu', {'automenu': 'navbar'}) }}
+{%- endraw -%}
+</pre>
+<p>this will add everything necessary to show menu as subnavbar</p>
+<pre class="prettyprint">
+{%- raw -%}
+{{ mopa_bootstrap_menu('mymenu', {'automenu': 'pills'}) }}
+{%- endraw -%}
+</pre>
+<p>this will add everything necessary to show menu as sidebar</p>
+<pre class="prettyprint">
+{%- raw -%}
+{{ mopa_bootstrap_menu('mymenu', {'automenu': 'pills', 'stacked':true}) }}
+{%- endraw -%}
+</pre>
+<p>Will add everything to show a list group</p>
+<pre class="prettyprint">
+{%- raw -%}
+{{ mopa_bootstrap_menu('mymenu', {'automenu': 'list-group', 'autochilds':true}) }}
+{%- endraw -%}
+</pre>
+
         </div>
     </section>
 
     <section id="template">
         <div class="page-header">
-            <h1>Template:</h1>
+            <h1>Navbars and its Template:</h1>
         </div>
-        <p>And to show the bar in your template just use</p>
+        <p>And to show the Navbar in your template just use</p>
         <pre class="prettyprint">
 {%- raw -%}
 {% embed '@MopaBootstrap/Navbar/navbar.html.twig' with { fixedTop: true } %}
@@ -51,12 +88,10 @@
 {%- endraw -%}
         </pre>
     </section>
-    <section  id="menus">
-        <div class="page-header">
-            <h1>Menus:</h1>
-        </div>
+</div>
+<div class="col-lg-6">
+
         <p>The menues are created Knpmenu Style and the AbstractNavbarMenuBuilder helps you adding the correct styles to e.g. Dropdown menues:</p>
         <pre class="prettyprint">{{ fileSource('@MopaBootstrapSandboxBundle/Menu/Builder.php') }}</pre>
-    </section>
 </div>
 {% endblock content %}
