@@ -1,4 +1,5 @@
 <?php
+
 namespace Mopa\Bundle\BootstrapSandboxBundle\Controller;
 
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleChoiceFormType;
@@ -21,24 +22,27 @@ use Symfony\Component\HttpKernel\Kernel;
 class ExamplesController extends Controller
 {
     /**
-    * @Route("/mopa/bootstrap", name="mopa_bootstrap_welcome")
-    * @Template
-    */
+     * @Route("/mopa/bootstrap", name="mopa_bootstrap_welcome")
+     * @Template
+     */
     public function indexAction(Request $request)
     {
         return array("version" => Kernel::VERSION);
-    }    /**
-    * @Route("/mopa/bootstrap/layout", name="mopa_bootstrap_layout_example")
-    * @Template
-    */
+    }
+
+    /**
+     * @Route("/mopa/bootstrap/layout", name="mopa_bootstrap_layout_example")
+     * @Template
+     */
     public function layoutAction(Request $request)
     {
         return array();
     }
+
     /**
-    * @Route("/mopa/bootstrap/forms/embeddedTypes", name="mopa_bootstrap_forms_embeddedtype")
+     * @Route("/mopa/bootstrap/forms/embeddedTypes", name="mopa_bootstrap_forms_embeddedtype")
      * @Template
-    */
+     */
     public function embeddedTypeAction(Request $request)
     {
         $dateTime = new \Mopa\Bundle\BootstrapSandboxBundle\Entity\DateTimeTest();
@@ -61,10 +65,11 @@ class ExamplesController extends Controller
                 'entity' => $dateTime
         );
     }
+
     /**
-    * @Route("/mopa/bootstrap/forms/extended", name="mopa_bootstrap_forms_extended")
+     * @Route("/mopa/bootstrap/forms/extended", name="mopa_bootstrap_forms_extended")
      * @Template
-    */
+     */
     public function extendedAction(Request $request)
     {
         $form = $this->createForm($formType = new ExampleExtendedFormType());
@@ -74,10 +79,11 @@ class ExamplesController extends Controller
             'formType' => $formType
         );
     }
+
     /**
-    * @Route("/mopa/bootstrap/forms/extended_view", name="mopa_bootstrap_forms_view_extended")
+     * @Route("/mopa/bootstrap/forms/extended_view", name="mopa_bootstrap_forms_view_extended")
      * @Template
-    */
+     */
     public function extended_viewAction(Request $request)
     {
         $form = $this->createForm($formType = new ExampleExtendedViewFormType());
@@ -87,10 +93,11 @@ class ExamplesController extends Controller
             'formType' => $formType
         );
     }
+
     /**
-    * @Route("/mopa/bootstrap/forms/errors", name="mopa_bootstrap_forms_errors")
+     * @Route("/mopa/bootstrap/forms/errors", name="mopa_bootstrap_forms_errors")
      * @Template
-    */
+     */
     public function errorsAction(Request $request)
     {
         $form = $this->createForm($formType = new ExampleErrorsFormType());
@@ -106,6 +113,7 @@ class ExamplesController extends Controller
             'formType' => $formType,
         );
     }
+
     /**
      * @Route("/mopa/bootstrap/forms/help_texts", name="mopa_bootstrap_forms_helptexts")
      * @Template
@@ -119,10 +127,11 @@ class ExamplesController extends Controller
             'formType' => $formType
         );
     }
+
     /**
-    * @Route("/mopa/bootstrap/forms/collections", name="mopa_bootstrap_forms_collections")
-    * @Template
-    */
+     * @Route("/mopa/bootstrap/forms/collections", name="mopa_bootstrap_forms_collections")
+     * @Template
+     */
     public function collectionsAction(Request $request)
     {
         $this->get('twig')->addExtension(new \Twig_Extension_Debug);
@@ -148,10 +157,11 @@ class ExamplesController extends Controller
             'formType' => $formType
         );
     }
+
     /**
-    * @Route("/mopa/bootstrap/forms/horizontal", name="mopa_bootstrap_forms_horizontal")
-    * @Template
-    */
+     * @Route("/mopa/bootstrap/forms/horizontal", name="mopa_bootstrap_forms_horizontal")
+     * @Template
+     */
     public function horizontalAction(Request $request)
     {
         $form = $this->createForm($formType = new ExampleHorizontalFormType());
@@ -161,10 +171,11 @@ class ExamplesController extends Controller
             'formType' => $formType
         );
     }
+
     /**
-    * @Route("/mopa/bootstrap/forms/examples", name="mopa_bootstrap_forms_examples")
-    * @Template
-    */
+     * @Route("/mopa/bootstrap/forms/examples", name="mopa_bootstrap_forms_examples")
+     * @Template
+     */
     public function formsAction(Request $request)
     {
         $form = $this->createForm($formType = new ExampleFormsType());
@@ -180,9 +191,9 @@ class ExamplesController extends Controller
     }
 
     /**
-    * @Route("/mopa/bootstrap/forms/choice", name="mopa_bootstrap_forms_choices")
+     * @Route("/mopa/bootstrap/forms/choice", name="mopa_bootstrap_forms_choices")
      * @Template
-    */
+     */
     public function choicesAction(Request $request)
     {
         $form = $this->createForm($formType = new ExampleChoiceFormType());
@@ -192,26 +203,29 @@ class ExamplesController extends Controller
             'formType' => $formType
         );
     }
+
     /**
-    * @Route("/mopa/bootstrap/navbar", name="mopa_bootstrap_navbar")
-    * @Template
-    */
+     * @Route("/mopa/bootstrap/navbar", name="mopa_bootstrap_navbar")
+     * @Template
+     */
     public function navbarAction(Request $request)
     {
         return array();
     }
+
     /**
-    * @Route("/mopa/bootstrap/components", name="mopa_bootstrap_components")
-    * @Template
-    */
+     * @Route("/mopa/bootstrap/components", name="mopa_bootstrap_components")
+     * @Template
+     */
     public function componentsAction(Request $request)
     {
         return array();
     }
+
     /**
-    * @Route("/mopa/bootstrap/components/setflashs", name="mopa_bootstrap_components_setflashs")
-    * @Template
-    */
+     * @Route("/mopa/bootstrap/components/setflashs", name="mopa_bootstrap_components_setflashs")
+     * @Template
+     */
     public function componentsSetflashsAction(Request $request)
     {
         $this->get('session')->getFlashBag()->add('alert', 'Your changes were saved!');
