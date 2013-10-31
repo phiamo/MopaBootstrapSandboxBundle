@@ -7,16 +7,18 @@ use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\Collection;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+
 class ExampleErrorsFormType extends AbstractType
 {
     private $formErrors;
-    
+
     public function __construct($formErrors = false) {
         $this->formErrors = $formErrors;
     }
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+
             ->add('textfield1', 'text', array(
                 'label' => 'Form sizes',
                 'constraints' =>  new Length(array('min' => 5)),
@@ -25,15 +27,7 @@ class ExampleErrorsFormType extends AbstractType
                     'placeholder' => 'input-mini',
                 )
             ))
-            ->add('textfield2', 'text', array(
-                'label_render' => false,
-                'constraints' =>  new Email(array('message' => 'Invalid email address')),
-                'attr' => array(
-                    'class' => 'input-medium',
-                    'placeholder' => 'input-medium',
-                )
-            ))
-            ->add('textfield3', 'text', array(
+            ->add('textarea', 'textarea', array(
                 'label_render' => false,
                 'error_type' => "block",
                 'constraints' =>  new Email(array('message' => 'Annother Invalid email address')),
@@ -41,6 +35,10 @@ class ExampleErrorsFormType extends AbstractType
                     'class' => 'input-large',
                     'placeholder' => 'input-large',
                 )
+            ))
+            ->add("subform", new ExampleExtendedFormType(), array(
+                    "label_render" => false,
+                    "widget_form_group" => false,
             ))
         ;
     }

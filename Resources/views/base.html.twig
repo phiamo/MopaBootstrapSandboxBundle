@@ -1,5 +1,25 @@
 {% extends 'MopaBootstrapBundle::base' ~ theme_type|default('')~ '.html.twig' %}
 
+{% block head_style %}
+{% stylesheets
+       '@MopaBootstrapSandboxBundle/Resources/public/less/mopabootstrapsandboxbundle.less'
+       '@MopaBootstrapSandboxBundle/Resources/public/css/prettify.css'
+       '@MopaBootstrapBundle/Resources/public/bootstrap/assets/css/docs.css'
+       '@MopaBootstrapBundle/Resources/public/less/mopabootstrapbundle.less'
+%}
+<link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+{% endstylesheets %}
+{% endblock head_style %}
+
+{% block head_script %}
+{% javascripts
+    'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'
+%}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% endblock head_script %}
+    
+    
 {% block head_bottom %}
     {{ parent() }}
     <script type="text/javascript">
@@ -13,17 +33,6 @@
       })();
     </script>
 {% endblock head_bottom %}
-
-{% block head_style %}
-{% stylesheets
-       '@MopaBootstrapSandboxBundle/Resources/public/less/mopabootstrapsandboxbundle.less'
-       '@MopaBootstrapSandboxBundle/Resources/public/css/prettify.css'
-       '@MopaBootstrapBundle/Resources/public/bootstrap/docs-assets/css/docs.css'
-       '@MopaBootstrapBundle/Resources/public/less/mopabootstrapbundle.less'
-%}
-<link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
-{% endstylesheets %}
-{% endblock head_style %}
 
 {% block navbar %}
 {% embed '@MopaBootstrap/Navbar/navbar.html.twig' with { fixedTop: true, inverse: true } %}

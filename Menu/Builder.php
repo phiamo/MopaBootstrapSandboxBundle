@@ -40,7 +40,7 @@ class Builder
         $dropdown->addChild('Collections Fields', array('route' => 'mopa_bootstrap_forms_collections'));
         $dropdown->addChild('Form Tabs', array('route' => 'mopa_bootstrap_forms_tabs'));
 
-        $menu->addChild('Navbars', array('route' => 'mopa_bootstrap_navbar'));
+        $menu->addChild('Menus & Navbars', array('route' => 'mopa_bootstrap_navbar'));
         $menu->addChild('Macros for components', array('route' => 'mopa_bootstrap_components'));
 
         return $menu;
@@ -53,9 +53,9 @@ class Builder
         ));
 
         $menu->addChild('Top', array('uri' => '#top'));
+        $menu->addChild('Menus', array('uri' => '#menus'));
         $menu->addChild('Navbars', array('uri' => '#navbars'));
         $menu->addChild('Template', array('uri' => '#template'));
-        $menu->addChild('Menus', array('uri' => '#menus'));
         // ... add more children
         return $menu;
     }
