@@ -65,7 +65,6 @@ config.yml:
 imports:
     - { resource: @MopaBootstrapSandboxBundle/Resources/config/themes.yml }
     - { resource: @MopaBootstrapSandboxBundle/Resources/config/examples/example_menu.yml }
-    - { resource: @MopaBootstrapSandboxBundle/Resources/config/examples/example_navbar.yml }
 
 # Assetic Configuration
 assetic:
