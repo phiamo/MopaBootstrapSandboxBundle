@@ -11,6 +11,10 @@
 {% endstylesheets %}
 {% endblock head_style %}
 
+{% block body_tag %}
+<body data-spy="scroll" data-target="#navbar-example">
+{% endblock body_tag %}
+
 {% block head_script %}
 {% javascripts
     'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'
@@ -18,8 +22,8 @@
     <script type="text/javascript" src="{{ asset_url }}"></script>
 {% endjavascripts %}
 {% endblock head_script %}
-    
-    
+
+
 {% block head_bottom %}
     {{ parent() }}
     <script type="text/javascript">
@@ -35,14 +39,14 @@
 {% endblock head_bottom %}
 
 {% block navbar %}
-{% embed '@MopaBootstrap/Navbar/navbar.html.twig' with { fixedTop: true, inverse: true } %}
+{% embed '@MopaBootstrap/Navbar/navbar.html.twig' with { fixedTop: true, inverse: true, id: 'navbar-example' } %}
     {% block brand %}
         <a class="navbar-brand" href="{{ path('_welcome') }}">Mopa Bootstrap</a>
     {% endblock %}
 
     {% block menu %}
         {{ mopa_bootstrap_menu('MopaBootstrapSandboxBundle:Builder:createMainMenu') }}
-        {{ mopa_bootstrap_menu('exampledropdown') }}
+        {{ mopa_bootstrap_menu('exampledropdown', {'automenu': 'navbar', 'pull-right': true}) }}
     {% endblock %}
 {% endembed %}
 {% endblock navbar %}
