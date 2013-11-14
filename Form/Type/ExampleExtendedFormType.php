@@ -58,6 +58,23 @@ class ExampleExtendedFormType extends AbstractType
                 'horizontal_input_wrapper_class' => 'col-lg-9',
                 'constraints' =>  new NotBlank(),
             ))
+            ->add('labeled_textarea', 'textarea', array(
+                'error_type' => "block",
+                'constraints' =>  new NotBlank(),
+                'attr' => array(
+                    'class' => 'input-large',
+                    'placeholder' => 'input-large',
+                )
+            ))
+            ->add('textarea', 'textarea', array(
+                'label_render' => false,
+                'error_type' => "block",
+                'constraints' =>  new NotBlank(),
+                'attr' => array(
+                    'class' => 'input-large',
+                    'placeholder' => 'input-large',
+                )
+            ))
             ->add('Prepended_Text', 'text', array(
                 'widget_addon_prepend' => array(
                     'text' => '@'

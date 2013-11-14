@@ -3,9 +3,7 @@ namespace Mopa\Bundle\BootstrapSandboxBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Validator\Constraints\Email;
-use Symfony\Component\Validator\Constraints\Length;
-use Symfony\Component\Validator\Constraints\Collection;
+use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class ExampleErrorsFormType extends AbstractType
@@ -21,7 +19,7 @@ class ExampleErrorsFormType extends AbstractType
 
             ->add('textfield1', 'text', array(
                 'label' => 'Form sizes',
-                'constraints' =>  new Length(array('min' => 5)),
+                'constraints' =>  new Assert\Length(array('min' => 5)),
                 'attr' => array(
                     'class' => 'input-mini',
                     'placeholder' => 'input-mini',
@@ -30,7 +28,7 @@ class ExampleErrorsFormType extends AbstractType
             ->add('textarea', 'textarea', array(
                 'label_render' => false,
                 'error_type' => "block",
-                'constraints' =>  new Email(array('message' => 'Annother Invalid email address')),
+                'constraints' =>  new Assert\Email(array('message' => 'Annother Invalid Message address')),
                 'attr' => array(
                     'class' => 'input-large',
                     'placeholder' => 'input-large',
