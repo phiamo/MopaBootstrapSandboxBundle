@@ -37,6 +37,8 @@ class ExampleErrorsFormType extends AbstractType
             ->add("subform", new ExampleExtendedFormType(), array(
                     "label_render" => false,
                     "widget_form_group" => false,
+            		"horizontal_input_wrapper_class" => "",
+            		"horizontal_label_offset_class" => "",
             ))
         ;
     }
