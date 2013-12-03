@@ -52,7 +52,7 @@ class MenuBuilder
         ));
 
         $tools->addChild('Symfony', array('uri' => 'http://www.symfony.com'));
-        $tools->addChild('bootstrap', array('uri' => 'http://twitter.github.com/bootstrap/'));
+        $tools->addChild('bootstrap', array('uri' => 'https://github.com/twbs/bootstrap'));
         $tools->addChild('node.js', array('uri' => 'http://nodejs.org/'));
         $tools->addChild('less', array('uri' => 'http://lesscss.org/'));
 
