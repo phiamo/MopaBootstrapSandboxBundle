@@ -53,6 +53,12 @@ class ExampleHorizontalFormType extends AbstractType
                     'rows'  => 3
                 )
             ))
+            ->add('buttons', 'form_actions', array(
+                    'buttons' => array(
+                        'save' => array('type' => 'submit', 'options' => array('label' => 'Save changes')),
+                        'cancel' => array('type' => 'button'),
+                    )
+                ))
         ;
     }
     public function setDefaultOptions(OptionsResolverInterface $resolver)
