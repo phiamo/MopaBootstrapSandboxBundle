@@ -41,7 +41,7 @@
 {% block navbar %}
 {% embed '@MopaBootstrap/Navbar/navbar.html.twig' with { fixedTop: true, inverse: true, id: 'navbar-example' } %}
     {% block brand %}
-        <a class="navbar-brand" href="{{ path('_welcome') }}">Mopa Bootstrap</a>
+        <a class="navbar-brand" href="{{ path('mopa_bootstrap_welcome') }}">Mopa Bootstrap</a>
     {% endblock %}
 
     {% block menu %}
