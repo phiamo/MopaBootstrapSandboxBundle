@@ -26,6 +26,7 @@ class ExampleCollectionsFormType extends AbstractType
                 'allow_delete' => true, // should render default button, change text with widget_remove_btn
                 'prototype' => true,
                 'widget_add_btn' => array('label' => "add email"),
+                'widget_remove_btn' => array('label' => "remove email"),
                 'show_legend' => false, // dont show another legend of subform
                 'options' => array( // options for collection fields
                     'label_render' => false,
