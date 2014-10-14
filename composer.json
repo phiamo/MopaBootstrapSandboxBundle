@@ -26,6 +26,9 @@
         "knplabs/knp-menu-bundle": "2.0.x-dev",
         "liip/theme-bundle": "dev-master"
     },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "3.0.x-dev"
