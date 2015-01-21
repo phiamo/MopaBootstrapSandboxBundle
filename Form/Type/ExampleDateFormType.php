@@ -13,18 +13,15 @@ class ExampleDateFormType extends AbstractType
                 'attr' => array('class' => 'startdate span1'),
                 'widget' => 'choice',
                 'format' => 'dd MM yyyy',
-                'horizontal_input_wrapper_class' => 'col-lg-3',
             ))
             ->add('endAt','date', array(
                 'attr' => array('class' => 'enddate span2'),
                 'widget' => 'choice',
                 'format' => 'dd MM yyyy',
-                'horizontal_input_wrapper_class' => 'col-lg-3',
             ))
             ->add('special','checkbox', array(
                 'label'     => 'Special?',
                 'required'  => false,
-                'horizontal_input_wrapper_class' => 'col-lg-1',
             ))
             ;
     }
