@@ -36,6 +36,30 @@ class ExampleCollectionsFormType extends AbstractType
                     'horizontal_input_wrapper_class' => "col-lg-8",
                 )
             ))
+            ->add('nice_email_collection_with_options','collection', array(
+                'type' => 'email',
+                'allow_add' => true,
+                'allow_delete' => true, // should render default button, change text with widget_remove_btn
+                'prototype' => true,
+                'widget_add_btn' => array('label' => "add email"),
+                'show_legend' => false, // dont show another legend of subform
+                'horizontal_wrap_children' => true,
+                'options' => array( // options for collection fields
+                    'label_render' => false,
+                    'widget_addon_prepend' => array(
+                        'text' => '@',
+                    ),
+                    'widget_remove_btn' => array(
+                        'label' => "remove",
+                        'horizontal_wrapper_div' => array(
+                            'class' => "col-lg-4"
+                        ),
+                        'wrapper_div' => false,
+                    ),
+                    'horizontal_label_offset_class' => "",
+                    'horizontal_input_wrapper_class' => "col-lg-8",
+                )
+            ))
             ->add('dates_collection','collection', array(
                 'type' => new ExampleDateFormType(),
                 'allow_add' => true,
