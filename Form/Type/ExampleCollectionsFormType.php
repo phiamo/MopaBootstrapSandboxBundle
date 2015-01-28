@@ -56,6 +56,7 @@ class ExampleCollectionsFormType extends AbstractType
                         ),
                         'wrapper_div' => false,
                     ),
+                    'horizontal' => true,
                     'horizontal_label_offset_class' => "",
                     'horizontal_input_wrapper_class' => "col-lg-8",
                 )
