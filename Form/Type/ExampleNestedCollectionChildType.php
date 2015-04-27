@@ -16,10 +16,11 @@ class ExampleNestedCollectionChildType extends AbstractType
     {
         $builder
             ->add(
-                'myCollection',
+                'myCollectionChild',
                 'collection',
                 [
                     'type' => 'text',
+                    'allow_add' => 'true'
                 ]
             );
     }

@@ -13,6 +13,7 @@ use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleFormsType;
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleHelpTextFormType;
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleHorizontalFormType;
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleInlineFormType;
+use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleNestedCollectionParentType;
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleSearchFormType;
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleTabsFormType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -171,6 +172,41 @@ class ExamplesController extends Controller
                 'startAt' => new \DateTime(),
                 'endAt' => new \DateTime(),
             ))
+        ));
+
+        return array(
+            'form'=>$form->createView(),
+            'formType' => $formType
+        );
+    }
+    /**
+     * @Route("/mopa/bootstrap/forms/collections/nested", name="mopa_bootstrap_forms_collections_nested")
+     * @Template
+     * @param Request $request
+     * @return array
+     */
+    public function nestedCollectionsAction(Request $request)
+    {
+        $this->get('twig')->addExtension(new \Twig_Extension_Debug);
+
+        $form = $this->createForm($formType = new ExampleNestedCollectionParentType());
+        $form->setData(array('asda'=>array(
+            "email_collection" => array(
+                "phiamo@googlemail.com",
+                "some@other.com",
+            ),
+            "nice_email_collection" => array(
+                "some@other.com",
+                "phiamo@googlemail.com",
+            ),
+            "nice_email_collection_with_options" => array(
+                "some@other.com",
+                "phiamo@googlemail.com",
+            ),
+            "dates_collection" => array(array(
+                'startAt' => new \DateTime(),
+                'endAt' => new \DateTime(),
+            )))
         ));
 
         return array(

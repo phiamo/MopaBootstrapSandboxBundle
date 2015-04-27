@@ -38,6 +38,7 @@ class Builder
         $dropdown->addChild('Help Texts', array('route' => 'mopa_bootstrap_forms_helptexts'));
         $dropdown->addChild('Choice Fields', array('route' => 'mopa_bootstrap_forms_choices'));
         $dropdown->addChild('Collections Fields', array('route' => 'mopa_bootstrap_forms_collections'));
+        $dropdown->addChild('Nested Collections', array('route' => 'mopa_bootstrap_forms_collections_nested'));
         $dropdown->addChild('Form Tabs', array('route' => 'mopa_bootstrap_forms_tabs'));
 
         $menu->addChild('Menus & Navbars', array('route' => 'mopa_bootstrap_navbar'));
