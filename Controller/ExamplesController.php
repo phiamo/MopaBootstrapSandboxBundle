@@ -146,6 +146,10 @@ class ExamplesController extends Controller
                 "some@other.com",
                 "phiamo@googlemail.com",
             ),
+            "nice_email_collection_with_options" => array(
+                "some@other.com",
+                "phiamo@googlemail.com",
+            ),
             "dates_collection" => array(array(
                 'startAt' => new \DateTime(),
                 'endAt' => new \DateTime(),
