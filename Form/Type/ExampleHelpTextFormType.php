@@ -43,7 +43,7 @@ class ExampleHelpTextFormType extends AbstractType
                     'placeholder' => "Some text",
                 )
             ))
-            
+
             ->add('textfield_label_popover', 'text', array(
                 'label' => "Label popover help",
                 'help_label_popover' => array(
@@ -81,7 +81,7 @@ class ExampleHelpTextFormType extends AbstractType
                     'placeholder' => "Some text",
                 )
             ))
-            
+
             ->add('textfield_wiget_help', 'text', array(
                 'label' => "Help right of widget",
                 'help_widget_popover' => array(

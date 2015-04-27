@@ -17,7 +17,7 @@ class ExampleFormsTypeTest extends TypeTestCase
      *
      * @dataProvider provideParametersForSubmitTest
      * @param ExampleFormsData $object
-     * @param array $data
+     * @param array            $data
      */
     public function testSubmit(ExampleFormsData $object, $data = [])
     {

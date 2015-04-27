@@ -49,12 +49,10 @@ class ExamplesController extends Controller
         $dateTimeType = new \Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleDateTimeTest();
 
         $form = $this->createForm($dateTimeType, $dateTime);
-        if ($this->getRequest()->getMethod() == 'POST')
-        {
+        if ($this->getRequest()->getMethod() == 'POST') {
             $form->bindRequest($this->getRequest());
 
-            if ($form->isValid())
-            {
+            if ($form->isValid()) {
                 // persist logic
             }
         }
@@ -108,6 +106,7 @@ class ExamplesController extends Controller
             "textarea" => "nothing",
         ));
         $form->isValid();
+
         return array(
             'form'=>$form->createView(),
             'formType' => $formType,

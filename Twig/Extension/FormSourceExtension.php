@@ -2,8 +2,8 @@
 
 namespace Mopa\Bundle\BootstrapSandboxBundle\Twig\Extension;
 
-use Symfony\Bundle\TwigBundle\Loader\FilesystemLoader;
 use Symfony\Component\HttpKernel\Config\FileLocator;
+use Twig_LoaderInterface;
 
 class FormSourceExtension extends \Twig_Extension
 {
@@ -11,7 +11,7 @@ class FormSourceExtension extends \Twig_Extension
     protected $locator;
     protected $controller;
 
-    public function __construct(FilesystemLoader $loader, FileLocator $locator)
+    public function __construct(Twig_LoaderInterface $loader, FileLocator $locator)
     {
         $this->loader = $loader;
         $this->locator = $locator;
