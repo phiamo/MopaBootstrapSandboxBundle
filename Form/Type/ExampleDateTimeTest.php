@@ -24,7 +24,6 @@ class ExampleDateTimeTest extends AbstractType
         ;
     }
 
-
     public function getName()
     {
         return 'datetime_test';

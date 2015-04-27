@@ -26,7 +26,6 @@ class DateTimeTest
      */
     private $name;
 
-
     /**
      * @var datetime $start
      *
@@ -41,13 +40,11 @@ class DateTimeTest
      */
     private $end;
 
-
     public function __construct()
     {
         $this->start = new \DateTime('now');
         $this->end = new \DateTime('+1 hour');
     }
-
 
     /**
      * Get id
@@ -67,12 +64,13 @@ class DateTimeTest
     /**
      * Set name
      *
-     * @param string $name
+     * @param  string       $name
      * @return Transmission
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
@@ -89,12 +87,13 @@ class DateTimeTest
     /**
      * Set start
      *
-     * @param datetime $start
+     * @param  datetime     $start
      * @return Transmission
      */
     public function setStart($start)
     {
         $this->start = $start;
+
         return $this;
     }
 
@@ -116,12 +115,13 @@ class DateTimeTest
     /**
      * Set end
      *
-     * @param datetime $end
+     * @param  datetime     $end
      * @return Transmission
      */
     public function setEnd($end)
     {
         $this->end = $end;
+
         return $this;
     }
 

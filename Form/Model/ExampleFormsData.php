@@ -37,7 +37,7 @@ class ExampleFormsData
     }
 
     /**
-     * @param int $checkboxesInline
+     * @param  int              $checkboxesInline
      * @return ExampleFormsData
      */
     public function setCheckboxesInline($checkboxesInline)
@@ -56,7 +56,7 @@ class ExampleFormsData
     }
 
     /**
-     * @param string $textField
+     * @param  string           $textField
      * @return ExampleFormsData
      */
     public function setTextField($textField)
