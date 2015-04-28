@@ -19,14 +19,14 @@ class ExampleNestedCollectionChildType extends AbstractType
             ->add(
                 'myCollectionChild',
                 'collection',
-                [
+                array(
                     'type' => 'text',
                     'allow_add' => 'true',
                     'label' => 'smth',
-                    'options' => [
+                    'options' => array(
                         'label' => 'smth else'
-                    ]
-                ]
+                    )
+                )
             );
     }
 

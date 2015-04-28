@@ -19,14 +19,14 @@ class ExampleNestedCollectionParentType extends AbstractType
             ->add(
                 'myCollection',
                 'collection',
-                [
+                array(
                     'type' => new ExampleNestedCollectionChildType(),
                     'allow_add' => true,
                     'label' => 'parent collection',
-                    'options' => [
+                    'options' => array(
                         'label' => 'child collection'
-                    ]
-                ]
+                    )
+                )
 
             );
     }

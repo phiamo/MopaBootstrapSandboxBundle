@@ -39,9 +39,9 @@ class ExampleFormsType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(
-            [
+            array(
                 'data_class' => 'Mopa\Bundle\BootstrapSandboxBundle\Form\Model\ExampleFormsData'
-            ]
+            )
         );
     }
 }
