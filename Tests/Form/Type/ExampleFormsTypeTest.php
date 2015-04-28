@@ -18,7 +18,7 @@ class ExampleFormsTypeTest extends AbstractDivLayoutTest
      * @param ExampleFormsData $object
      * @param array            $data
      */
-    public function testSubmit(ExampleFormsData $object, $data = [])
+    public function testSubmit(ExampleFormsData $object, $data = array())
     {
         $form = $this->factory->create(new ExampleFormsType());
         $form->submit($data);
@@ -32,11 +32,11 @@ class ExampleFormsTypeTest extends AbstractDivLayoutTest
      */
     public function provideParametersForSubmitTest()
     {
-        return [
-            [
-                'object' => new ExampleFormsData('test', [1]),
-                'data' => ['textField' => 'test', 'checkboxesInline' => [1]]
-            ]
-        ];
+        return array(
+            array(
+                'object' => new ExampleFormsData('test', array(1)),
+                'data' => array('textField' => 'test', 'checkboxesInline' => array(1))
+            )
+        );
     }
 }
