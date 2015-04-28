@@ -13,73 +13,50 @@
             <button type="reset" class="btn">Cancel</button>
         </div>
     </form>
-    <div class="row">
-        <div class="col-lg-6">
-         <h3>Button Icons</h3>
-             <p>To make use of the button icons you can either apply them in the FormType:</p>
-
-              <pre class="prettyprint">
-$builder
-    ->add('nice_email_collection','collection', array(
-        'widget_add_btn' => array(
-            'icon' => 'plus-sign',
-            'label' => 'add email'
-         ),
-    ))
-    ;
-             </pre>
-        </div>
-        <div class="col-lg-6">
-             <p>Or configure them globally:</p>
-
-              <pre class="prettyprint">
-mopa_bootstrap:
-    form:
-        collection:
-            widget_remove_btn:
-                icon: trash
-                icon_color: white
-            widget_add_btn:
-                icon: plus-sign
-             </pre>
-             <p>And if configured globally you can override them again in the FormType!</p>
-        </div>
-    </div>
 </div>
 <div class="col-lg-6">
-      <h3>Easy use of collections</h3>
-      <p>We often saw probs when using collection, so we added some code to ease the use</p>
-      <p><b>Please review your javascript includes, we provide a new <a href="https://github.com/phiamo/MopaBootstrapBundle/blob/master/Resources/public/js/mopabootstrap-collection.js">mopabootstrap-collection.js</a></b><p>
-      <p>Include it in your layout, or per page, as you like.<p>
-      <p>For an easy collection with e.g. just a bunch of mail adresses just add the collection to your form</p>
+    <div class="row">
+        <div class="col-sd-12">
+             <h3>Simple Parent Collection</h3>
 
-      <p>An example: to generate nice inputs with icons you dont write one line of html:</p>
-      <pre class="prettyprint">
-$builder
-    ->add('nice_email_collection','collection', array(
-        'type' => 'email',
-        'allow_add' => true,
-        'allow_delete' => true, // should render default button, change text with widget_remove_btn
-        'prototype' => true,
-        'widget_add_btn' => array('label' => "add email"),
-        'show_legend' => false, // dont show another legend of subform
-        'options' => array( // options for collection fields
-            'label_render' => false,
-            'widget_addon_prepend' => array(
-                'text' => '@',
-            ),
-            'horizontal_input_wrapper_class' => "col-lg-8",
-        )
-    ))
-</pre>
-<p>And in your markup you just need one line: </p>
-<pre class="prettyprint">
-{% raw %}
-      &lt;form class=&quot;form-horizontal&quot;&gt;
-        {{ form_widget(form) }}
-      &lt;/form&gt;
-{% endraw %}
-</pre>
+                  <pre class="prettyprint">
+
+        $builder
+            ->add(
+                'myCollection',
+                'collection',
+                [
+                    'type' => new ExampleNestedCollectionChildType(),
+                    'allow_add' => true,
+                    'options' => [
+                        'label' => 'first layer'
+                    ]
+                ]
+
+            );
+                 </pre>
+        </div>
+        <div class="col-sd-12">
+             <h4>And its Childform</h4>
+
+              <pre class="prettyprint">
+
+        $builder
+            ->add(
+                'myCollectionChild',
+                'collection',
+                [
+                    'type' => 'text',
+                    'allow_add' => 'true',
+                    'label' => 'smth',
+                    'options' => [
+                        'label' => 'smth else'
+                    ]
+                ]
+            );
+             </pre>
+        </div>
+    </div>
 </div>
 {% endblock content %}
 
