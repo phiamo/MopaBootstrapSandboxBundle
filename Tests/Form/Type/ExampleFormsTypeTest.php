@@ -1,8 +1,7 @@
 <?php
 namespace Mopa\Bundle\BootstrapSandboxBundle\Form\Type;
 
-use Mopa\Bundle\BootstrapBundle\Tests\Form\TypeTestCase;
-use Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleFormsType;
+use Mopa\Bundle\BootstrapBundle\Tests\Form\AbstractDivLayoutTest;
 use Mopa\Bundle\BootstrapSandboxBundle\Form\Model\ExampleFormsData;
 
 /**
@@ -10,7 +9,7 @@ use Mopa\Bundle\BootstrapSandboxBundle\Form\Model\ExampleFormsData;
  *
  * @author Ivan Molchanov <ivan.molchanov@opensoftdev.ru>
  */
-class ExampleFormsTypeTest extends TypeTestCase
+class ExampleFormsTypeTest extends AbstractDivLayoutTest
 {
     /**
      * Test form submit
@@ -35,8 +34,8 @@ class ExampleFormsTypeTest extends TypeTestCase
     {
         return [
             [
-                'object' => new ExampleFormsData('test', 1),
-                'data' => ['textField' => 'test', 'checkboxesInline' => 1,]
+                'object' => new ExampleFormsData('test', [1]),
+                'data' => ['textField' => 'test', 'checkboxesInline' => [1]]
             ]
         ];
     }
