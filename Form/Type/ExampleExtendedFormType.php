@@ -8,6 +8,10 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 
 class ExampleExtendedFormType extends AbstractType
 {
+    /**
+     * @param FormBuilderInterface $builder
+     * @param array $options
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -214,6 +218,10 @@ class ExampleExtendedFormType extends AbstractType
             ))
         ;
     }
+
+    /**
+     * @param OptionsResolverInterface $resolver
+     */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
@@ -221,6 +229,10 @@ class ExampleExtendedFormType extends AbstractType
             'show_legend' => false,
         ));
     }
+
+    /**
+     * @return string
+     */
     public function getName()
     {
         return 'mopa_bootstrap_example_extended_forms';

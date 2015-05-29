@@ -27,14 +27,14 @@ class DateTimeTest
     private $name;
 
     /**
-     * @var datetime $start
+     * @var \DateTime $start
      *
      * @ORM\Column(name="start", type="datetime")
      */
     private $start;
 
     /**
-     * @var datetime $end
+     * @var \DateTime $end
      *
      * @ORM\Column(name="end", type="datetime")
      */
@@ -56,6 +56,9 @@ class DateTimeTest
         return $this->id;
     }
 
+    /**
+     * @param $id
+     */
     public function setId($id)
     {
         $this->id = $id;
@@ -65,7 +68,7 @@ class DateTimeTest
      * Set name
      *
      * @param  string       $name
-     * @return Transmission
+     * @return DateTimeTest
      */
     public function setName($name)
     {
@@ -87,8 +90,8 @@ class DateTimeTest
     /**
      * Set start
      *
-     * @param  datetime     $start
-     * @return Transmission
+     * @param  \DateTime     $start
+     * @return DateTimeTest
      */
     public function setStart($start)
     {
@@ -100,13 +103,16 @@ class DateTimeTest
     /**
      * Get start
      *
-     * @return datetime
+     * @return \DateTime
      */
     public function getStart()
     {
         return $this->start;
     }
 
+    /**
+     * @return \DateTime
+     */
     public function getBegin()
     {
         return $this->getStart();
@@ -115,8 +121,8 @@ class DateTimeTest
     /**
      * Set end
      *
-     * @param  datetime     $end
-     * @return Transmission
+     * @param  \DateTime     $end
+     * @return DateTimeTest
      */
     public function setEnd($end)
     {
@@ -128,7 +134,7 @@ class DateTimeTest
     /**
      * Get end
      *
-     * @return datetime
+     * @return \DateTime
      */
     public function getEnd()
     {

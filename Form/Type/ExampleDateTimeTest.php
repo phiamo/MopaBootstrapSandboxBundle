@@ -7,6 +7,10 @@ use Symfony\Component\Form\FormBuilderInterface;
 class ExampleDateTimeTest extends AbstractType
 {
 
+    /**
+     * @param FormBuilderInterface $builder
+     * @param array $options
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -24,6 +28,9 @@ class ExampleDateTimeTest extends AbstractType
         ;
     }
 
+    /**
+     * @return string
+     */
     public function getName()
     {
         return 'datetime_test';
