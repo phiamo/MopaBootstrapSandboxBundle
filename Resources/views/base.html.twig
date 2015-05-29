@@ -2,9 +2,11 @@
 
 {% block head_style %}
 {% stylesheets
-       '@MopaBootstrapSandboxBundle/Resources/public/less/mopabootstrapsandboxbundle.less'
-       '@MopaBootstrapSandboxBundle/Resources/public/css/prettify.css'
-       '@MopaBootstrapBundle/Resources/public/less/mopabootstrapbundle.less'
+        '@MopaBootstrapSandboxBundle/Resources/public/less/mopabootstrapsandboxbundle.less'
+        '@MopaBootstrapSandboxBundle/Resources/public/css/prettify.css'
+        '@MopaBootstrapBundle/Resources/public/less/mopabootstrapbundle.less'
+        '@MopaBootstrapBundle/Resources/public/bootstrap/docs/assets/css/docs.min.css'
+        '@MopaBootstrapBundle/Resources/public/components/smalot-bootstrap-datetimepicker/build/build_standalone.less'
 %}
 <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
 {% endstylesheets %}
@@ -63,12 +65,59 @@
 {% endblock content_row %}
 
 {% block foot_script %}
-{{ parent() }}
+    {{ parent() }}
 
-<script type="text/javascript" src="{{ asset('bundles/mopabootstrapsandbox/js/prettify.js') }}"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-    window.prettyPrint && prettyPrint();
-});
-</script>
+    <script type="text/javascript" src="{{ asset('bundles/mopabootstrapsandbox/js/prettify.js') }}"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        window.prettyPrint && prettyPrint();
+    });
+    </script>
+
+    {% javascripts
+    '@MopaBootstrapBundle/Resources/public/components/smalot-bootstrap-datetimepicker/js/bootstrap-datetimepicker.js'
+    '@MopaBootstrapBundle/Resources/public/components/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.fr.js'
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    <script type="text/javascript">
+        $(function(){
+
+            $('[data-provider="datepicker"]').datetimepicker({
+                autoclose: true,
+                format: 'dd/mm/yyyy',
+                language: 'fr',
+                minView: 'month',
+                pickerPosition: 'bottom-left',
+                todayBtn: true,
+                startView: 'month'
+            });
+
+            $('[data-provider="datetimepicker"]').datetimepicker({
+                autoclose: true,
+                format: 'dd/mm/yyyy hh:ii',
+                pickerPosition: 'bottom-left',
+                todayBtn: true
+            });
+
+            $('[data-provider="timepicker"]').datetimepicker({
+                autoclose: true,
+                format: 'hh:ii',
+                formatViewType: 'time',
+                maxView: 'day',
+                minView: 'hour',
+                pickerPosition: 'bottom-left',
+                startView: 'day'
+            });
+
+            // Restore value from hidden input
+            $('input[type=hidden]', '.date').each(function(){
+                if($(this).val()) {
+                    $(this).parent().datetimepicker('setValue');
+                }
+            });
+
+        });
+    </script>
 {% endblock foot_script %}

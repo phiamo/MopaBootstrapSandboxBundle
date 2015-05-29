@@ -162,19 +162,22 @@ class ExampleExtendedFormType extends AbstractType
                 'constraints' =>  new NotBlank(),
             ))
             ->add('time1', 'time', array(
-                'widget' => 'choice',
-                'horizontal_input_wrapper_class' => 'col-lg-2',
+                'widget' => 'single_text',
+                'horizontal_input_wrapper_class' => 'col-lg-4',
                 'constraints' =>  new NotBlank(),
+                'timepicker' => true,
             ))
             ->add('date1', 'date', array(
-                'horizontal_input_wrapper_class' => 'col-lg-2',
-                'widget' => 'choice',
+                'horizontal_input_wrapper_class' => 'col-lg-4',
+                'widget' => 'single_text',
                 'constraints' =>  new NotBlank(),
+                'datepicker' => true,
             ))
             ->add('date_time1', 'datetime', array(
-                'widget' => 'choice',
-                'horizontal_input_wrapper_class' => 'col-lg-2',
+                'widget' => 'single_text',
+                'horizontal_input_wrapper_class' => 'col-lg-5',
                 'constraints' =>  new NotBlank(),
+                'datetimepicker' => true,
             ))
             ->add('Prefix_Text', 'text', array(
                 'widget_prefix' => "Prefix Text",
