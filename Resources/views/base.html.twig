@@ -65,6 +65,14 @@
 {% endblock content_row %}
 
 {% block foot_script %}
+    {% javascripts
+    '@MopaBootstrapBundle/Resources/public/bootstrap/js/tooltip.js'
+    '@MopaBootstrapBundle/Resources/public/bootstrap/js/*.js'
+    '@MopaBootstrapBundle/Resources/public/js/mopabootstrap-collection.js'
+    '@MopaBootstrapBundle/Resources/public/js/mopabootstrap-subnav.js'
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
     {{ parent() }}
 
     <script type="text/javascript" src="{{ asset('bundles/mopabootstrapsandbox/js/prettify.js') }}"></script>
