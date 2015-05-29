@@ -43,14 +43,13 @@ class ExampleChoiceFormType extends AbstractType
             ))
             ->add('Simple_Checkboxes', 'checkbox', array(
                 'label'        => 'Simple checkbox',
-                'help_block'  => 'This is the inline help',
                 'help_block'  => 'Checkbox widgets can have help block too'
             ))
             ->add('Radio_By_Buttons', 'choice', array(
                 'widget_type' => 'inline-btn',
                 'expanded'    => true,
                 'choices'      => array('1' => 'one', '2' => 'two'),
-                'attr'  => array(
+                'label_attr'  => array(
                     'class' => 'btn-default',
                 ),
                 'help_block'  => 'Radio by buttons (btn)',
@@ -60,7 +59,7 @@ class ExampleChoiceFormType extends AbstractType
                 'expanded'    => true,
                 'multiple'    => true,
                 'choices'      => array('1' => 'one', '2' => 'two'),
-                'attr'  => array(
+                'label_attr'  => array(
                     'class' => 'btn-default',
                 ),
                 'help_block'  => 'Checkboxes by buttons (inline-btn)',
