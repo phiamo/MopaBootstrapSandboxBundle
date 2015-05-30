@@ -27,7 +27,7 @@ class ExamplesController extends Controller
     /**
      * @Route("/mopa/bootstrap", name="mopa_bootstrap_welcome")
      * @Template
-     * @param Request $request
+     * @param  Request $request
      * @return array
      */
     public function indexAction(Request $request)
@@ -38,7 +38,7 @@ class ExamplesController extends Controller
     /**
      * @Route("/mopa/bootstrap/layout", name="mopa_bootstrap_layout_example")
      * @Template
-     * @param Request $request
+     * @param  Request $request
      * @return array
      */
     public function layoutAction(Request $request)
@@ -49,7 +49,7 @@ class ExamplesController extends Controller
     /**
      * @Route("/mopa/bootstrap/forms/embeddedTypes", name="mopa_bootstrap_forms_embeddedtype")
      * @Template
-     * @param Request $request
+     * @param  Request $request
      * @return array
      */
     public function embeddedTypeAction(Request $request)
@@ -76,7 +76,7 @@ class ExamplesController extends Controller
     /**
      * @Route("/mopa/bootstrap/forms/extended", name="mopa_bootstrap_forms_extended")
      * @Template
-     * @param Request $request
+     * @param  Request $request
      * @return array
      */
     public function extendedAction(Request $request)
@@ -92,7 +92,7 @@ class ExamplesController extends Controller
     /**
      * @Route("/mopa/bootstrap/forms/extended_view", name="mopa_bootstrap_forms_view_extended")
      * @Template
-     * @param Request $request
+     * @param  Request $request
      * @return array
      */
     public function extended_viewAction(Request $request)
@@ -108,7 +108,7 @@ class ExamplesController extends Controller
     /**
      * @Route("/mopa/bootstrap/forms/errors", name="mopa_bootstrap_forms_errors")
      * @Template
-     * @param Request $request
+     * @param  Request $request
      * @return array
      */
     public function errorsAction(Request $request)
@@ -131,7 +131,7 @@ class ExamplesController extends Controller
     /**
      * @Route("/mopa/bootstrap/forms/help_texts", name="mopa_bootstrap_forms_helptexts")
      * @Template
-     * @param Request $request
+     * @param  Request $request
      * @return array
      */
     public function helpTextsAction(Request $request)
@@ -147,7 +147,7 @@ class ExamplesController extends Controller
     /**
      * @Route("/mopa/bootstrap/forms/collections", name="mopa_bootstrap_forms_collections")
      * @Template
-     * @param Request $request
+     * @param  Request $request
      * @return array
      */
     public function collectionsAction(Request $request)
@@ -182,7 +182,7 @@ class ExamplesController extends Controller
     /**
      * @Route("/mopa/bootstrap/forms/collections/nested", name="mopa_bootstrap_forms_collections_nested")
      * @Template
-     * @param Request $request
+     * @param  Request $request
      * @return array
      */
     public function nestedCollectionsAction(Request $request)
@@ -199,7 +199,7 @@ class ExamplesController extends Controller
     /**
      * @Route("/mopa/bootstrap/forms/horizontal", name="mopa_bootstrap_forms_horizontal")
      * @Template
-     * @param Request $request
+     * @param  Request $request
      * @return array
      */
     public function horizontalAction(Request $request)
@@ -215,7 +215,7 @@ class ExamplesController extends Controller
     /**
      * @Route("/mopa/bootstrap/forms/examples", name="mopa_bootstrap_forms_examples")
      * @Template
-     * @param Request $request
+     * @param  Request $request
      * @return array
      */
     public function formsAction(Request $request)
@@ -235,7 +235,7 @@ class ExamplesController extends Controller
     /**
      * @Route("/mopa/bootstrap/forms/choice", name="mopa_bootstrap_forms_choices")
      * @Template
-     * @param Request $request
+     * @param  Request $request
      * @return array
      */
     public function choicesAction(Request $request)
@@ -251,7 +251,7 @@ class ExamplesController extends Controller
     /**
      * @Route("/mopa/bootstrap/navbar", name="mopa_bootstrap_navbar")
      * @Template
-     * @param Request $request
+     * @param  Request $request
      * @return array
      */
     public function navbarAction(Request $request)
@@ -262,7 +262,7 @@ class ExamplesController extends Controller
     /**
      * @Route("/mopa/bootstrap/components", name="mopa_bootstrap_components")
      * @Template
-     * @param Request $request
+     * @param  Request $request
      * @return array
      */
     public function componentsAction(Request $request)
@@ -272,7 +272,7 @@ class ExamplesController extends Controller
 
     /**
      * @Route("/mopa/bootstrap/components/setflashs", name="mopa_bootstrap_components_setflashs")
-     * @param Request $request
+     * @param  Request                                            $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function componentsSetflashsAction(Request $request)
@@ -287,7 +287,7 @@ class ExamplesController extends Controller
     /**
      * @Route("/mopa/bootstrap/tabs", name="mopa_bootstrap_forms_tabs")
      * @Template()
-     * @param Request $request
+     * @param  Request $request
      * @return array
      */
     public function tabsAction(Request $request)

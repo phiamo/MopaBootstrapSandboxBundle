@@ -90,7 +90,7 @@ class DateTimeTest
     /**
      * Set start
      *
-     * @param  \DateTime     $start
+     * @param  \DateTime    $start
      * @return DateTimeTest
      */
     public function setStart($start)
@@ -121,7 +121,7 @@ class DateTimeTest
     /**
      * Set end
      *
-     * @param  \DateTime     $end
+     * @param  \DateTime    $end
      * @return DateTimeTest
      */
     public function setEnd($end)
