@@ -23,7 +23,6 @@
     "require": {
         "php": ">=5.3.2",
         "mopa/bootstrap-bundle": "3.*@dev",
-        "knplabs/knp-menu-bundle": "2.0.x-dev",
         "knplabs/knp-menu-bundle": "2.0.0",
         "liip/theme-bundle": "dev-master"
     },
